@@ -1,0 +1,56 @@
+[
+ {
+  "case": "SQL-L4-04",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "商品名称和类目如下：\n1. 无线耳机3号，数码\n2. 智能手机4号，数码\n3. 蓝牙音箱3号，数码\n4. 无线耳机4号，数码\n5. 洗衣机2号，家电\n6. 冰箱3号，家电\n7. 电饭煲4号，家电\n8. 洗衣机4号，家电\n9. 吸尘器4号，家电\n10. 空调3号，家电\n（共13条，完整结果共13行）"
+  ]
+ },
+ {
+  "case": "SQL-L6-02",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "被购买过的商品名(去重,前15)为：T恤1号、T恤2号、T恤3号、T恤4号、冰箱1号、冰箱2号、冰箱3号、冰箱4号、口红1号、口红2号"
+  ]
+ },
+ {
+  "case": "PY-P1-10",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "商品成本总和为1326.808"
+  ]
+ },
+ {
+  "case": "TOOL-T5-02",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "客户id为77、288、494的客户购买商品件数合计均为384件，是买过最多件商品的客户，对应的客户id为77、288、494。",
+   "客户id为77时，城市是长春，vip等级是0；客户id为288时，城市是重庆，vip等级是0。",
+   "这位客户一共下过145单。"
+  ]
+ }
+]

@@ -1,0 +1,41 @@
+[
+ {
+  "case": "SQL-L2-01",
+  "suite": "sql",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "| 排名 | 客户姓名 | 城市 |\n|---|---|---|\n| 1 | 用户0276 | 重庆 |\n| 2 | 用户0293 | 北京 |\n| 3 | 用户0240 | 昆明 |\n| 4 | 用户0403 | 杭州 |\n| 5 | 用户0440 | 苏州 |"
+  ]
+ },
+ {
+  "case": "SQL-L2-02",
+  "suite": "sql",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "前5件商品的名称和价格：\n\n1. 智能手机1号：2930.6\n2. 智能手机2号：699.6\n3. 智能手机3号：874.2\n4. 智能手机4号：7725.6\n5. 无线耳机1号：4661.2"
+  ]
+ },
+ {
+  "case": "PY-P1-01",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "orders表一共有 **15988 行**。"
+  ]
+ }
+]

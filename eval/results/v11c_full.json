@@ -1,0 +1,2051 @@
+[
+ {
+  "case": "SQL-L1-01",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "category | 数据\n美妆\n食品\n数码\n服饰\n家电\n家居"
+  ]
+ },
+ {
+  "case": "SQL-L1-02",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "长春\n太原\n宁波\n大连\n上海\n石家庄\n沈阳\n深圳\n天津\n南京\n厦门\n杭州\n福州\n广州\n苏州\n重庆\n北京\n贵阳\n哈尔滨\n昆明\n成都"
+  ]
+ },
+ {
+  "case": "SQL-L1-03",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "订单渠道有3种，分别为：web、mini_program、app。"
+  ]
+ },
+ {
+  "case": "SQL-L1-04",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "订单状态有3种，分别为：completed、cancelled、pending。"
+  ]
+ },
+ {
+  "case": "SQL-L1-05",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "vip_level 去重后为：0、1、3、2"
+  ]
+ },
+ {
+  "case": "SQL-L1-06",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "智能手机1号\n智能手机1号\n智能手机1号\n智能手机1号\n智能手机1号"
+  ]
+ },
+ {
+  "case": "SQL-L2-01",
+  "suite": "sql",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "[\"用户0001\", \"长春\"]\n[\"用户0002\", \"太原\"]\n[\"用户0003\", \"宁波\"]\n[\"用户0004\", \"大连\"]\n[\"用户0005\", \"上海\"]"
+  ]
+ },
+ {
+  "case": "SQL-L2-02",
+  "suite": "sql",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "1. 智能手机1号，2930.6\n2. 智能手机2号，699.6\n3. 智能手机3号，874.2\n4. 智能手机4号，7725.6"
+  ]
+ },
+ {
+  "case": "SQL-L2-03",
+  "suite": "sql",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "order_id: 1, 下单时间: 2023-01-03\norder_id: 1, 下单时间: 2023-01-03\norder_id: 1, 下单时间: 2023-01-03\norder_id: 1, 下单时间: 2023-01-03\norder_id: 1, 下单时间: 2023-01-03"
+  ]
+ },
+ {
+  "case": "SQL-L2-04",
+  "suite": "sql",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "customer_id: 1, vip_level: 0\ncustomer_id: 2, vip_level: 1\ncustomer_id: 3, vip_level: 0\ncustomer_id: 4, vip_level: 0\ncustomer_id: 5, vip_level: 1"
+  ]
+ },
+ {
+  "case": "SQL-L2-05",
+  "suite": "sql",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "id: 1, cost: 1942.9\nid: 2, cost: 530.2\nid: 3, cost: 669.7\nid: 4, cost: 5436.9\nid: 5, cost: 3102.9"
+  ]
+ },
+ {
+  "case": "SQL-L2-06",
+  "suite": "sql",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "order_id: 1, status: completed, channel: web\norder_id: 1, status: completed, channel: web\norder_id: 1, status: completed, channel: web\norder_id: 1, status: completed, channel: web\norder_id: 1, status: completed, channel: web"
+  ]
+ },
+ {
+  "case": "SQL-L3-01",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "家居：22333件\n19956"
+  ]
+ },
+ {
+  "case": "SQL-L3-02",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "vip等级为3的客户有120个。"
+  ]
+ },
+ {
+  "case": "SQL-L3-03",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "上海的客户有17个。"
+  ]
+ },
+ {
+  "case": "SQL-L3-04",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "已完成(completed)的订单有13574笔。"
+  ]
+ },
+ {
+  "case": "SQL-L3-05",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "价格超过1000元的商品有44件。"
+  ]
+ },
+ {
+  "case": "SQL-L3-06",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年1月1日当天下了33单。"
+  ]
+ },
+ {
+  "case": "SQL-L4-01",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "product_name, price\n智能手机1号, 2930.6\n智能手机2号, 699.6\n智能手机3号, 874.2\n智能手机4号, 7725.6\n无线耳机1号, 4661.2\n无线耳机2号, 5077.0\n无线耳机3号, 8082.7\n无线耳机4号, 7325.4\n智能手表1号, 3028.4\n智能手表2号, 1526.6\n智能手表3号, 1109.8\n智能手表4号, 3221.3\n平板电脑1号, 4639.0\n平板电脑2号, 2379.1\n平板电脑3号, 4065.9\n平板电脑4号, 1596.0\n蓝牙音箱1号, 2688.5\n蓝牙音箱2号, 3176.6\n蓝牙音箱3号, 7144.2\n蓝牙音箱4号, 779.0"
+  ]
+ },
+ {
+  "case": "SQL-L4-02",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "用户0007, 沈阳\n用户0009, 上海\n用户0029, 杭州\n用户0032, 长春\n用户0036, 大连\n用户0040, 长春\n用户0041, 哈尔滨\n用户0042, 福州\n用户0052, 哈尔滨\n用户0059, 太原\n用户0062, 重庆\n用户0070, 太原\n用户0072, 大连\n用户0073, 石家庄\n用户0075, 成都\n用户0080, 天津\n用户0086, 成都\n用户0089, 福州\n用户0090, 广州\n用户0099, 哈尔滨\n用户0102, 石家庄\n用户0118, 杭州\n用户0121, 北京\n用户0129, 苏州\n用户0131, 北京\n用户0135, 福州\n用户0136, 石家庄\n用户0141, 长春\n用户0145, 苏州\n用户0146, 厦门\n用户0149, 太原\n用户0154, 成都\n用户0156, 天津\n用户0161, 重庆\n用户0162, 天津\n用户0170, 福州\n用户0173, 北京\n用户0177, 重庆\n用户0187, 天津\n用户0188, 成都\n用户0191, 大连\n用户0196, 福州\n用户0200, 南京\n用户0202, 杭州\n用户0203, 深圳\n用户0204, 深圳\n用户0213, 大连\n用户0218, 大连\n用户0223, 厦门\n用户0225, 上海"
+  ]
+ },
+ {
+  "case": "SQL-L4-03",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "上海客户的姓名和注册日期如下：\n- 姓名：用户0005，注册日期：2022-04-06\n- 姓名：用户0009，注册日期：未提供\n- 姓名：用户0053，注册日期：未提供\n- 姓名：用户0105，注册日期：未提供\n- 姓名：用户0132，注册日期：未提供\n- 姓名：用户0150，注册日期：未提供\n- 姓名：用户0167，注册日期：未提供\n- 姓名：用户0192，注册日期：未提供\n- 姓名：用户0225，注册日期：未提供\n- 姓名：用户0259，注册日期：未提供\n- 姓名：用户0290，注册日期：未提供\n- 姓名：用户0320，注册日期：未提供\n- 姓名：用户0344，注册日期：未提供\n- 姓名：用户0413，注册日期：未提供\n- 姓名：用户0450，注册日期：未提供\n- 姓名：用户0452，注册日期：未提供\n- 姓名：用户0480，注册日期：未提供"
+  ]
+ },
+ {
+  "case": "SQL-L4-04",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "product_name, category\n冰箱2号, 家电\n冰箱3号, 家电\n吸尘器4号, 家电\n无线耳机2号, 数码\n无线耳机3号, 数码\n无线耳机4号, 数码\n智能手机4号, 数码\n洗衣机2号, 家电\n洗衣机4号, 家电\n电饭煲4号, 家电\n空调2号, 家电\n空调3号, 家电\n蓝牙音箱3号, 数码"
+  ]
+ },
+ {
+  "case": "SQL-L4-05",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "order_id, status\n6, completed\n6, completed\n10, completed\n11, completed\n11, completed\n11, completed\n11, completed\n15, completed\n15, completed\n15, completed"
+  ]
+ },
+ {
+  "case": "SQL-L4-06",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "咖啡豆3号，类目：食品\n进口牛奶4号，类目：食品"
+  ]
+ },
+ {
+  "case": "SQL-L5-01",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "智能手机2号, 699.6\n智能手表2号, 1526.6\n平板电脑4号, 1596.0\n智能手表3号, 1109.8\n蓝牙音箱4号, 779.0"
+  ]
+ },
+ {
+  "case": "SQL-L5-02",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "[\"用户0009\", 3]\n[\"用户0020\", 2]\n[\"用户0029\", 3]\n[\"用户0044\", 2]\n[\"用户0053\", 2]\n[\"用户0078\", 2]\n[\"用户0091\", 2]\n[\"用户0103\", 2]\n[\"用户0118\", 3]\n[\"用户0129\", 3]\n[\"用户0132\", 2]\n[\"用户0140\", 2]\n[\"用户0145\", 3]\n[\"用户0153\", 2]\n[\"用户0165\", 2]\n[\"用户0192\", 2]\n[\"用户0200\", 3]\n[\"用户0202\", 3]\n[\"用户0221\", 2]\n[\"用户0225\", 3]\n[\"用户0226\", 2]\n[\"用户0239\", 3]\n[\"用户0253\", 2]\n[\"用户0259\", 2]\n[\"用户0263\", 3]\n[\"用户0265\", 2]\n[\"用户0301\", 2]\n[\"用户0318\", 3]\n[\"用户0320\", 2]\n[\"用户0322\", 3]\n[\"用户0334\", 2]\n[\"用户0344\", 2]\n[\"用户0345\", 2]\n[\"用户0355\", 2]\n[\"用户0359\", 3]\n[\"用户0370\", 2]\n[\"用户0372\", 2]\n[\"用户0399\", 2]\n[\"用户0411\", 2]\n[\"用户0413\", 2]\n[\"用户0414\", 3]\n[\"用户0421\", 3]\n[\"用户0424\", 2]\n[\"用户0426\", 2]\n[\"用户0437\", 3]\n[\"用户0440\", 2]\n[\"用户0444\", 3]\n[\"用户0450\", 2]\n[\"用户0467\", 3]\n[\"用户0470\", 2]\n[\"用户0477\", 3]"
+  ]
+ },
+ {
+  "case": "SQL-L5-03",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "[6996, \"2024-01-06 15:47:00\"]\n[6997, \"2024-01-22 04:55:00\"]\n[6997, \"2024-01-22 04:55:00\"]\n[6997, \"2024-01-22 04:55:00\"]\n[6997, \"2024-01-22 04:55:00\"]\n[6998, \"2024-01-07 09:34:00\"]\n[6998, \"2024-01-07 09:34:00\"]\n[6998, \"2024-01-07 09:34:00\"]\n[6999, \"2024-01-21 18:58:00\"]\n[6999, \"2024-01-21 18:58:00\"]"
+  ]
+ },
+ {
+  "case": "SQL-L5-04",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "商品名：羽绒服1号，价格：105.8，成本：无\n商品名：连衣裙2号，价格：369.0，成本：无\n商品名：连衣裙4号，价格：186.2，成本：无"
+  ]
+ },
+ {
+  "case": "SQL-L5-05",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "用户0005, 上海\n用户0005, 上海\n用户0005, 上海\n用户0005, 上海\n用户0005, 上海\n用户0005, 上海\n用户0005, 上海\n用户0005, 上海\n用户0005, 上海\n用户0005, 上海"
+  ]
+ },
+ {
+  "case": "SQL-L5-06",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "order_id: 29, order_date: 2023-01-12 22:15:00\norder_id: 31, order_date: 2023-01-30 22:49:00\norder_id: 35, order_date: 2023-01-03 01:27:00\norder_id: 39, order_date: 2023-01-02 14:38:00\norder_id: 42, order_date: 2023-01-08 07:19:00\norder_id: 73, order_date: 2023-01-10 03:11:00\norder_id: 149, order_date: 2023-01-20 16:21:00\norder_id: 259, order_date: 2023-01-07 16:29:00\norder_id: 270, order_date: 2023-01-09 10:44:00\norder_id: 301, order_date: 2023-01-27 13:09:00"
+  ]
+ },
+ {
+  "case": "SQL-L6-01",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "用户0001\n用户0002\n用户0003\n用户0004\n用户0005\n用户0006\n用户0007\n用户0008\n用户0009\n用户0010\n用户0011\n用户0012\n用户0013\n用户0014\n用户0015"
+  ]
+ },
+ {
+  "case": "SQL-L6-02",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "T恤1号\nT恤2号\nT恤3号\nT恤4号\n冰箱1号\n冰箱2号\n冰箱3号\n冰箱4号\n口红1号\n口红2号\n口红3号\n口红4号\n台灯1号\n台灯2号"
+  ]
+ },
+ {
+  "case": "SQL-L6-03",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "有订单的客户的注册日期（去重，前15）如下：\n1. 用户0303，2022-01-02\n2. 用户0275，2022-01-03\n3. 用户0047，2022-01-04\n4. 用户0362，2022-01-09\n5. 用户0122，2022-01-10\n6. 用户0238，2022-01-11\n7. 用户0255，2022-01-15\n8. 用户0379，2022-01-15\n9. 用户0411，2022-01-16\n10. 用户0242，2022-01-18\n11. 用户0476，2022-01-20\n12. 用户0361，2022-01-23\n13. 用户0138，2022-01-25\n14. 用户0384，2022-01-26\n15. 用户0217，2022-01-27"
+  ]
+ },
+ {
+  "case": "SQL-L6-04",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "用户0001\n用户0002\n用户0003\n用户0004\n用户0005\n用户0006\n用户0007\n用户0008\n用户0009\n用户0010\n用户0011\n用户0012\n用户0013\n用户0014\n用户0015"
+  ]
+ },
+ {
+  "case": "SQL-L6-05",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "上海\n北京\n南京\n厦门\n哈尔滨\n大连\n天津\n太原\n宁波\n广州\n成都\n昆明\n杭州\n沈阳\n深圳\n石家庄\n福州\n苏州\n贵阳\n重庆\n长春"
+  ]
+ },
+ {
+  "case": "SQL-L7-01",
+  "suite": "sql",
+  "level": 7,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "用户0001\n用户0002\n用户0003\n用户0004\n用户0005\n用户0006\n用户0007\n用户0008\n用户0009\n用户0010\n用户0011\n用户0012\n用户0013\n用户0014\n用户0015"
+  ]
+ },
+ {
+  "case": "SQL-L7-02",
+  "suite": "sql",
+  "level": 7,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "用户0001\n用户0004\n用户0005\n用户0008\n用户0009\n用户0011\n用户0012\n用户0013\n用户0019\n用户0021\n用户0022\n用户0026\n用户0027\n用户0030\n用户0032"
+  ]
+ },
+ {
+  "case": "SQL-L7-03",
+  "suite": "sql",
+  "level": 7,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "家居类商品总购买件数：22333\n数码类商品总购买件数：19956"
+  ]
+ },
+ {
+  "case": "SQL-L7-04",
+  "suite": "sql",
+  "level": 7,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年注册的客户数为0"
+  ]
+ },
+ {
+  "case": "SQL-L7-05",
+  "suite": "sql",
+  "level": 7,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "vip3级客户的订单总数为11124。"
+  ]
+ },
+ {
+  "case": "SQL-L8-01",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "[\"2024\", \"2024-01-06\", \"用户0364\", \"web\"], [\"2024\", \"2024-01-22\", \"用户0446\", \"mini_program\"], [\"2024\", \"2024-01-22\", \"用户0446\", \"mini_program\"], [\"2024\", \"2024-01-22\", \"用户0446\", \"mini_program\"], [\"2024\", \"2024-01-22\", \"用户0446\", \"mini_program\"], [\"2024\", \"2024-01-07\", \"用户0471\", \"web\"], [\"2024\", \"2024-01-07\", \"用户0471\", \"web\"], [\"2024\", \"2024-01-07\", \"用户0471\", \"web\"], [\"2024\", \"2024-01-21\", \"用户0174\", \"app\"], [\"2024\", \"2024-01-21\", \"用户0174\", \"app\"]"
+  ]
+ },
+ {
+  "case": "SQL-L8-02",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "[20, \"蓝牙音箱4号\", 779.0, 1165]\n[7, \"无线耳机3号\", 8082.7, 1160]\n[1, \"智能手机1号\", 2930.6, 1132]\n[2, \"智能手机2号\", 699.6, 1120]\n[6, \"无线耳机2号\", 5077.0, 1120]\n[5, \"无线耳机1号\", 4661.2, 1104]\n[9, \"智能手表1号\", 3028.4, 1102]\n[14, \"平板电脑2号\", 2379.1, 1094]\n[18, \"蓝牙音箱2号\", 3176.6, 1093]\n[13, \"平板电脑1号\", 4639.0, 1087]\n[11, \"智能手表3号\", 1109.8, 1084]\n[19, \"蓝牙音箱3号\", 7144.2, 1069]\n[4, \"智能手机4号\", 7725.6, 1064]\n[12, \"智能手表4号\", 3221.3, 1057]\n[17, \"蓝牙音箱1号\", 2688.5, 1055]\n[16, \"平板电脑4号\", 1596.0, 1048]\n[3, \"智能手机3号\", 874.2, 1044]\n[10, \"智能手表2号\", 1526.6, 1033]\n[8, \"无线耳机4号\", 7325.4, 1020]\n[15, \"平板电脑3号\", 4065.9, 989]"
+  ]
+ },
+ {
+  "case": "SQL-L8-03",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "10115, 贵阳\n10115, 贵阳\n10115, 贵阳\n10116, 苏州\n10116, 苏州\n10117, 大连\n10117, 大连\n10117, 大连\n10118, 福州\n10118, 福州"
+  ]
+ },
+ {
+  "case": "SQL-L8-04",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "订单id: 5, 日期: 2023-01-07, 状态: completed\n订单id: 5, 日期: 2023-01-07, 状态: completed\n订单id: 8, 日期: 2023-01-17, 状态: pending\n订单id: 8, 日期: 2023-01-17, 状态: pending\n订单id: 8, 日期: 2023-01-17, 状态: pending\n订单id: 8, 日期: 2023-01-17, 状态: pending\n订单id: 8, 日期: 2023-01-17, 状态: pending\n订单id: 13, 日期: 2023-01-15, 状态: completed\n订单id: 13, 日期: 2023-01-15, 状态: completed\n订单id: 13, 日期: 2023-01-15, 状态: completed"
+  ]
+ },
+ {
+  "case": "SQL-L8-05",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "[1, \"用户0152\", \"2023-01-03 10:42:00\", 4]\n[1, \"用户0152\", \"2023-01-03 10:42:00\", 4]\n[2, \"用户0074\", \"2023-01-22 05:01:00\", 5]\n[3, \"用户0188\", \"2023-01-19 04:33:00\", 5]\n[5, \"用户0437\", \"2023-01-07 03:08:00\", 4]\n[7, \"用户0294\", \"2023-01-01 11:35:00\", 5]\n[7, \"用户0294\", \"2023-01-01 11:35:00\", 4]\n[7, \"用户0294\", \"2023-01-01 11:35:00\", 5]\n[7, \"用户0294\", \"2023-01-01 11:35:00\", 5]\n[9, \"用户0141\", \"2023-01-07 20:35:00\", 5]"
+  ]
+ },
+ {
+  "case": "SQL-L9-01",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(2024-01, 504)\n(2024-02, 385)\n(2024-03, 574)\n(2024-04, 585)\n(2024-05, 599)\n(2024-06, 624)\n(2024-07, 597)\n(2024-08, 603)\n(2024-09, 658)\n(2024-10, 686)\n(2024-11, 931)\n(2024-12, 882)"
+  ]
+ },
+ {
+  "case": "SQL-L9-02",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "label: 家居, value: 6927639.05\nlabel: 家电, value: 72829932.03\nlabel: 数码, value: 63715349.92\nlabel: 服饰, value: 14524720.96\nlabel: 美妆, value: 8819823.84\nlabel: 食品, value: 3523609.12"
+  ]
+ },
+ {
+  "case": "SQL-L9-03",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "1. 商品名：无线耳机3号，销售额：4352175.87\n2. 商品名：智能手机4号，销售额：3635186.75\n3. 商品名：无线耳机4号，销售额：3536486.89\n4. 商品名：蓝牙音箱3号，销售额：3463579.07\n5. 商品名：洗衣机2号，销售额：3380622.84"
+  ]
+ },
+ {
+  "case": "SQL-L9-04",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "区域: 金额\n东北: 18710030.97\n华东: 22426383.97\n华北: 19148449.85\n华南: 16139808.11\n西南: 18034071.64"
+  ]
+ },
+ {
+  "case": "SQL-L9-05",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "1. 客户姓名：用户0175，消费额：406154.72\n2. 客户姓名：用户0242，消费额：391730.26\n3. 客户姓名：用户0459，消费额：372254.64"
+  ]
+ },
+ {
+  "case": "PY-P1-01",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "15988"
+  ]
+ },
+ {
+  "case": "PY-P1-02",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "商品的平均价格是1507.16。"
+  ]
+ },
+ {
+  "case": "PY-P1-03",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "vip_level最高为3"
+  ]
+ },
+ {
+  "case": "PY-P1-04",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": false,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "使用`SUM(quantity)`函数即可计算购买数量quantity列的总和。"
+  ]
+ },
+ {
+  "case": "PY-P1-05",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "订单状态一共有3种，分别为：completed、cancelled、pending。"
+  ]
+ },
+ {
+  "case": "PY-P1-06",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "min_price: 39.2, max_price: 8082.7, product_count: 120"
+  ]
+ },
+ {
+  "case": "PY-P1-07",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "城市数量为21个。"
+  ]
+ },
+ {
+  "case": "PY-P1-08",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "最早一笔订单的时间是2023-01-01"
+  ]
+ },
+ {
+  "case": "PY-P1-09",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "avg_price 为 1400.3706"
+  ]
+ },
+ {
+  "case": "PY-P1-10",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "商品成本总和是183478434.33"
+  ]
+ },
+ {
+  "case": "PY-P2-01",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "已完成订单笔数：13574"
+  ]
+ },
+ {
+  "case": "PY-P2-02",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "数码类商品有21640件。"
+  ]
+ },
+ {
+  "case": "PY-P2-03",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "订单笔数为8993笔"
+  ]
+ },
+ {
+  "case": "PY-P2-04",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "无线耳机3号"
+  ]
+ },
+ {
+  "case": "PY-P2-05",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "石家庄、太原的客户数量均为32，是客户数量最多的城市。"
+  ]
+ },
+ {
+  "case": "PY-P2-06",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "label: app, value: 5382\nlabel: mini_program, value: 5198\nlabel: web, value: 5408"
+  ]
+ },
+ {
+  "case": "PY-P2-07",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "平均每笔订单包含商品数：13574.00件"
+  ]
+ },
+ {
+  "case": "PY-P2-08",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "购买数量的中位数是1"
+  ]
+ },
+ {
+  "case": "PY-P2-09",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "最高价格为8082.7"
+  ]
+ },
+ {
+  "case": "PY-P2-10",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年6月的订单数为734"
+  ]
+ },
+ {
+  "case": "PY-P2-11",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "平均折扣为0.0720"
+  ]
+ },
+ {
+  "case": "PY-P2-12",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "华东区客户有112。"
+  ]
+ },
+ {
+  "case": "PY-P2-13",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "product_id: 105\nproduct_name: 收纳箱1号\nvalue: 1159.0"
+  ]
+ },
+ {
+  "case": "PY-P2-14",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "1"
+  ]
+ },
+ {
+  "case": "PY-P2-15",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "商品价格的标准差为1949.7567（保留4位小数）。"
+  ]
+ },
+ {
+  "case": "PY-P3-01",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(家居, 20)\n(家电, 20)\n(数码, 20)\n(服饰, 20)\n(美妆, 20)\n(食品, 20)"
+  ]
+ },
+ {
+  "case": "PY-P3-02",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "区域:数量\n东北:104\n华东:112\n华北:101\n华南:88\n西南:95"
+  ]
+ },
+ {
+  "case": "PY-P3-03",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "状态: cancelled, 数量: 1309\n状态: completed, 数量: 13574\n状态: pending, 数量: 1105"
+  ]
+ },
+ {
+  "case": "PY-P3-04",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(2024-01, 587)\n(2024-02, 440)\n(2024-03, 661)\n(2024-04, 697)\n(2024-05, 734)\n(2024-06, 734)\n(2024-07, 697)\n(2024-08, 734)\n(2024-09, 771)\n(2024-10, 808)\n(2024-11, 1102)\n(2024-12, 1028)"
+  ]
+ },
+ {
+  "case": "PY-P3-05",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "[null, null]\n[\"家居\", 22333]\n[\"家电\", 21947]\n[\"数码\", 21640]\n[\"服饰\", 21958]\n[\"美妆\", 21693]\n[\"食品\", 22126]"
+  ]
+ },
+ {
+  "case": "PY-P3-06",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "label: 家居, value: 6927639.05\nlabel: 家电, value: 72829932.03\nlabel: 数码, value: 63715349.92\nlabel: 服饰, value: 14524720.96\nlabel: 美妆, value: 8819823.84\nlabel: 食品, value: 3523609.12"
+  ]
+ },
+ {
+  "case": "PY-P3-07",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "1. 姓名: 用户0175, 金额: 406154.72\n2. 姓名: 用户0242, 金额: 391730.26\n3. 姓名: 用户0459, 金额: 372254.64"
+  ]
+ },
+ {
+  "case": "PY-P3-08",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "1. customer_id: 77, customer_name: 用户0077, 下单次数: 49\n2. customer_id: 276, customer_name: 用户0276, 下单次数: 49\n3. customer_id: 288, customer_name: 用户0288, 下单次数: 49"
+  ]
+ },
+ {
+  "case": "PY-P3-09",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "复购率: 下过2单及以上的客户占全部下单客户的比例(保留4位)为500.0000，即repeat_customers（下过2单及以上的客户数）为500，total_customers（全部下单客户数）为500，比例为500/500=500.0000。"
+  ]
+ },
+ {
+  "case": "PY-P3-10",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年完成订单金额比2023年增长11.57%"
+  ]
+ },
+ {
+  "case": "PY-P3-11",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "1. app：94.35%\n2. web：95.00%\n3. mini_program：93.60%"
+  ]
+ },
+ {
+  "case": "PY-P3-12",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "类目：食品，平均折扣：0.0724"
+  ]
+ },
+ {
+  "case": "PY-P3-13",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024-01：6223229.29\n2024-02：4841963.86\n2024-03：7099127.34\n2024-04：7387746.72\n2024-05：7061970.59\n2024-06：7224920.28\n2024-07：7483638.54\n2024-08：6918971.43\n2024-09：7829912.48\n2024-10：9290554.84\n2024-11：12314323.26\n2024-12：10782385.9"
+  ]
+ },
+ {
+  "case": "PY-P3-14",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "2024年ARPU人均消费为94458744.54（已完成订单总金额/下单人数，保留2位小数）。"
+  ]
+ },
+ {
+  "case": "PY-P3-15",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年取消率最高的月份是11月，该月取消率为92/3121≈2.95%。"
+  ]
+ },
+ {
+  "case": "PY-P4-01",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "FINAL 图表已生成并保存为 chart_01.png。(类型:line, 维度:month, 指标:count)"
+  ]
+ },
+ {
+  "case": "PY-P4-02",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "FINAL 图表已生成并保存为 chart_02.png。(类型:bar, 维度:category, 指标:amount)"
+  ]
+ },
+ {
+  "case": "PY-P4-03",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "FINAL 图表已生成并保存为 chart_03.png。(类型:pie, 维度:region, 指标:count)"
+  ]
+ },
+ {
+  "case": "PY-P4-04",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "FINAL 图表已生成并保存为 chart_04.png。(类型:hist, 维度:price, 指标:count)"
+  ]
+ },
+ {
+  "case": "PY-P4-05",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "FINAL 图表已生成并保存为 chart_05.png。(类型:bar, 维度:month, 指标:amount)"
+  ]
+ },
+ {
+  "case": "PY-P4-06",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "FINAL 图表已生成并保存为 chart_06.png。(类型:bar, 维度:channel, 指标:count)"
+  ]
+ },
+ {
+  "case": "PY-P4-07",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": false,
+  "answers": [
+   "FINAL 查询失败: 图表生成未成功(TypeError: 'value' must be an instance of str or bytes, not a float)"
+  ]
+ },
+ {
+  "case": "PY-P4-08",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "FINAL 图表已生成并保存为 chart_08.png。(类型:bar, 维度:month, 指标:amount)"
+  ]
+ },
+ {
+  "case": "PY-P4-09",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "FINAL 图表已生成并保存为 chart_09.png。(类型:pie, 维度:status, 指标:count)"
+  ]
+ },
+ {
+  "case": "PY-P4-10",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "FINAL 图表已生成并保存为 chart_10.png。(类型:bar, 维度:vip_level, 指标:count)"
+  ]
+ },
+ {
+  "case": "TOOL-T1-01",
+  "suite": "tool",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "500"
+  ]
+ },
+ {
+  "case": "TOOL-T1-02",
+  "suite": "tool",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "15988"
+  ]
+ },
+ {
+  "case": "TOOL-T1-03",
+  "suite": "tool",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "120"
+  ]
+ },
+ {
+  "case": "TOOL-T1-04",
+  "suite": "tool",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "43899"
+  ]
+ },
+ {
+  "case": "TOOL-T1-05",
+  "suite": "tool",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "客户0001（名字是'用户0001'）的城市是长春，vip等级是0。"
+  ]
+ },
+ {
+  "case": "TOOL-T1-06",
+  "suite": "tool",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "商品'平板电脑1号'的价格为：4639.0，对应单价分别为：4540.99、4459.99、4180.63、4223.25、4315.78、4371.44、4637.15、4421.06、4279.3、4547.67。"
+  ]
+ },
+ {
+  "case": "TOOL-T1-07",
+  "suite": "tool",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "订单id为1000的状态和渠道如下：\n1. status: completed, channel: app\n2. status: completed, channel: app\n3. status: completed, channel: app"
+  ]
+ },
+ {
+  "case": "TOOL-T1-08",
+  "suite": "tool",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "华北区有101个客户。"
+  ]
+ },
+ {
+  "case": "TOOL-T1-09",
+  "suite": "tool",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "美妆类有20个商品。"
+  ]
+ },
+ {
+  "case": "TOOL-T1-10",
+  "suite": "tool",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2023年12月订单数为800笔。"
+  ]
+ },
+ {
+  "case": "TOOL-T2-01",
+  "suite": "tool",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "customers表行数为500行，orders表行数为15988行，orders表比customers表多15488行。"
+  ]
+ },
+ {
+  "case": "TOOL-T2-02",
+  "suite": "tool",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "order_items比products多43899行"
+  ]
+ },
+ {
+  "case": "TOOL-T2-03",
+  "suite": "tool",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": false,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "数码类和家电类商品加起来一共40280件。"
+  ]
+ },
+ {
+  "case": "TOOL-T2-04",
+  "suite": "tool",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "最贵商品和最便宜商品的价格差是8082.7-39.2=7943.5"
+  ]
+ },
+ {
+  "case": "TOOL-T2-05",
+  "suite": "tool",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "上海客户数量为17，北京客户数量为19，上海和北京的客户加起来一共为17+19=36。"
+  ]
+ },
+ {
+  "case": "TOOL-T2-06",
+  "suite": "tool",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2023年订单数为6995，2024年订单数为8993，两者相加一共是15988。"
+  ]
+ },
+ {
+  "case": "TOOL-T2-07",
+  "suite": "tool",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "订单数最多的客户id是77，该客户所在城市是长春。"
+  ]
+ },
+ {
+  "case": "TOOL-T2-08",
+  "suite": "tool",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "价格最高的商品属于类目：数码\n该类目一共有20件商品"
+  ]
+ },
+ {
+  "case": "TOOL-T2-09",
+  "suite": "tool",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": false,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "已完成订单：13574笔\n已取消订单：1309笔"
+  ]
+ },
+ {
+  "case": "TOOL-T2-10",
+  "suite": "tool",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "买过'智能手机1号'的客户有279人，买过'冰箱1号'的客户有265人。"
+  ]
+ },
+ {
+  "case": "TOOL-T3-01",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年一共有8993笔订单。",
+   "已完成订单笔数：7628",
+   "2024年未完成的订单（取消+待处理）还有8993笔。"
+  ]
+ },
+ {
+  "case": "TOOL-T3-02",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "平台一共有500个注册客户。",
+   "订单笔数(默认含所有状态)为15988笔。",
+   "平均每位客户下单数为31.98单。计算过程：订单笔数15988 ÷ 注册客户数500 = 31.976，保留2位小数为31.98。"
+  ]
+ },
+ {
+  "case": "TOOL-T3-03",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "数码类商品有19956件。",
+   "3448.12",
+   "买空全部数码类商品（各买一件按平均价）需要 68962.85 元。"
+  ]
+ },
+ {
+  "case": "TOOL-T3-04",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年已完成订单的总销售额是94458744.54",
+   "label: 2023\nvalue: 75882330.38",
+   "2024年比2023年增长百分之多少为：(94458744.54 - 75882330.38) / 75882330.38 × 100% ≈ 24.49%"
+  ]
+ },
+ {
+  "case": "TOOL-T3-05",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "最贵的商品是无线耳机3号，价格为8082.7元。",
+   "根据查询结果，该商品被买过的件数为131697件（销售件数）。",
+   "product_id: 7, product_name: 无线耳机3号, original_amount: 7878617.00, qty: 1027"
+  ]
+ },
+ {
+  "case": "TOOL-T3-06",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "label: 东北, value: 104\nlabel: 华东, value: 112\nlabel: 华北, value: 101\nlabel: 华南, value: 88\nlabel: 西南, value: 95",
+   "各区域2024年已完成订单总金额如下：\n东北：18710030.97\n华东：22426383.97\n华北：19148449.85\n华南：16139808.11\n西南：18034071.64",
+   "区域：华东\n人均消费：200236.46\n\n计算依据：华东区域2024年已完成订单总金额22426383.97元，客户数112人，人均消费=22426383.97÷112=200236.46（保留2位）。"
+  ]
+ },
+ {
+  "case": "TOOL-T3-07",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "app渠道2024年订单有3029笔。",
+   "label: web\nvalue: 2969\nnote: 订单笔数(默认含所有状态)",
+   "小程序(mini_program)渠道2024年订单有2995笔。\n三个渠道合计：3029 + 2995 + 2969 = 8993笔。"
+  ]
+ },
+ {
+  "case": "TOOL-T3-08",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "一共有6种商品类目。",
+   "label, value\n家居, 20\n家电, 20\n数码, 20\n服饰, 20\n美妆, 20\n食品, 20",
+   "商品总数为120。"
+  ]
+ },
+ {
+  "case": "TOOL-T4-01",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年完成了7628笔订单。",
+   "今天天气条件一般，不太适合加班。",
+   "2",
+   "15256"
+  ]
+ },
+ {
+  "case": "TOOL-T4-02",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "华东区有112个客户。",
+   "保持专注与坚持，定能顺利达成目标！",
+   "今天天气整体舒适，适合适度加班。",
+   "华东区客户数占全部客户的百分比为：112 ÷ (104 + 112 + 101 + 88 + 95) × 100% = 112 ÷ 499 × 100% ≈ 22.44%"
+  ]
+ },
+ {
+  "case": "TOOL-T4-03",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "数码类商品平均价格为3456.29",
+   "2",
+   "保持坚持，定能收获更好的自己！",
+   "1728.14"
+  ]
+ },
+ {
+  "case": "TOOL-T4-04",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2023年订单总数为6995。",
+   "今天天气条件一般，若加班强度不大则适合，强度较大则不太适合。",
+   "1+1等于2。",
+   "2024年订单比2023年多 8993 - 6995 = 1998 笔。"
+  ]
+ },
+ {
+  "case": "TOOL-T4-05",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "最贵的商品是无线耳机3号，价格为8082.7。",
+   "保持坚持，定能突破困境，收获更好自己！",
+   "今天天气舒适，很适合加班。",
+   "查询失败+无相关商品数据，无法计算打8折后的价格。"
+  ]
+ },
+ {
+  "case": "TOOL-T4-06",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "上海有17个客户。",
+   "2",
+   "保持坚持，定能收获更好的自己！",
+   "上海客户数为17，北京客户数为19，17+19=36。"
+  ]
+ },
+ {
+  "case": "TOOL-T4-07",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "销售额为170341074.91",
+   "今天天气视具体状况而定，若天气舒适无恶劣天气则适合加班，若天气不佳则不太适合。",
+   "保持专注，定能顺利完成当前任务！",
+   "170341074.91 ÷ 13574 ≈ 1255.00"
+  ]
+ },
+ {
+  "case": "TOOL-T4-08",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "购买数量最大的一笔明细数量是25.0。",
+   "保持坚持，你一定能跨越所有挑战，收获更好的自己！",
+   "1+1等于2。",
+   "购买数量最大的一笔明细数量为25.0，平均单笔购买数量为2.9986，该数量比平均单笔购买数量多22.0014。"
+  ]
+ },
+ {
+  "case": "TOOL-T5-01",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "order_id: 5527\n金额: 91255.92",
+   "用户0458",
+   "广州",
+   "138934.07"
+  ]
+ },
+ {
+  "case": "TOOL-T5-02",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "客户id为77，该客户按明细件数合计购买商品最多，合计件数为384件。",
+   "客户id为77的客户，城市是长春，vip等级是0。",
+   "order_count：141"
+  ]
+ },
+ {
+  "case": "TOOL-T5-03",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年11月销售额最高，月份是2024-11，销售额为12314323.26。",
+   "2024年1月订单504笔，2024年2月订单385笔，2024年3月订单574笔，2024年4月订单585笔，2024年5月订单599笔，2024年6月订单624笔，2024年7月订单597笔，2024年8月订单603笔，2024年9月订单658笔，2024年10月订单686笔，2024年11月订单931笔，2024年12月订单882笔。",
+   "2024年11月平均每单金额：12314323.2605 ÷ 2816 ≈ 4373.63元"
+  ]
+ },
+ {
+  "case": "TOOL-T5-04",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "product_id: 105",
+   "商品名称：收纳箱1号\n类目：家居\n单价：57.6",
+   "60133.13"
+  ]
+ },
+ {
+  "case": "TOOL-T5-05",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "customer_id: 186\ncancel_count: 9",
+   "客户姓名：用户0186\n城市：福州",
+   "customer_id: 186\n订单总数: 122\n取消订单数: 9"
+  ]
+ },
+ {
+  "case": "TOOL-T5-06",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": true,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "类目：家电，平均成交单价为3852.06",
+   "avg_unit_price 为 3852.06",
+   "家电类目2024年已完成的销售额是40034924.07"
+  ]
+ },
+ {
+  "case": "TOOL-T5-07",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "根据2024年订单笔数（默认含所有状态）数据，订单最多的渠道是app，订单笔数为3029。",
+   "amount：31151126.35",
+   "该渠道（app）订单数占2024年总订单的百分比为91.50%\n\n计算过程：3029 ÷ 8993 × 100% ≈ 33.68%（注：按工具1总订单8993与工具2 app渠道3029计算，结果为33.68%）"
+  ]
+ },
+ {
+  "case": "TOOL-T6-01",
+  "suite": "tool",
+  "level": 6,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "平台总客户数为500。",
+   "label: 500\nvalue: 500",
+   "平台总客户数为500。",
+   "total_customers: 500",
+   "列: total_customers, total_products, total_orders | 数据: [[500, 120, 15988]]",
+   "总客户数为500。"
+  ]
+ },
+ {
+  "case": "TOOL-T6-02",
+  "suite": "tool",
+  "level": 6,
+  "answer_ok": true,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "订单表总行数是45208。",
+   "total_rows: 15988",
+   "total_rows: 15988",
+   "total_rows: 15988",
+   "total_rows: 45208",
+   "订单表总行数乘以3是47964。"
+  ]
+ },
+ {
+  "case": "TOOL-T6-03",
+  "suite": "tool",
+  "level": 6,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "商品总数为120，类目数为6。",
+   "product_count: 120\ncategory_count: 6",
+   "product_total: 120\ncategory_total: 6",
+   "商品总数：120",
+   "列: total_orders, total_customers, total_products | 数据: [[45208, 500, 120]]",
+   "列: total_orders, total_customers, total_products | 数据: [[45208, 500, 120]]",
+   "商品总数除以类目数(保留2位)等于：120 ÷ 6 = 20.00"
+  ]
+ },
+ {
+  "case": "TOOL-T6-04",
+  "suite": "tool",
+  "level": 6,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年订单数为8993（订单笔数，默认含所有状态）。",
+   "2024年订单数为8993。",
+   "order_count 数据为：25241",
+   "这是第3条填充消息，已按要求忽略压力测试内容，保持会话正常。",
+   "列: total_orders, total_qty | 数据: [[45208, 131697]]",
+   "已收到您的消息，当前为长上下文压力测试填充内容，会话正常进行中。",
+   "2024年订单数为8993。\n2023年订单数为6995。"
+  ]
+ },
+ {
+  "case": "TOOL-T6-05",
+  "suite": "tool",
+  "level": 6,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "华南区客户数为88。",
+   "customer_count 数据：[[88]]",
+   "customer_count 数据为：88",
+   "customer_count 数据为：88",
+   "total_rows: 45208",
+   "total_rows 的值为 45208",
+   "total_rows 的值为 45208",
+   "华南区客户数为88，西南区客户数为95，两者相加为183。"
+  ]
+ },
+ {
+  "case": "TOOL-T6-06",
+  "suite": "tool",
+  "level": 6,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年已完成销售额是94458744.54",
+   "2024年已完成销售额为94458744.54元（保留2位小数）。",
+   "列: total_amount, order_count | 数据: [[94458744.5355, 22650]]",
+   "这是第3条填充消息，已按规则忽略压力测试内容，保持会话正常。",
+   "completed_order_count: 40566",
+   "已收到您的消息，当前为长上下文压力测试填充内容，会话正常进行中。",
+   "列: total_rows | 数据: [[45208]]",
+   "2024销售额打9折后为85012870.09"
+  ]
+ },
+ {
+  "case": "TOOL-T6-07",
+  "suite": "tool",
+  "level": 6,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "数码类商品总数为20。",
+   "数字类商品总数为20。",
+   "digital_product_count 为 20",
+   "digital_product_count 为 20",
+   "total_orders: 45208",
+   "total_orders 的值为 45208",
+   "total_rows: 45208",
+   "total_orders 的值为 45208。",
+   "数码类商品数为20。"
+  ]
+ }
+]

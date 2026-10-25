@@ -1,0 +1,4777 @@
+{
+ "sql": [
+  {
+   "id": "SQL-L1-01",
+   "level": 1,
+   "desc": "单表单字段",
+   "q": "列出所有商品类目(不重复)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "数码",
+     "家电",
+     "服饰",
+     "食品",
+     "美妆",
+     "家居"
+    ],
+    "ref_sql": "SELECT DISTINCT category FROM products"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L1-02",
+   "level": 1,
+   "desc": "单表单字段",
+   "q": "列出所有城市(客户表,不重复)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "长春",
+     "太原",
+     "宁波",
+     "大连",
+     "上海",
+     "石家庄",
+     "沈阳",
+     "深圳",
+     "天津",
+     "南京",
+     "厦门",
+     "杭州",
+     "福州",
+     "广州",
+     "苏州",
+     "重庆",
+     "北京",
+     "贵阳",
+     "哈尔滨",
+     "昆明",
+     "成都"
+    ],
+    "ref_sql": "SELECT DISTINCT city FROM customers"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L1-03",
+   "level": 1,
+   "desc": "单表单字段",
+   "q": "订单渠道有哪几种",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "web",
+     "mini_program",
+     "app"
+    ],
+    "ref_sql": "SELECT DISTINCT channel FROM orders"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L1-04",
+   "level": 1,
+   "desc": "单表单字段",
+   "q": "订单状态有哪几种",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "completed",
+     "cancelled",
+     "pending"
+    ],
+    "ref_sql": "SELECT DISTINCT status FROM orders"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L1-05",
+   "level": 1,
+   "desc": "单表单字段",
+   "q": "客户表里出现过的 vip_level 有哪些(去重)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "ref_sql": "SELECT DISTINCT vip_level FROM customers ORDER BY 1"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L1-06",
+   "level": 1,
+   "desc": "单表单字段",
+   "q": "按id序给前5个商品名(ORDER BY id LIMIT 5)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "智能手机1号",
+     "智能手机2号",
+     "智能手机3号",
+     "智能手机4号",
+     "无线耳机1号"
+    ],
+    "ref_sql": "SELECT name FROM products ORDER BY id LIMIT 5"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L2-01",
+   "level": 2,
+   "desc": "单表多字段",
+   "q": "给前5位客户的姓名和城市",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "用户0001",
+     "长春",
+     "用户0002",
+     "太原",
+     "用户0003",
+     "宁波",
+     "用户0004",
+     "大连",
+     "用户0005",
+     "上海"
+    ],
+    "ref_sql": "SELECT name, city FROM customers ORDER BY id LIMIT 5"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L2-02",
+   "level": 2,
+   "desc": "单表多字段",
+   "q": "给前5件商品的名称和价格",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "智能手机1号",
+     2930.6,
+     "智能手机2号",
+     699.6,
+     "智能手机3号",
+     874.2,
+     "智能手机4号",
+     7725.6,
+     "无线耳机1号",
+     4661.2
+    ],
+    "ref_sql": "SELECT name, price FROM products ORDER BY id LIMIT 5"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L2-03",
+   "level": 2,
+   "desc": "单表多字段",
+   "q": "给前5个订单的id和下单时间",
+   "gold": {
+    "kind": "values",
+    "values": [
+     1,
+     "2023-01-03 10:42:00",
+     2,
+     "2023-01-22 05:01:00",
+     3,
+     "2023-01-19 04:33:00",
+     4,
+     "2023-01-15 06:39:00",
+     5,
+     "2023-01-07 03:08:00"
+    ],
+    "ref_sql": "SELECT id, order_date FROM orders ORDER BY id LIMIT 5"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L2-04",
+   "level": 2,
+   "desc": "单表多字段",
+   "q": "给前5位客户的id和vip等级",
+   "gold": {
+    "kind": "values",
+    "values": [
+     1,
+     0,
+     2,
+     1,
+     3,
+     0,
+     4,
+     0,
+     5,
+     1
+    ],
+    "ref_sql": "SELECT id, vip_level FROM customers ORDER BY id LIMIT 5"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L2-05",
+   "level": 2,
+   "desc": "单表多字段",
+   "q": "给前5件商品的id和成本",
+   "gold": {
+    "kind": "values",
+    "values": [
+     1,
+     1942.9,
+     2,
+     530.2,
+     3,
+     669.7,
+     4,
+     5436.9,
+     5,
+     3102.9
+    ],
+    "ref_sql": "SELECT id, cost FROM products ORDER BY id LIMIT 5"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L2-06",
+   "level": 2,
+   "desc": "单表多字段",
+   "q": "给前5个订单的id、状态、渠道",
+   "gold": {
+    "kind": "values",
+    "values": [
+     1,
+     "completed",
+     "web",
+     2,
+     "completed",
+     "mini_program",
+     3,
+     "completed",
+     "web",
+     4,
+     "cancelled",
+     "web",
+     5,
+     "completed",
+     "web"
+    ],
+    "ref_sql": "SELECT id, status, channel FROM orders ORDER BY id LIMIT 5"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L3-01",
+   "level": 3,
+   "desc": "单表1字段1条件",
+   "q": "数码类商品一共有多少件",
+   "gold": {
+    "kind": "values",
+    "values": [
+     20
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM products WHERE category='数码'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L3-02",
+   "level": 3,
+   "desc": "单表1字段1条件",
+   "q": "vip等级为3的客户有多少",
+   "gold": {
+    "kind": "values",
+    "values": [
+     120
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM customers WHERE vip_level=3"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L3-03",
+   "level": 3,
+   "desc": "单表1字段1条件",
+   "q": "上海的客户有多少",
+   "gold": {
+    "kind": "values",
+    "values": [
+     17
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM customers WHERE city='上海'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L3-04",
+   "level": 3,
+   "desc": "单表1字段1条件",
+   "q": "已完成(completed)的订单有多少",
+   "gold": {
+    "kind": "values",
+    "values": [
+     13574
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM orders WHERE status='completed'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L3-05",
+   "level": 3,
+   "desc": "单表1字段1条件",
+   "q": "价格超过1000元的商品有几件",
+   "gold": {
+    "kind": "values",
+    "values": [
+     44
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM products WHERE price>1000"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L3-06",
+   "level": 3,
+   "desc": "单表1字段1条件",
+   "q": "2024年1月1日当天下了多少单",
+   "gold": {
+    "kind": "values",
+    "values": [
+     16
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM orders WHERE substr(order_date,1,10)='2024-01-01'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L4-01",
+   "level": 4,
+   "desc": "单表多字段1条件",
+   "q": "数码类商品的名称和价格",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "智能手机1号",
+     2930.6,
+     "智能手机2号",
+     699.6,
+     "智能手机3号",
+     874.2,
+     "智能手机4号",
+     7725.6,
+     "无线耳机1号",
+     4661.2,
+     "无线耳机2号",
+     5077.0,
+     "无线耳机3号",
+     8082.7,
+     "无线耳机4号",
+     7325.4,
+     "智能手表1号",
+     3028.4,
+     "智能手表2号",
+     1526.6,
+     "智能手表3号",
+     1109.8,
+     "智能手表4号",
+     3221.3,
+     "平板电脑1号",
+     4639.0,
+     "平板电脑2号",
+     2379.1,
+     "平板电脑3号",
+     4065.9,
+     "平板电脑4号",
+     1596.0,
+     "蓝牙音箱1号",
+     2688.5,
+     "蓝牙音箱2号",
+     3176.6,
+     "蓝牙音箱3号",
+     7144.2,
+     "蓝牙音箱4号",
+     779.0
+    ],
+    "ref_sql": "SELECT name, price FROM products WHERE category='数码' LIMIT 20"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L4-02",
+   "level": 4,
+   "desc": "单表多字段1条件",
+   "q": "vip3级客户的姓名和城市",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "用户0007",
+     "沈阳",
+     "用户0009",
+     "上海",
+     "用户0029",
+     "杭州",
+     "用户0032",
+     "长春",
+     "用户0036",
+     "大连",
+     "用户0040",
+     "长春",
+     "用户0041",
+     "哈尔滨",
+     "用户0042",
+     "福州",
+     "用户0052",
+     "哈尔滨",
+     "用户0059",
+     "太原",
+     "用户0062",
+     "重庆",
+     "用户0070",
+     "太原",
+     "用户0072",
+     "大连",
+     "用户0073",
+     "石家庄",
+     "用户0075",
+     "成都",
+     "用户0080",
+     "天津",
+     "用户0086",
+     "成都",
+     "用户0089",
+     "福州",
+     "用户0090",
+     "广州",
+     "用户0099",
+     "哈尔滨"
+    ],
+    "ref_sql": "SELECT name, city FROM customers WHERE vip_level=3 LIMIT 20"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L4-03",
+   "level": 4,
+   "desc": "单表多字段1条件",
+   "q": "上海客户的姓名和注册日期",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "用户0005",
+     "2022-04-06",
+     "用户0009",
+     "2022-06-13",
+     "用户0053",
+     "2022-04-25",
+     "用户0105",
+     "2023-04-15",
+     "用户0132",
+     "2022-07-03",
+     "用户0150",
+     "2023-06-17",
+     "用户0167",
+     "2022-02-17",
+     "用户0192",
+     "2022-12-27",
+     "用户0225",
+     "2023-03-07",
+     "用户0259",
+     "2023-08-11",
+     "用户0290",
+     "2022-04-04",
+     "用户0320",
+     "2022-10-17",
+     "用户0344",
+     "2022-02-17",
+     "用户0413",
+     "2022-06-28",
+     "用户0450",
+     "2022-07-04",
+     "用户0452",
+     "2022-07-05",
+     "用户0480",
+     "2022-11-29"
+    ],
+    "ref_sql": "SELECT name, signup_date FROM customers WHERE city='上海' LIMIT 20"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L4-04",
+   "level": 4,
+   "desc": "单表多字段1条件",
+   "q": "单价大于5000的商品名称和类目",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "智能手机4号",
+     "数码",
+     "无线耳机2号",
+     "数码",
+     "无线耳机3号",
+     "数码",
+     "无线耳机4号",
+     "数码",
+     "蓝牙音箱3号",
+     "数码",
+     "冰箱2号",
+     "家电",
+     "冰箱3号",
+     "家电",
+     "洗衣机2号",
+     "家电",
+     "洗衣机4号",
+     "家电",
+     "空调2号",
+     "家电",
+     "空调3号",
+     "家电",
+     "电饭煲4号",
+     "家电",
+     "吸尘器4号",
+     "家电"
+    ],
+    "ref_sql": "SELECT name, category FROM products WHERE price>5000"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L4-05",
+   "level": 4,
+   "desc": "单表多字段1条件",
+   "q": "app渠道订单的id和状态(前10个)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     6,
+     "completed",
+     10,
+     "completed",
+     11,
+     "completed",
+     15,
+     "completed",
+     19,
+     "completed",
+     24,
+     "completed",
+     27,
+     "completed",
+     29,
+     "cancelled",
+     31,
+     "cancelled",
+     32,
+     "completed"
+    ],
+    "ref_sql": "SELECT id, status FROM orders WHERE channel='app' ORDER BY id LIMIT 10"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L4-06",
+   "level": 4,
+   "desc": "单表多字段1条件",
+   "q": "价格低于50的商品名称和类目",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "咖啡豆3号",
+     "食品",
+     "进口牛奶4号",
+     "食品"
+    ],
+    "ref_sql": "SELECT name, category FROM products WHERE price<50"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L5-01",
+   "level": 5,
+   "desc": "单表多字段多条件",
+   "q": "数码类且价格低于2000的商品名和价格",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "智能手机2号",
+     699.6,
+     "智能手机3号",
+     874.2,
+     "智能手表2号",
+     1526.6,
+     "智能手表3号",
+     1109.8,
+     "平板电脑4号",
+     1596.0,
+     "蓝牙音箱4号",
+     779.0
+    ],
+    "ref_sql": "SELECT name, price FROM products WHERE category='数码' AND price<2000"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L5-02",
+   "level": 5,
+   "desc": "单表多字段多条件",
+   "q": "华东区vip等级>=2的客户姓名和等级",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "用户0009",
+     3,
+     "用户0020",
+     2,
+     "用户0029",
+     3,
+     "用户0044",
+     2,
+     "用户0053",
+     2,
+     "用户0078",
+     2,
+     "用户0091",
+     2,
+     "用户0103",
+     2,
+     "用户0118",
+     3,
+     "用户0129",
+     3,
+     "用户0132",
+     2,
+     "用户0140",
+     2,
+     "用户0145",
+     3,
+     "用户0153",
+     2,
+     "用户0165",
+     2,
+     "用户0192",
+     2,
+     "用户0200",
+     3,
+     "用户0202",
+     3,
+     "用户0221",
+     2,
+     "用户0225",
+     3
+    ],
+    "ref_sql": "SELECT name, vip_level FROM customers WHERE region='华东' AND vip_level>=2 LIMIT 20"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L5-03",
+   "level": 5,
+   "desc": "单表多字段多条件",
+   "q": "2024年已完成订单的id和日期(前10)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     6996,
+     "2024-01-06",
+     6997,
+     "2024-01-22",
+     6998,
+     "2024-01-07",
+     6999,
+     "2024-01-21",
+     7000,
+     "2024-01-21",
+     7001,
+     "2024-01-04",
+     7002,
+     "2024-01-13",
+     7003,
+     "2024-01-12",
+     7004,
+     "2024-01-31",
+     7005,
+     "2024-01-14"
+    ],
+    "ref_sql": "SELECT id, substr(order_date,1,10) d FROM orders WHERE status='completed' AND order_date>='2024-01-01' AND order_date<'2025-01-01' ORDER BY id LIMIT 10"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L5-04",
+   "level": 5,
+   "desc": "单表多字段多条件",
+   "q": "服饰类价格在100到500之间的商品名、价格、成本",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "羽绒服1号",
+     105.8,
+     67.1,
+     "连衣裙2号",
+     369.0,
+     262.1,
+     "连衣裙4号",
+     186.2,
+     141.8
+    ],
+    "ref_sql": "SELECT name, price, cost FROM products WHERE category='服饰' AND price BETWEEN 100 AND 500"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L5-05",
+   "level": 5,
+   "desc": "单表多字段多条件",
+   "q": "上海和北京的客户姓名与城市(前10)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "用户0005",
+     "上海",
+     "用户0009",
+     "上海",
+     "用户0022",
+     "北京",
+     "用户0053",
+     "上海",
+     "用户0088",
+     "北京",
+     "用户0096",
+     "北京",
+     "用户0105",
+     "上海",
+     "用户0121",
+     "北京",
+     "用户0131",
+     "北京",
+     "用户0132",
+     "上海"
+    ],
+    "ref_sql": "SELECT name, city FROM customers WHERE city IN ('上海','北京') ORDER BY id LIMIT 10"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L5-06",
+   "level": 5,
+   "desc": "单表多字段多条件",
+   "q": "app渠道里被取消的订单id和日期(前10)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     29,
+     "2023-01-12",
+     31,
+     "2023-01-30",
+     35,
+     "2023-01-03",
+     39,
+     "2023-01-02",
+     42,
+     "2023-01-08",
+     73,
+     "2023-01-10",
+     149,
+     "2023-01-20",
+     259,
+     "2023-01-07",
+     270,
+     "2023-01-09",
+     301,
+     "2023-01-27"
+    ],
+    "ref_sql": "SELECT id, substr(order_date,1,10) d FROM orders WHERE channel='app' AND status='cancelled' ORDER BY id LIMIT 10"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L6-01",
+   "level": 6,
+   "desc": "多表1字段",
+   "q": "下过订单的客户姓名(去重,前15)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "用户0001",
+     "用户0002",
+     "用户0003",
+     "用户0004",
+     "用户0005",
+     "用户0006",
+     "用户0007",
+     "用户0008",
+     "用户0009",
+     "用户0010",
+     "用户0011",
+     "用户0012",
+     "用户0013",
+     "用户0014",
+     "用户0015"
+    ],
+    "ref_sql": "SELECT DISTINCT c.name FROM customers c JOIN orders o ON o.customer_id=c.id LIMIT 15"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L6-02",
+   "level": 6,
+   "desc": "多表1字段",
+   "q": "被购买过的商品名(去重,前15)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "智能手机1号",
+     "智能手机2号",
+     "智能手机3号",
+     "智能手机4号",
+     "无线耳机1号",
+     "无线耳机2号",
+     "无线耳机3号",
+     "无线耳机4号",
+     "智能手表1号",
+     "智能手表2号",
+     "智能手表3号",
+     "智能手表4号",
+     "平板电脑1号",
+     "平板电脑2号",
+     "平板电脑3号"
+    ],
+    "ref_sql": "SELECT DISTINCT p.name FROM products p JOIN order_items i ON i.product_id=p.id LIMIT 15"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L6-03",
+   "level": 6,
+   "desc": "多表1字段",
+   "q": "有订单的客户的注册日期(去重,前15)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "2022-01-02",
+     "2022-01-03",
+     "2022-01-04",
+     "2022-01-09",
+     "2022-01-10",
+     "2022-01-11",
+     "2022-01-15",
+     "2022-01-16",
+     "2022-01-18",
+     "2022-01-20",
+     "2022-01-23",
+     "2022-01-25",
+     "2022-01-26",
+     "2022-01-27",
+     "2022-01-30"
+    ],
+    "ref_sql": "SELECT DISTINCT c.signup_date FROM customers c JOIN orders o ON o.customer_id=c.id ORDER BY 1 LIMIT 15"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L6-04",
+   "level": 6,
+   "desc": "多表1字段",
+   "q": "买过数码类商品的客户姓名(去重,前15)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "用户0001",
+     "用户0002",
+     "用户0003",
+     "用户0004",
+     "用户0005",
+     "用户0006",
+     "用户0007",
+     "用户0008",
+     "用户0009",
+     "用户0010",
+     "用户0011",
+     "用户0012",
+     "用户0013",
+     "用户0014",
+     "用户0015"
+    ],
+    "ref_sql": "SELECT DISTINCT c.name FROM customers c JOIN orders o ON o.customer_id=c.id JOIN order_items i ON i.order_id=o.id JOIN products p ON p.id=i.product_id WHERE p.category='数码' ORDER BY c.id LIMIT 15"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L6-05",
+   "level": 6,
+   "desc": "多表1字段",
+   "q": "下过订单的客户所在城市(去重)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "长春",
+     "太原",
+     "宁波",
+     "大连",
+     "上海",
+     "石家庄",
+     "沈阳",
+     "深圳",
+     "天津",
+     "南京",
+     "厦门",
+     "杭州",
+     "福州",
+     "广州",
+     "苏州",
+     "重庆",
+     "北京",
+     "贵阳",
+     "哈尔滨",
+     "昆明",
+     "成都"
+    ],
+    "ref_sql": "SELECT DISTINCT c.city FROM customers c JOIN orders o ON o.customer_id=c.id"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L7-01",
+   "level": 7,
+   "desc": "多表1字段1条件",
+   "q": "2024年下过订单的客户姓名(去重,前15)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "用户0001",
+     "用户0002",
+     "用户0003",
+     "用户0004",
+     "用户0005",
+     "用户0006",
+     "用户0007",
+     "用户0008",
+     "用户0009",
+     "用户0010",
+     "用户0011",
+     "用户0012",
+     "用户0013",
+     "用户0014",
+     "用户0015"
+    ],
+    "ref_sql": "SELECT DISTINCT c.name FROM customers c JOIN orders o ON o.customer_id=c.id WHERE o.order_date>='2024-01-01' AND o.order_date<'2025-01-01' ORDER BY c.id LIMIT 15"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L7-02",
+   "level": 7,
+   "desc": "多表1字段1条件",
+   "q": "买过'智能手机1号'的客户姓名(前15)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "用户0001",
+     "用户0003",
+     "用户0004",
+     "用户0005",
+     "用户0008",
+     "用户0009",
+     "用户0011",
+     "用户0012",
+     "用户0013",
+     "用户0019",
+     "用户0021",
+     "用户0022",
+     "用户0023",
+     "用户0026",
+     "用户0027"
+    ],
+    "ref_sql": "SELECT DISTINCT c.name FROM customers c JOIN orders o ON o.customer_id=c.id JOIN order_items i ON i.order_id=o.id JOIN products p ON p.id=i.product_id WHERE p.name='智能手机1号' ORDER BY c.id LIMIT 15"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L7-03",
+   "level": 7,
+   "desc": "多表1字段1条件",
+   "q": "数码类商品的总购买件数",
+   "gold": {
+    "kind": "values",
+    "values": [
+     21640
+    ],
+    "ref_sql": "SELECT SUM(i.quantity) FROM order_items i JOIN products p ON p.id=i.product_id WHERE p.category='数码'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L7-04",
+   "level": 7,
+   "desc": "多表1字段1条件",
+   "q": "2024年注册的客户数(按注册日期)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     0
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM customers WHERE substr(signup_date,1,4)='2024'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L7-05",
+   "level": 7,
+   "desc": "多表1字段1条件",
+   "q": "vip3级客户的订单总数",
+   "gold": {
+    "kind": "values",
+    "values": [
+     3895
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM orders o JOIN customers c ON c.id=o.customer_id WHERE c.vip_level=3"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L8-01",
+   "level": 8,
+   "desc": "多表多字段1条件",
+   "q": "2024年订单的日期、客户姓名、渠道(前10)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "2024-01-06",
+     "用户0364",
+     "web",
+     "2024-01-22",
+     "用户0446",
+     "mini_program",
+     "2024-01-07",
+     "用户0471",
+     "web",
+     "2024-01-21",
+     "用户0174",
+     "app",
+     "2024-01-21",
+     "用户0472",
+     "mini_program",
+     "2024-01-04",
+     "用户0125",
+     "mini_program",
+     "2024-01-13",
+     "用户0132",
+     "mini_program",
+     "2024-01-12",
+     "用户0041",
+     "web",
+     "2024-01-31",
+     "用户0075",
+     "web",
+     "2024-01-14",
+     "用户0293",
+     "mini_program"
+    ],
+    "ref_sql": "SELECT substr(o.order_date,1,10) d, c.name, o.channel FROM orders o JOIN customers c ON c.id=o.customer_id WHERE o.order_date>='2024-01-01' ORDER BY o.id LIMIT 10"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L8-02",
+   "level": 8,
+   "desc": "多表多字段1条件",
+   "q": "数码类商品的名称、价格和被购买总件数",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "智能手机1号",
+     2930.6,
+     1132,
+     "智能手机2号",
+     699.6,
+     1120,
+     "智能手机3号",
+     874.2,
+     1044,
+     "智能手机4号",
+     7725.6,
+     1064,
+     "无线耳机1号",
+     4661.2,
+     1104,
+     "无线耳机2号",
+     5077.0,
+     1120,
+     "无线耳机3号",
+     8082.7,
+     1160,
+     "无线耳机4号",
+     7325.4,
+     1020,
+     "智能手表1号",
+     3028.4,
+     1102,
+     "智能手表2号",
+     1526.6,
+     1033,
+     "智能手表3号",
+     1109.8,
+     1084,
+     "智能手表4号",
+     3221.3,
+     1057,
+     "平板电脑1号",
+     4639.0,
+     1087,
+     "平板电脑2号",
+     2379.1,
+     1094,
+     "平板电脑3号",
+     4065.9,
+     989,
+     "平板电脑4号",
+     1596.0,
+     1048,
+     "蓝牙音箱1号",
+     2688.5,
+     1055,
+     "蓝牙音箱2号",
+     3176.6,
+     1093,
+     "蓝牙音箱3号",
+     7144.2,
+     1069,
+     "蓝牙音箱4号",
+     779.0,
+     1165
+    ],
+    "ref_sql": "SELECT p.name, p.price, SUM(i.quantity) qty FROM products p JOIN order_items i ON i.product_id=p.id WHERE p.category='数码' GROUP BY p.id ORDER BY p.id"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L8-03",
+   "level": 8,
+   "desc": "多表多字段1条件",
+   "q": "2024年6月订单的id和客户城市(前10)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     10115,
+     "贵阳",
+     10116,
+     "苏州",
+     10117,
+     "大连",
+     10118,
+     "福州",
+     10119,
+     "苏州",
+     10120,
+     "太原",
+     10121,
+     "宁波",
+     10122,
+     "昆明",
+     10123,
+     "福州",
+     10124,
+     "福州"
+    ],
+    "ref_sql": "SELECT o.id, c.city FROM orders o JOIN customers c ON c.id=o.customer_id WHERE o.order_date>='2024-06-01' AND o.order_date<'2024-07-01' ORDER BY o.id LIMIT 10"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L8-04",
+   "level": 8,
+   "desc": "多表多字段1条件",
+   "q": "华东区客户的订单id、日期、状态(前10)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     5,
+     "2023-01-07",
+     "completed",
+     8,
+     "2023-01-17",
+     "pending",
+     13,
+     "2023-01-15",
+     "completed",
+     16,
+     "2023-01-13",
+     "completed",
+     20,
+     "2023-01-05",
+     "completed",
+     27,
+     "2023-01-28",
+     "completed",
+     37,
+     "2023-01-25",
+     "completed",
+     38,
+     "2023-01-27",
+     "completed",
+     39,
+     "2023-01-02",
+     "cancelled",
+     40,
+     "2023-01-08",
+     "completed"
+    ],
+    "ref_sql": "SELECT o.id, substr(o.order_date,1,10) d, o.status FROM orders o JOIN customers c ON c.id=o.customer_id WHERE c.region='华东' ORDER BY o.id LIMIT 10"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L8-05",
+   "level": 8,
+   "desc": "多表多字段1条件",
+   "q": "单笔购买数量>=4的订单id、客户姓名、日期(前10)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     1,
+     "用户0152",
+     "2023-01-03",
+     1,
+     "用户0152",
+     "2023-01-03",
+     2,
+     "用户0074",
+     "2023-01-22",
+     3,
+     "用户0188",
+     "2023-01-19",
+     5,
+     "用户0437",
+     "2023-01-07",
+     7,
+     "用户0294",
+     "2023-01-01",
+     7,
+     "用户0294",
+     "2023-01-01",
+     7,
+     "用户0294",
+     "2023-01-01",
+     7,
+     "用户0294",
+     "2023-01-01",
+     9,
+     "用户0141",
+     "2023-01-07"
+    ],
+    "ref_sql": "SELECT i.order_id, c.name, substr(o.order_date,1,10) d FROM order_items i JOIN orders o ON o.id=i.order_id JOIN customers c ON c.id=o.customer_id WHERE i.quantity>=4 ORDER BY i.id LIMIT 10"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L9-01",
+   "level": 9,
+   "desc": "多表多字段多条件聚合",
+   "q": "2024年每月的完成订单数(月份,数量)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "2024-01",
+     504,
+     "2024-02",
+     385,
+     "2024-03",
+     574,
+     "2024-04",
+     585,
+     "2024-05",
+     599,
+     "2024-06",
+     624,
+     "2024-07",
+     597,
+     "2024-08",
+     603,
+     "2024-09",
+     658,
+     "2024-10",
+     686,
+     "2024-11",
+     931,
+     "2024-12",
+     882
+    ],
+    "ref_sql": "SELECT substr(order_date,1,7) m, COUNT(*) FROM orders WHERE status='completed' AND order_date>='2024-01-01' AND order_date<'2025-01-01' GROUP BY 1 ORDER BY 1"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L9-02",
+   "level": 9,
+   "desc": "多表多字段多条件聚合",
+   "q": "各类目的销售额(仅已完成订单, 类目,金额)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "家居",
+     6927639.05,
+     "家电",
+     72829932.03,
+     "数码",
+     63715349.92,
+     "服饰",
+     14524720.96,
+     "美妆",
+     8819823.84,
+     "食品",
+     3523609.12
+    ],
+    "ref_sql": "SELECT p.category, ROUND(SUM(i.quantity*i.unit_price*(1-i.discount)),2) amt FROM order_items i JOIN products p ON p.id=i.product_id JOIN orders o ON o.id=i.order_id WHERE o.status='completed' GROUP BY 1 ORDER BY 1"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L9-03",
+   "level": 9,
+   "desc": "多表多字段多条件聚合",
+   "q": "2024年销售额前5的商品名与销售额(已完成)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "无线耳机3号",
+     4352175.87,
+     "智能手机4号",
+     3635186.75,
+     "无线耳机4号",
+     3536486.89,
+     "蓝牙音箱3号",
+     3463579.07,
+     "洗衣机2号",
+     3380622.84
+    ],
+    "ref_sql": "SELECT p.name, ROUND(SUM(i.quantity*i.unit_price*(1-i.discount)),2) amt FROM order_items i JOIN products p ON p.id=i.product_id JOIN orders o ON o.id=i.order_id WHERE o.status='completed' AND o.order_date>='2024-01-01' AND o.order_date<'2025-01-01' GROUP BY p.id ORDER BY amt DESC LIMIT 5"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L9-04",
+   "level": 9,
+   "desc": "多表多字段多条件聚合",
+   "q": "各区域2024年已完成订单总金额(区域,金额)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "东北",
+     18710030.97,
+     "华东",
+     22426383.97,
+     "华北",
+     19148449.85,
+     "华南",
+     16139808.11,
+     "西南",
+     18034071.64
+    ],
+    "ref_sql": "SELECT c.region, ROUND(SUM(i.quantity*i.unit_price*(1-i.discount)),2) amt FROM order_items i JOIN orders o ON o.id=i.order_id JOIN customers c ON c.id=o.customer_id WHERE o.status='completed' AND o.order_date>='2024-01-01' AND o.order_date<'2025-01-01' GROUP BY 1 ORDER BY 1"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "SQL-L9-05",
+   "level": 9,
+   "desc": "多表多字段多条件聚合",
+   "q": "2024年消费金额前3的客户姓名与消费额(已完成)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "用户0175",
+     406154.72,
+     "用户0242",
+     391730.26,
+     "用户0459",
+     372254.64
+    ],
+    "ref_sql": "SELECT c.name, ROUND(SUM(i.quantity*i.unit_price*(1-i.discount)),2) amt FROM order_items i JOIN orders o ON o.id=i.order_id JOIN customers c ON c.id=o.customer_id WHERE o.status='completed' AND o.order_date>='2024-01-01' AND o.order_date<'2025-01-01' GROUP BY c.id ORDER BY amt DESC LIMIT 3"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  }
+ ],
+ "pandas": [
+  {
+   "id": "PY-P1-01",
+   "level": 1,
+   "desc": "单算子",
+   "q": "orders表一共有多少行",
+   "gold": {
+    "kind": "values",
+    "values": [
+     15988
+    ],
+    "ref_py": "len(dfs['orders'])"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P1-02",
+   "level": 1,
+   "desc": "单算子",
+   "q": "商品表(products)中 price 列的平均值是多少",
+   "gold": {
+    "kind": "values",
+    "values": [
+     1592.71
+    ],
+    "ref_py": "dfs['products']['price'].mean()"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P1-03",
+   "level": 1,
+   "desc": "单算子",
+   "q": "最高的客户vip等级是多少",
+   "gold": {
+    "kind": "values",
+    "values": [
+     3
+    ],
+    "ref_py": "dfs['customers']['vip_level'].max()"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P1-04",
+   "level": 1,
+   "desc": "单算子",
+   "q": "order_items 表的 quantity 列总和是多少",
+   "gold": {
+    "kind": "values",
+    "values": [
+     131697
+    ],
+    "ref_py": "int(dfs['order_items']['quantity'].sum())"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P1-05",
+   "level": 1,
+   "desc": "单算子",
+   "q": "订单状态一共有几种",
+   "gold": {
+    "kind": "values",
+    "values": [
+     3
+    ],
+    "ref_py": "dfs['orders']['status'].nunique()"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P1-06",
+   "level": 1,
+   "desc": "单算子",
+   "q": "商品最低价格是多少",
+   "gold": {
+    "kind": "values",
+    "values": [
+     39.2
+    ],
+    "ref_py": "dfs['products']['price'].min()"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P1-07",
+   "level": 1,
+   "desc": "单算子",
+   "q": "客户分布在多少个城市",
+   "gold": {
+    "kind": "values",
+    "values": [
+     21
+    ],
+    "ref_py": "dfs['customers']['city'].nunique()"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P1-08",
+   "level": 1,
+   "desc": "单算子",
+   "q": "最早一笔订单的时间",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "2023-01-01 03:10:00"
+    ],
+    "ref_py": "str(dfs['orders']['order_date'].min())"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P1-09",
+   "level": 1,
+   "desc": "单算子",
+   "q": "明细表平均单价是多少",
+   "gold": {
+    "kind": "values",
+    "values": [
+     1507.1598
+    ],
+    "ref_py": "round(dfs['order_items']['unit_price'].mean(),4)"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P1-10",
+   "level": 1,
+   "desc": "单算子",
+   "q": "商品成本总和是多少",
+   "gold": {
+    "kind": "values",
+    "values": [
+     131145.2
+    ],
+    "ref_py": "round(dfs['products']['cost'].sum(),2)"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P2-01",
+   "level": 2,
+   "desc": "双算子",
+   "q": "已完成的订单有多少笔",
+   "gold": {
+    "kind": "values",
+    "values": [
+     13574
+    ],
+    "ref_py": "int((dfs['orders']['status']=='completed').sum())"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P2-02",
+   "level": 2,
+   "desc": "双算子",
+   "q": "数码类商品有几款(商品款数)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     20
+    ],
+    "ref_py": "int((dfs['products']['category']=='数码').sum())"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P2-03",
+   "level": 2,
+   "desc": "双算子",
+   "q": "2024年的订单有多少笔",
+   "gold": {
+    "kind": "values",
+    "values": [
+     8993
+    ],
+    "ref_py": "int(dfs['orders']['order_date'].str.startswith('2024').sum())"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P2-04",
+   "level": 2,
+   "desc": "双算子",
+   "q": "最贵的商品叫什么名字",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "无线耳机3号"
+    ],
+    "ref_py": "dfs['products'].loc[dfs['products']['price'].idxmax(),'name']"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P2-05",
+   "level": 2,
+   "desc": "双算子",
+   "q": "客户数量最多的城市是哪个",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "太原"
+    ],
+    "ref_py": "dfs['customers']['city'].value_counts().idxmax()"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P2-06",
+   "level": 2,
+   "desc": "双算子",
+   "q": "哪个渠道订单最多",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "web"
+    ],
+    "ref_py": "dfs['orders']['channel'].value_counts().idxmax()"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P2-07",
+   "level": 2,
+   "desc": "双算子",
+   "q": "平均每笔有商品明细的订单包含几行商品明细(按 order_items 行数/有明细订单数, 保留2位)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     2.99
+    ],
+    "ref_py": "round(dfs['order_items'].groupby('order_id').size().mean(),2)"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P2-08",
+   "level": 2,
+   "desc": "双算子",
+   "q": "购买数量的中位数是多少",
+   "gold": {
+    "kind": "values",
+    "values": [
+     3.0
+    ],
+    "ref_py": "float(dfs['order_items']['quantity'].median())"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P2-09",
+   "level": 2,
+   "desc": "双算子",
+   "q": "数码类商品的最高价格",
+   "gold": {
+    "kind": "values",
+    "values": [
+     8082.7
+    ],
+    "ref_py": "dfs['products'][dfs['products']['category']=='数码']['price'].max()"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P2-10",
+   "level": 2,
+   "desc": "双算子",
+   "q": "2024年6月的订单数",
+   "gold": {
+    "kind": "values",
+    "values": [
+     734
+    ],
+    "ref_py": "int(dfs['orders']['order_date'].str.startswith('2024-06').sum())"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P2-11",
+   "level": 2,
+   "desc": "双算子",
+   "q": "平均折扣是多少(保留4位)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     0.0721
+    ],
+    "ref_py": "round(dfs['order_items']['discount'].mean(),4)"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P2-12",
+   "level": 2,
+   "desc": "双算子",
+   "q": "华东区客户有多少",
+   "gold": {
+    "kind": "values",
+    "values": [
+     112
+    ],
+    "ref_py": "int((dfs['customers']['region']=='华东').sum())"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P2-13",
+   "level": 2,
+   "desc": "双算子",
+   "q": "被购买次数最多的商品id是多少(按订单明细行数统计)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     73
+    ],
+    "ref_py": "int(dfs['order_items']['product_id'].value_counts().idxmax())"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P2-14",
+   "level": 2,
+   "desc": "双算子",
+   "q": "订单按时间排序后第100笔订单的id",
+   "gold": {
+    "kind": "values",
+    "values": [
+     353
+    ],
+    "ref_py": "int(dfs['orders'].sort_values('order_date').iloc[99]['id'])"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P2-15",
+   "level": 2,
+   "desc": "双算子",
+   "q": "商品价格的标准差(保留4位)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     2063.0599
+    ],
+    "ref_py": "round(dfs['products']['price'].std(),4)"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P3-01",
+   "level": 3,
+   "desc": "多算子",
+   "q": "各个类目分别有多少件商品(类目,数量 按类目排序)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     [
+      "家居",
+      20
+     ],
+     [
+      "家电",
+      20
+     ],
+     [
+      "数码",
+      20
+     ],
+     [
+      "服饰",
+      20
+     ],
+     [
+      "美妆",
+      20
+     ],
+     [
+      "食品",
+      20
+     ]
+    ],
+    "ref_py": "sorted(zip(dfs['products'].groupby('category').size().index.tolist(), dfs['products'].groupby('category').size().tolist()))"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P3-02",
+   "level": 3,
+   "desc": "多算子",
+   "q": "各区域的客户数(区域,数量 按区域排序)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     [
+      "东北",
+      104
+     ],
+     [
+      "华东",
+      112
+     ],
+     [
+      "华北",
+      101
+     ],
+     [
+      "华南",
+      88
+     ],
+     [
+      "西南",
+      95
+     ]
+    ],
+    "ref_py": "sorted(zip(dfs['customers'].groupby('region').size().index.tolist(), dfs['customers'].groupby('region').size().tolist()))"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P3-03",
+   "level": 3,
+   "desc": "多算子",
+   "q": "各状态订单数(状态,数量)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     [
+      "cancelled",
+      1309
+     ],
+     [
+      "completed",
+      13574
+     ],
+     [
+      "pending",
+      1105
+     ]
+    ],
+    "ref_py": "sorted(zip(dfs['orders'].groupby('status').size().index.tolist(), dfs['orders'].groupby('status').size().tolist()))"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P3-04",
+   "level": 3,
+   "desc": "多算子",
+   "q": "2024年每月订单数(月份,数量)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     [
+      "2024-01",
+      587
+     ],
+     [
+      "2024-02",
+      440
+     ],
+     [
+      "2024-03",
+      661
+     ],
+     [
+      "2024-04",
+      697
+     ],
+     [
+      "2024-05",
+      734
+     ],
+     [
+      "2024-06",
+      734
+     ],
+     [
+      "2024-07",
+      697
+     ],
+     [
+      "2024-08",
+      734
+     ],
+     [
+      "2024-09",
+      771
+     ],
+     [
+      "2024-10",
+      808
+     ],
+     [
+      "2024-11",
+      1102
+     ],
+     [
+      "2024-12",
+      1028
+     ]
+    ],
+    "ref_py": "sorted(zip(dfs['orders'][dfs['orders']['order_date'].str.startswith('2024')]['order_date'].str[:7].value_counts().index.tolist(), dfs['orders'][dfs['orders']['order_date'].str.startswith('2024')]['order_date'].str[:7].value_counts().tolist()))"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P3-05",
+   "level": 3,
+   "desc": "多算子",
+   "q": "把明细和商品表关联后,各类目的销售总件数(类目,件数)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "家居",
+     22333,
+     "家电",
+     21947,
+     "数码",
+     21640,
+     "服饰",
+     21958,
+     "美妆",
+     21693,
+     "食品",
+     22126
+    ],
+    "ref_sql": "SELECT p.category, SUM(i.quantity) FROM order_items i JOIN products p ON p.id=i.product_id GROUP BY 1 ORDER BY 1"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P3-06",
+   "level": 3,
+   "desc": "多算子",
+   "q": "各类目销售额(已完成订单, 金额=件数*单价*(1-折扣), 保留2位)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "家居",
+     6927639.05,
+     "家电",
+     72829932.03,
+     "数码",
+     63715349.92,
+     "服饰",
+     14524720.96,
+     "美妆",
+     8819823.84,
+     "食品",
+     3523609.12
+    ],
+    "ref_sql": "SELECT p.category, ROUND(SUM(i.quantity*i.unit_price*(1-i.discount)),2) FROM order_items i JOIN products p ON p.id=i.product_id JOIN orders o ON o.id=i.order_id WHERE o.status='completed' GROUP BY 1 ORDER BY 1"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P3-07",
+   "level": 3,
+   "desc": "多算子",
+   "q": "2024年消费金额最高的前3个客户的姓名和金额(已完成,保留2位)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "用户0175",
+     406154.72,
+     "用户0242",
+     391730.26,
+     "用户0459",
+     372254.64
+    ],
+    "ref_sql": "SELECT c.name, ROUND(SUM(i.quantity*i.unit_price*(1-i.discount)),2) a FROM order_items i JOIN orders o ON o.id=i.order_id JOIN customers c ON c.id=o.customer_id WHERE o.status='completed' AND o.order_date>='2024-01-01' AND o.order_date<'2025-01-01' GROUP BY c.id ORDER BY a DESC LIMIT 3"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P3-08",
+   "level": 3,
+   "desc": "多算子",
+   "q": "下单次数最多的前3位客户id和次数",
+   "gold": {
+    "kind": "values",
+    "values": [
+     77,
+     49,
+     276,
+     49,
+     288,
+     49
+    ],
+    "ref_sql": "SELECT customer_id, COUNT(*) n FROM orders GROUP BY customer_id ORDER BY n DESC, customer_id LIMIT 3"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P3-09",
+   "level": 3,
+   "desc": "多算子",
+   "q": "复购率: 下过2单及以上的客户占全部下单客户的比例(保留4位)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     1.0
+    ],
+    "ref_py": "round((dfs['orders'].groupby('customer_id').size()>=2).sum()/dfs['orders']['customer_id'].nunique(),4)"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P3-10",
+   "level": 3,
+   "desc": "多算子",
+   "q": "2024年完成订单金额比2023年增长百分之几(保留2位)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     24.48
+    ],
+    "ref_sql": "SELECT ROUND((SELECT SUM(i.quantity*i.unit_price*(1-i.discount)) FROM order_items i JOIN orders o ON o.id=i.order_id WHERE o.status='completed' AND o.order_date>='2024-01-01' AND o.order_date<'2025-01-01')*100.0/(SELECT SUM(i.quantity*i.unit_price*(1-i.discount)) FROM order_items i JOIN orders o ON o.id=i.order_id WHERE o.status='completed' AND o.order_date>='2023-01-01' AND o.order_date<'2024-01-01')-100,2)"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P3-11",
+   "level": 3,
+   "desc": "多算子",
+   "q": "各渠道销售额占总销售额的百分比(已完成,渠道,百分比保留2位,按渠道排序)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "app",
+     33.22,
+     "mini_program",
+     33.0,
+     "web",
+     33.79
+    ],
+    "ref_sql": "SELECT channel, ROUND(SUM(quantity*unit_price*(1-discount))*100.0/(SELECT SUM(quantity*unit_price*(1-discount)) FROM v_sales WHERE status='completed'),2) FROM v_sales WHERE status='completed' GROUP BY channel ORDER BY channel"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P3-12",
+   "level": 3,
+   "desc": "多算子",
+   "q": "平均折扣最高的类目是哪个",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "家居"
+    ],
+    "ref_py": "dfs['order_items'].merge(dfs['products'], left_on='product_id', right_on='id').groupby('category')['discount'].mean().idxmax()"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P3-13",
+   "level": 3,
+   "desc": "多算子",
+   "q": "2024年每月销售额(已完成,月份,金额保留2位)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "2024-01",
+     6223229.29,
+     "2024-02",
+     4841963.86,
+     "2024-03",
+     7099127.34,
+     "2024-04",
+     7387746.72,
+     "2024-05",
+     7061970.59,
+     "2024-06",
+     7224920.28,
+     "2024-07",
+     7483638.54,
+     "2024-08",
+     6918971.43,
+     "2024-09",
+     7829912.48,
+     "2024-10",
+     9290554.84,
+     "2024-11",
+     12314323.26,
+     "2024-12",
+     10782385.9
+    ],
+    "ref_sql": "SELECT substr(o.order_date,1,7) m, ROUND(SUM(i.quantity*i.unit_price*(1-i.discount)),2) FROM order_items i JOIN orders o ON o.id=i.order_id WHERE o.status='completed' AND o.order_date>='2024-01-01' AND o.order_date<'2025-01-01' GROUP BY 1 ORDER BY 1"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P3-14",
+   "level": 3,
+   "desc": "多算子",
+   "q": "2024年ARPU人均消费(已完成订单总金额/下单人数,保留2位)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     188917.49
+    ],
+    "ref_sql": "SELECT ROUND((SELECT SUM(i.quantity*i.unit_price*(1-i.discount)) FROM order_items i JOIN orders o ON o.id=i.order_id WHERE o.status='completed' AND o.order_date>='2024-01-01' AND o.order_date<'2025-01-01')/(SELECT COUNT(DISTINCT customer_id) FROM orders WHERE order_date>='2024-01-01' AND order_date<'2025-01-01'),2)"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P3-15",
+   "level": 3,
+   "desc": "多算子",
+   "q": "2024年取消率最高的月份是几月(回答格式如 2024-05)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "2024-05"
+    ],
+    "ref_sql": "SELECT m FROM (SELECT substr(order_date,1,7) m, SUM(status='cancelled')*1.0/COUNT(*) r FROM orders WHERE order_date>='2024-01-01' AND order_date<'2025-01-01' GROUP BY 1) ORDER BY r DESC, m LIMIT 1"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P4-01",
+   "level": 4,
+   "desc": "出图",
+   "q": "画2024年每月订单数折线图,保存为 chart_01.png",
+   "gold": {
+    "kind": "chart",
+    "values": [
+     "2024-01",
+     587,
+     "2024-02",
+     440,
+     "2024-03",
+     661,
+     "2024-04",
+     697,
+     "2024-05",
+     734,
+     "2024-06",
+     734,
+     "2024-07",
+     697,
+     "2024-08",
+     734,
+     "2024-09",
+     771,
+     "2024-10",
+     808,
+     "2024-11",
+     1102,
+     "2024-12",
+     1028
+    ]
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P4-02",
+   "level": 4,
+   "desc": "出图",
+   "q": "画各类目销售额柱状图(已完成订单),保存为 chart_02.png",
+   "gold": {
+    "kind": "chart",
+    "values": [
+     "家居",
+     6927639.05,
+     "家电",
+     72829932.03,
+     "数码",
+     63715349.92,
+     "服饰",
+     14524720.96,
+     "美妆",
+     8819823.84,
+     "食品",
+     3523609.12
+    ]
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P4-03",
+   "level": 4,
+   "desc": "出图",
+   "q": "画各区域客户数饼图,保存为 chart_03.png",
+   "gold": {
+    "kind": "chart",
+    "values": [
+     "东北",
+     104,
+     "华东",
+     112,
+     "华北",
+     101,
+     "华南",
+     88,
+     "西南",
+     95
+    ]
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P4-04",
+   "level": 4,
+   "desc": "出图",
+   "q": "画商品价格分布直方图,保存为 chart_04.png",
+   "gold": {
+    "kind": "chart",
+    "values": []
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P4-05",
+   "level": 4,
+   "desc": "出图",
+   "q": "画2024年每月销售额柱状图(已完成),保存为 chart_05.png",
+   "gold": {
+    "kind": "chart",
+    "values": [
+     "2024-01",
+     6223229.29,
+     "2024-02",
+     4841963.86,
+     "2024-03",
+     7099127.34,
+     "2024-04",
+     7387746.72,
+     "2024-05",
+     7061970.59,
+     "2024-06",
+     7224920.28,
+     "2024-07",
+     7483638.54,
+     "2024-08",
+     6918971.43,
+     "2024-09",
+     7829912.48,
+     "2024-10",
+     9290554.84,
+     "2024-11",
+     12314323.26,
+     "2024-12",
+     10782385.9
+    ]
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P4-06",
+   "level": 4,
+   "desc": "出图",
+   "q": "画各渠道订单数条形图,保存为 chart_06.png",
+   "gold": {
+    "kind": "chart",
+    "values": [
+     "app",
+     5382,
+     "mini_program",
+     5198,
+     "web",
+     5408
+    ]
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P4-07",
+   "level": 4,
+   "desc": "出图",
+   "q": "画数码类商品价格条形图,保存为 chart_07.png",
+   "gold": {
+    "kind": "chart",
+    "values": [
+     "智能手机1号",
+     2930.6,
+     "智能手机2号",
+     699.6,
+     "智能手机3号",
+     874.2,
+     "智能手机4号",
+     7725.6,
+     "无线耳机1号",
+     4661.2,
+     "无线耳机2号",
+     5077.0,
+     "无线耳机3号",
+     8082.7,
+     "无线耳机4号",
+     7325.4,
+     "智能手表1号",
+     3028.4,
+     "智能手表2号",
+     1526.6,
+     "智能手表3号",
+     1109.8,
+     "智能手表4号",
+     3221.3,
+     "平板电脑1号",
+     4639.0,
+     "平板电脑2号",
+     2379.1,
+     "平板电脑3号",
+     4065.9,
+     "平板电脑4号",
+     1596.0,
+     "蓝牙音箱1号",
+     2688.5,
+     "蓝牙音箱2号",
+     3176.6,
+     "蓝牙音箱3号",
+     7144.2,
+     "蓝牙音箱4号",
+     779.0
+    ]
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P4-08",
+   "level": 4,
+   "desc": "出图",
+   "q": "画2023与2024各季度销售额对比柱状图(已完成),保存为 chart_08.png",
+   "gold": {
+    "kind": "chart",
+    "values": [
+     "2023-Q1",
+     13816695.14,
+     "2023-Q2",
+     17778525.12,
+     "2023-Q3",
+     19292630.42,
+     "2023-Q4",
+     24994479.69,
+     "2024-Q1",
+     18164320.49,
+     "2024-Q2",
+     21674637.59,
+     "2024-Q3",
+     22232522.45,
+     "2024-Q4",
+     32387264.0
+    ]
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P4-09",
+   "level": 4,
+   "desc": "出图",
+   "q": "画订单状态占比饼图,保存为 chart_09.png",
+   "gold": {
+    "kind": "chart",
+    "values": [
+     "cancelled",
+     1309,
+     "completed",
+     13574,
+     "pending",
+     1105
+    ]
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  },
+  {
+   "id": "PY-P4-10",
+   "level": 4,
+   "desc": "出图",
+   "q": "画vip等级分布柱状图,保存为 chart_10.png",
+   "gold": {
+    "kind": "chart",
+    "values": [
+     0,
+     128,
+     1,
+     134,
+     2,
+     118,
+     3,
+     120
+    ]
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ],
+   "turns": null
+  }
+ ],
+ "tool": [
+  {
+   "id": "TOOL-T1-01",
+   "level": 1,
+   "desc": "一轮一次",
+   "q": "customers表有多少行",
+   "gold": {
+    "kind": "values",
+    "values": [
+     500
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM customers"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T1-02",
+   "level": 1,
+   "desc": "一轮一次",
+   "q": "orders表有多少行",
+   "gold": {
+    "kind": "values",
+    "values": [
+     15988
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM orders"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T1-03",
+   "level": 1,
+   "desc": "一轮一次",
+   "q": "products表有多少行",
+   "gold": {
+    "kind": "values",
+    "values": [
+     120
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM products"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T1-04",
+   "level": 1,
+   "desc": "一轮一次",
+   "q": "order_items表有多少行",
+   "gold": {
+    "kind": "values",
+    "values": [
+     43899
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM order_items"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T1-05",
+   "level": 1,
+   "desc": "一轮一次",
+   "q": "客户0001(名字是'用户0001')的城市和vip等级",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "长春",
+     0
+    ],
+    "ref_sql": "SELECT city, vip_level FROM customers WHERE name='用户0001'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T1-06",
+   "level": 1,
+   "desc": "一轮一次",
+   "q": "商品'平板电脑1号'的价格",
+   "gold": {
+    "kind": "values",
+    "values": [
+     4639.0
+    ],
+    "ref_sql": "SELECT price FROM products WHERE name='平板电脑1号'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T1-07",
+   "level": 1,
+   "desc": "一轮一次",
+   "q": "订单id为1000的状态和渠道",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "completed",
+     "app"
+    ],
+    "ref_sql": "SELECT status, channel FROM orders WHERE id=1000"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T1-08",
+   "level": 1,
+   "desc": "一轮一次",
+   "q": "华北区有多少客户",
+   "gold": {
+    "kind": "values",
+    "values": [
+     101
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM customers WHERE region='华北'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T1-09",
+   "level": 1,
+   "desc": "一轮一次",
+   "q": "美妆类有多少商品",
+   "gold": {
+    "kind": "values",
+    "values": [
+     20
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM products WHERE category='美妆'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T1-10",
+   "level": 1,
+   "desc": "一轮一次",
+   "q": "2023年12月有多少订单",
+   "gold": {
+    "kind": "values",
+    "values": [
+     800
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM orders WHERE order_date>='2023-12-01' AND order_date<'2024-01-01'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T2-01",
+   "level": 2,
+   "desc": "一轮多次",
+   "q": "customers和orders两个表哪个行数多? 多多少行",
+   "gold": {
+    "kind": "values",
+    "values": [
+     15488
+    ],
+    "ref_sql": "SELECT (SELECT COUNT(*) FROM orders)-(SELECT COUNT(*) FROM customers)"
+   },
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T2-02",
+   "level": 2,
+   "desc": "一轮多次",
+   "q": "order_items比products多多少行",
+   "gold": {
+    "kind": "values",
+    "values": [
+     43779
+    ],
+    "ref_sql": "SELECT (SELECT COUNT(*) FROM order_items)-(SELECT COUNT(*) FROM products)"
+   },
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T2-03",
+   "level": 2,
+   "desc": "一轮多次",
+   "q": "数码类和家电类商品一共有多少款",
+   "gold": {
+    "kind": "values",
+    "values": [
+     40
+    ],
+    "ref_sql": "SELECT (SELECT COUNT(*) FROM products WHERE category='数码')+(SELECT COUNT(*) FROM products WHERE category='家电')"
+   },
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T2-04",
+   "level": 2,
+   "desc": "一轮多次",
+   "q": "最贵商品和最便宜商品的价格差是多少",
+   "gold": {
+    "kind": "values",
+    "values": [
+     8043.5
+    ],
+    "ref_sql": "SELECT MAX(price)-MIN(price) FROM products"
+   },
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T2-05",
+   "level": 2,
+   "desc": "一轮多次",
+   "q": "上海和北京的客户加起来一共多少",
+   "gold": {
+    "kind": "values",
+    "values": [
+     36
+    ],
+    "ref_sql": "SELECT (SELECT COUNT(*) FROM customers WHERE city='上海')+(SELECT COUNT(*) FROM customers WHERE city='北京')"
+   },
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T2-06",
+   "level": 2,
+   "desc": "一轮多次",
+   "q": "2023年订单数加上2024年订单数一共是多少",
+   "gold": {
+    "kind": "values",
+    "values": [
+     15988
+    ],
+    "ref_sql": "SELECT (SELECT COUNT(*) FROM orders WHERE order_date>='2023-01-01' AND order_date<'2024-01-01')+(SELECT COUNT(*) FROM orders WHERE order_date>='2024-01-01' AND order_date<'2025-01-01')"
+   },
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T2-07",
+   "level": 2,
+   "desc": "一轮多次",
+   "q": "订单数最多的客户id是多少? 这位客户在哪个城市",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "长春"
+    ],
+    "ref_sql": "SELECT c.city FROM (SELECT customer_id, COUNT(*) n FROM orders GROUP BY customer_id ORDER BY n DESC, customer_id LIMIT 1) t JOIN customers c ON c.id=t.customer_id"
+   },
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T2-08",
+   "level": 2,
+   "desc": "一轮多次",
+   "q": "价格最高的商品属于哪个类目? 该类目一共有多少件商品",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "数码",
+     20
+    ],
+    "ref_sql": "SELECT (SELECT category FROM products ORDER BY price DESC LIMIT 1) cat, (SELECT COUNT(*) FROM products WHERE category=(SELECT category FROM products ORDER BY price DESC LIMIT 1))"
+   },
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T2-09",
+   "level": 2,
+   "desc": "一轮多次",
+   "q": "已完成和已取消的订单分别有多少笔",
+   "gold": {
+    "kind": "values",
+    "values": [
+     13574,
+     1309
+    ],
+    "ref_sql": "SELECT (SELECT COUNT(*) FROM orders WHERE status='completed'), (SELECT COUNT(*) FROM orders WHERE status='cancelled')"
+   },
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T2-10",
+   "level": 2,
+   "desc": "一轮多次",
+   "q": "买过'智能手机1号'和买过'冰箱1号'的客户分别有多少",
+   "gold": {
+    "kind": "values",
+    "values": [
+     279,
+     265
+    ],
+    "ref_sql": "SELECT (SELECT COUNT(DISTINCT o.customer_id) FROM order_items i JOIN products p ON p.id=i.product_id JOIN orders o ON o.id=i.order_id WHERE p.name='智能手机1号'), (SELECT COUNT(DISTINCT o.customer_id) FROM order_items i JOIN products p ON p.id=i.product_id JOIN orders o ON o.id=i.order_id WHERE p.name='冰箱1号')"
+   },
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": null
+  },
+  {
+   "id": "TOOL-T3-01",
+   "level": 3,
+   "desc": "多轮每轮一次",
+   "q": "三轮对话",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "2024年一共有多少笔订单?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        8993
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM orders WHERE order_date>='2024-01-01' AND order_date<'2025-01-01'"
+      }
+     },
+     {
+      "q": "2024年已完成的订单有多少笔?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        7628
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM orders WHERE status='completed' AND order_date>='2024-01-01' AND order_date<'2025-01-01'"
+      }
+     },
+     {
+      "q": "那2024年未完成的订单(取消+待处理)还有多少笔?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        1365
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM orders WHERE status!='completed' AND order_date>='2024-01-01' AND order_date<'2025-01-01'"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T3-02",
+   "level": 3,
+   "desc": "多轮每轮一次",
+   "q": "三轮对话",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "平台一共有多少注册客户?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        500
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM customers"
+      }
+     },
+     {
+      "q": "一共产生了多少笔订单?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        15988
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM orders"
+      }
+     },
+     {
+      "q": "平均每位客户下几单? 保留2位小数",
+      "gold": {
+       "kind": "values",
+       "values": [
+        31.98
+       ]
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T3-03",
+   "level": 3,
+   "desc": "多轮每轮一次",
+   "q": "三轮对话",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "数码类商品有多少件?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        20
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM products WHERE category='数码'"
+      }
+     },
+     {
+      "q": "数码类商品的平均价格是多少? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        3636.53
+       ],
+       "ref_sql": "SELECT ROUND(AVG(price),2) FROM products WHERE category='数码'"
+      }
+     },
+     {
+      "q": "买空全部数码类商品(各买一件按平均价)需要多少钱? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        72730.7
+       ]
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T3-04",
+   "level": 3,
+   "desc": "多轮每轮一次",
+   "q": "三轮对话",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "2024年已完成订单的总销售额是多少? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        94458744.54
+       ],
+       "ref_sql": "SELECT ROUND(SUM(i.quantity*i.unit_price*(1-i.discount)),2) FROM order_items i JOIN orders o ON o.id=i.order_id WHERE o.status='completed' AND o.order_date>='2024-01-01' AND o.order_date<'2025-01-01'"
+      }
+     },
+     {
+      "q": "2023年同口径销售额是多少? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        75882330.38
+       ],
+       "ref_sql": "SELECT ROUND(SUM(i.quantity*i.unit_price*(1-i.discount)),2) FROM order_items i JOIN orders o ON o.id=i.order_id WHERE o.status='completed' AND o.order_date>='2023-01-01' AND o.order_date<'2024-01-01'"
+      }
+     },
+     {
+      "q": "2024年比2023年增长百分之多少? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        24.48
+       ],
+       "ref_sql": "SELECT ROUND((SELECT SUM(i.quantity*i.unit_price*(1-i.discount)) FROM order_items i JOIN orders o ON o.id=i.order_id WHERE o.status='completed' AND o.order_date>='2024-01-01' AND o.order_date<'2025-01-01')*100.0/(SELECT SUM(i.quantity*i.unit_price*(1-i.discount)) FROM order_items i JOIN orders o ON o.id=i.order_id WHERE o.status='completed' AND o.order_date>='2023-01-01' AND o.order_date<'2024-01-01')-100,2)"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T3-05",
+   "level": 3,
+   "desc": "多轮每轮一次",
+   "q": "三轮对话",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "最贵的商品是什么? 多少钱",
+      "gold": {
+       "kind": "values",
+       "values": [
+        "无线耳机3号",
+        8082.7
+       ],
+       "ref_sql": "SELECT name, price FROM products ORDER BY price DESC LIMIT 1"
+      }
+     },
+     {
+      "q": "它被买过多少件?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        1160
+       ],
+       "ref_sql": "SELECT COALESCE(SUM(i.quantity),0) FROM order_items i JOIN products p ON p.id=i.product_id WHERE p.price=(SELECT MAX(price) FROM products)"
+      }
+     },
+     {
+      "q": "这些销售按它原价算是多少钱? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        9375932.0
+       ]
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T3-06",
+   "level": 3,
+   "desc": "多轮每轮一次",
+   "q": "三轮对话",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "各区域客户数是多少?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        "东北",
+        104,
+        "华东",
+        112,
+        "华北",
+        101,
+        "华南",
+        88,
+        "西南",
+        95
+       ],
+       "ref_sql": "SELECT region, COUNT(*) FROM customers GROUP BY 1 ORDER BY 1"
+      }
+     },
+     {
+      "q": "各区域2024年已完成订单总金额是多少? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        "东北",
+        18710030.97,
+        "华东",
+        22426383.97,
+        "华北",
+        19148449.85,
+        "华南",
+        16139808.11,
+        "西南",
+        18034071.64
+       ],
+       "ref_sql": "SELECT c.region, ROUND(SUM(i.quantity*i.unit_price*(1-i.discount)),2) FROM order_items i JOIN orders o ON o.id=i.order_id JOIN customers c ON c.id=o.customer_id WHERE o.status='completed' AND o.order_date>='2024-01-01' AND o.order_date<'2025-01-01' GROUP BY 1 ORDER BY 1"
+      }
+     },
+     {
+      "q": "哪个区域人均消费最高? 人均多少(保留2位)? 按该区域客户数算",
+      "gold": {
+       "kind": "values",
+       "values": [
+        "华东",
+        200235.57
+       ],
+       "ref_sql": "SELECT region, ROUND(amt/n,2) FROM (SELECT c.region, SUM(i.quantity*i.unit_price*(1-i.discount)) amt, COUNT(DISTINCT c.id) n FROM order_items i JOIN orders o ON o.id=i.order_id JOIN customers c ON c.id=o.customer_id WHERE o.status='completed' AND o.order_date>='2024-01-01' AND o.order_date<'2025-01-01' GROUP BY c.region) ORDER BY 2 DESC LIMIT 1"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T3-07",
+   "level": 3,
+   "desc": "多轮每轮一次",
+   "q": "三轮对话",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "app渠道2024年订单有多少笔?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        3029
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM orders WHERE channel='app' AND order_date>='2024-01-01' AND order_date<'2025-01-01'"
+      }
+     },
+     {
+      "q": "web渠道2024年订单有多少笔?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        2969
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM orders WHERE channel='web' AND order_date>='2024-01-01' AND order_date<'2025-01-01'"
+      }
+     },
+     {
+      "q": "小程序(mini_program)渠道2024年订单有多少笔? 三个渠道合计多少?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        2995,
+        8993
+       ],
+       "ref_sql": "SELECT (SELECT COUNT(*) FROM orders WHERE channel='mini_program' AND order_date>='2024-01-01' AND order_date<'2025-01-01'), (SELECT COUNT(*) FROM orders WHERE order_date>='2024-01-01' AND order_date<'2025-01-01')"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T3-08",
+   "level": 3,
+   "desc": "多轮每轮一次",
+   "q": "三轮对话",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "一共有多少种商品类目?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        6
+       ],
+       "ref_sql": "SELECT COUNT(DISTINCT category) FROM products"
+      }
+     },
+     {
+      "q": "每个类目各有多少件商品?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        "家居",
+        20,
+        "家电",
+        20,
+        "数码",
+        20,
+        "服饰",
+        20,
+        "美妆",
+        20,
+        "食品",
+        20
+       ],
+       "ref_sql": "SELECT category, COUNT(*) FROM products GROUP BY 1 ORDER BY 1"
+      }
+     },
+     {
+      "q": "商品总数是多少?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        120
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM products"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T4-01",
+   "level": 4,
+   "desc": "相隔几轮引用",
+   "q": "四轮对话",
+   "gold": null,
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "2024年完成了多少笔订单? 记住这个数",
+      "gold": {
+       "kind": "values",
+       "values": [
+        7628
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM orders WHERE status='completed' AND order_date>='2024-01-01' AND order_date<'2025-01-01'"
+      }
+     },
+     {
+      "q": "你觉得今天天气适合加班吗?",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "1+1等于几? 不用查数据库",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "把这个数乘以2是多少?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        15256
+       ]
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T4-02",
+   "level": 4,
+   "desc": "相隔几轮引用",
+   "q": "四轮对话",
+   "gold": null,
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "华东区有多少客户? 记住这个数",
+      "gold": {
+       "kind": "values",
+       "values": [
+        112
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM customers WHERE region='华东'"
+      }
+     },
+     {
+      "q": "帮我写一句鼓励自己的话, 要简短",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "你觉得今天天气适合加班吗?",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "华东区客户数占全部客户的百分之几? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        22.4
+       ],
+       "ref_sql": "SELECT ROUND((SELECT COUNT(*) FROM customers WHERE region='华东')*100.0/(SELECT COUNT(*) FROM customers),2)"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T4-03",
+   "level": 4,
+   "desc": "相隔几轮引用",
+   "q": "四轮对话",
+   "gold": null,
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "数码类商品(products表)的平均售价是多少? 保留2位并记住",
+      "gold": {
+       "kind": "values",
+       "values": [
+        3636.53
+       ],
+       "ref_sql": "SELECT ROUND(AVG(price),2) FROM products WHERE category='数码'"
+      }
+     },
+     {
+      "q": "1+1等于几? 不用查数据库",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "帮我写一句鼓励自己的话, 要简短",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "用刚才那个数除以2, 等于多少? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        1818.27
+       ]
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T4-04",
+   "level": 4,
+   "desc": "相隔几轮引用",
+   "q": "四轮对话",
+   "gold": null,
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "2023年订单总数是多少? 记住",
+      "gold": {
+       "kind": "values",
+       "values": [
+        6995
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM orders WHERE order_date>='2023-01-01' AND order_date<'2024-01-01'"
+      }
+     },
+     {
+      "q": "你觉得今天天气适合加班吗?",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "1+1等于几? 不用查数据库",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "2024年订单比2023年多多少笔?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        1998
+       ],
+       "ref_sql": "SELECT (SELECT COUNT(*) FROM orders WHERE order_date>='2024-01-01' AND order_date<'2025-01-01')-(SELECT COUNT(*) FROM orders WHERE order_date>='2023-01-01' AND order_date<'2024-01-01')"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T4-05",
+   "level": 4,
+   "desc": "相隔几轮引用",
+   "q": "四轮对话",
+   "gold": null,
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "最贵的商品叫什么? 多少钱?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        "无线耳机3号",
+        8082.7
+       ],
+       "ref_sql": "SELECT name, price FROM products ORDER BY price DESC LIMIT 1"
+      }
+     },
+     {
+      "q": "帮我写一句鼓励自己的话, 要简短",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "你觉得今天天气适合加班吗?",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这件商品打8折是多少钱? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        6466.16
+       ]
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T4-06",
+   "level": 4,
+   "desc": "相隔几轮引用",
+   "q": "四轮对话",
+   "gold": null,
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "上海有多少客户? 记住这个数",
+      "gold": {
+       "kind": "values",
+       "values": [
+        17
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM customers WHERE city='上海'"
+      }
+     },
+     {
+      "q": "1+1等于几? 不用查数据库",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "帮我写一句鼓励自己的话, 要简短",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "再加上北京客户数, 一共是多少?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        36
+       ],
+       "ref_sql": "SELECT (SELECT COUNT(*) FROM customers WHERE city='上海')+(SELECT COUNT(*) FROM customers WHERE city='北京')"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T4-07",
+   "level": 4,
+   "desc": "相隔几轮引用",
+   "q": "四轮对话",
+   "gold": null,
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "已完成订单的销售额是多少? 保留2位并记住",
+      "gold": {
+       "kind": "values",
+       "values": [
+        170341074.91
+       ],
+       "ref_sql": "SELECT ROUND(SUM(i.quantity*i.unit_price*(1-i.discount)),2) FROM order_items i JOIN orders o ON o.id=i.order_id WHERE o.status='completed'"
+      }
+     },
+     {
+      "q": "你觉得今天天气适合加班吗?",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "帮我写一句鼓励自己的话, 要简短",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "刚才的销售额除以订单量(取整)是多少?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        12549
+       ],
+       "ref_sql": "SELECT CAST(SUM(i.quantity*i.unit_price*(1-i.discount))/COUNT(DISTINCT i.order_id) AS INT) FROM order_items i JOIN orders o ON o.id=i.order_id WHERE o.status='completed'"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T4-08",
+   "level": 4,
+   "desc": "相隔几轮引用",
+   "q": "四轮对话",
+   "gold": null,
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "购买数量最大的一笔明细, 数量是多少? 记住",
+      "gold": {
+       "kind": "values",
+       "values": [
+        5
+       ],
+       "ref_sql": "SELECT MAX(quantity) FROM order_items"
+      }
+     },
+     {
+      "q": "帮我写一句鼓励自己的话, 要简短",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "1+1等于几? 不用查数据库",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这个数量比平均单笔购买数量多多少? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        2.0
+       ]
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T5-01",
+   "level": 5,
+   "desc": "连续多跳",
+   "q": "四轮链式",
+   "gold": null,
+   "min_calls": 4,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "金额最大的订单(已完成,金额=件数*单价*(1-折扣))的id是多少?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        5527
+       ],
+       "ref_sql": "SELECT i.order_id FROM order_items i JOIN orders o ON o.id=i.order_id WHERE o.status='completed' GROUP BY i.order_id ORDER BY SUM(i.quantity*i.unit_price*(1-i.discount)) DESC LIMIT 1"
+      }
+     },
+     {
+      "q": "这笔订单是谁下的? 告诉我客户姓名",
+      "gold": {
+       "kind": "values",
+       "values": [
+        "用户0046"
+       ]
+      }
+     },
+     {
+      "q": "这位客户在哪个城市?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        "广州"
+       ]
+      }
+     },
+     {
+      "q": "这位客户2024年在本平台共消费多少? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        259947.8
+       ]
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T5-02",
+   "level": 5,
+   "desc": "连续多跳",
+   "q": "四轮链式",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "买过最多件商品(按明细件数合计)的客户id是多少?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        175
+       ],
+       "ref_sql": "SELECT customer_id FROM orders o JOIN order_items i ON i.order_id=o.id GROUP BY o.customer_id ORDER BY SUM(i.quantity) DESC, o.customer_id LIMIT 1"
+      }
+     },
+     {
+      "q": "这位客户的城市和vip等级?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        "苏州",
+        1
+       ]
+      }
+     },
+     {
+      "q": "这位客户一共下过多少单?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        42
+       ]
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T5-03",
+   "level": 5,
+   "desc": "连续多跳",
+   "q": "四轮链式",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "2024年哪个月销售额最高(已完成)? 月份是多少",
+      "gold": {
+       "kind": "values",
+       "values": [
+        "2024-11"
+       ],
+       "ref_sql": "SELECT substr(o.order_date,1,7) FROM order_items i JOIN orders o ON o.id=i.order_id WHERE o.status='completed' AND o.order_date>='2024-01-01' AND o.order_date<'2025-01-01' GROUP BY 1 ORDER BY SUM(i.quantity*i.unit_price*(1-i.discount)) DESC LIMIT 1"
+      }
+     },
+     {
+      "q": "那个月的订单有多少笔?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        1102
+       ]
+      }
+     },
+     {
+      "q": "那个月平均每单多少钱(已完成)? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        13226.99
+       ]
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T5-04",
+   "level": 5,
+   "desc": "连续多跳",
+   "q": "四轮链式",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "被购买件数最多的商品id是多少?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        105
+       ],
+       "ref_sql": "SELECT product_id FROM order_items GROUP BY product_id ORDER BY SUM(quantity) DESC, product_id LIMIT 1"
+      }
+     },
+     {
+      "q": "这件商品的名称、类目和单价?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        "收纳箱1号",
+        "家居",
+        58.4
+       ]
+      }
+     },
+     {
+      "q": "它贡献的销售额(含已取消订单)是多少? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        63989.14
+       ]
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T5-05",
+   "level": 5,
+   "desc": "连续多跳",
+   "q": "四轮链式",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "取消订单最多的客户id是多少?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        186
+       ],
+       "ref_sql": "SELECT customer_id FROM orders WHERE status='cancelled' GROUP BY customer_id ORDER BY COUNT(*) DESC, customer_id LIMIT 1"
+      }
+     },
+     {
+      "q": "这位客户的姓名和城市?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        "用户0186",
+        "福州"
+       ]
+      }
+     },
+     {
+      "q": "这位客户的订单总数是多少? 其中取消多少笔?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        46,
+        9
+       ]
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T5-06",
+   "level": 5,
+   "desc": "连续多跳",
+   "q": "四轮链式",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "平均单价最高的类目是哪个?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        "家电"
+       ],
+       "ref_sql": "SELECT category FROM products GROUP BY category ORDER BY AVG(price) DESC LIMIT 1"
+      }
+     },
+     {
+      "q": "该类目商品的平均价格是多少? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        4037.89
+       ]
+      }
+     },
+     {
+      "q": "该类目2024年已完成的销售额是多少? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        40034924.07
+       ]
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T5-07",
+   "level": 5,
+   "desc": "连续多跳",
+   "q": "四轮链式",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "2024年订单最多的渠道是哪个?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        "app"
+       ],
+       "ref_sql": "SELECT channel FROM orders WHERE order_date>='2024-01-01' AND order_date<'2025-01-01' GROUP BY channel ORDER BY COUNT(*) DESC LIMIT 1"
+      }
+     },
+     {
+      "q": "该渠道2024年已完成订单的金额是多少? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        31151126.35
+       ]
+      }
+     },
+     {
+      "q": "该渠道订单数占2024年总订单的百分比? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        33.68
+       ]
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T6-01",
+   "level": 6,
+   "desc": "跨maxlen依赖",
+   "q": "多轮长对话",
+   "gold": null,
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "平台总客户数是多少? 记住它",
+      "gold": {
+       "kind": "values",
+       "values": [
+        500
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM customers"
+      }
+     },
+     {
+      "q": "这是第1条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第2条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第3条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第4条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "最开始我问的那个数(总客户数)是多少?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        500
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM customers"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T6-02",
+   "level": 6,
+   "desc": "跨maxlen依赖",
+   "q": "多轮长对话",
+   "gold": null,
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "订单表总行数是多少? 记住",
+      "gold": {
+       "kind": "values",
+       "values": [
+        15988
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM orders"
+      }
+     },
+     {
+      "q": "这是第1条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第2条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第3条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第4条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "订单表总行数乘以3是多少?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        47964
+       ]
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T6-03",
+   "level": 6,
+   "desc": "跨maxlen依赖",
+   "q": "多轮长对话",
+   "gold": null,
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "商品总数和类目数分别是多少? 记住",
+      "gold": {
+       "kind": "values",
+       "values": [
+        120,
+        6
+       ],
+       "ref_sql": "SELECT (SELECT COUNT(*) FROM products), (SELECT COUNT(DISTINCT category) FROM products)"
+      }
+     },
+     {
+      "q": "这是第1条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第2条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第3条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第4条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第5条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "商品总数除以类目数(保留2位)等于多少?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        20.0
+       ]
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T6-04",
+   "level": 6,
+   "desc": "跨maxlen依赖",
+   "q": "多轮长对话",
+   "gold": null,
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "2024年订单数是多少? 记住",
+      "gold": {
+       "kind": "values",
+       "values": [
+        8993
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM orders WHERE order_date>='2024-01-01' AND order_date<'2025-01-01'"
+      }
+     },
+     {
+      "q": "这是第1条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第2条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第3条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第4条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第5条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "还记得最开始问的2024年订单数吗? 顺便告诉我2023年的订单数",
+      "gold": {
+       "kind": "values",
+       "values": [
+        6995
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM orders WHERE order_date>='2023-01-01' AND order_date<'2024-01-01'"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T6-05",
+   "level": 6,
+   "desc": "跨maxlen依赖",
+   "q": "多轮长对话",
+   "gold": null,
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "华南区客户数是多少? 记住",
+      "gold": {
+       "kind": "values",
+       "values": [
+        88
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM customers WHERE region='华南'"
+      }
+     },
+     {
+      "q": "这是第1条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第2条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第3条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第4条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第5条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第6条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "华南区客户数加上西南区客户数是多少?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        183
+       ],
+       "ref_sql": "SELECT (SELECT COUNT(*) FROM customers WHERE region='华南')+(SELECT COUNT(*) FROM customers WHERE region='西南')"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T6-06",
+   "level": 6,
+   "desc": "跨maxlen依赖",
+   "q": "多轮长对话",
+   "gold": null,
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "2024年已完成销售额是多少? 保留2位并记住",
+      "gold": {
+       "kind": "values",
+       "values": [
+        94458744.54
+       ],
+       "ref_sql": "SELECT ROUND(SUM(i.quantity*i.unit_price*(1-i.discount)),2) FROM order_items i JOIN orders o ON o.id=i.order_id WHERE o.status='completed' AND o.order_date>='2024-01-01' AND o.order_date<'2025-01-01'"
+      }
+     },
+     {
+      "q": "这是第1条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第2条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第3条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第4条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第5条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第6条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "最开始那个2024销售额, 打9折后是多少? 保留2位",
+      "gold": {
+       "kind": "values",
+       "values": [
+        85012870.08
+       ]
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T6-07",
+   "level": 6,
+   "desc": "跨maxlen依赖",
+   "q": "多轮长对话",
+   "gold": null,
+   "min_calls": 2,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "数码类商品总数是多少? 记住",
+      "gold": {
+       "kind": "values",
+       "values": [
+        20
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM products WHERE category='数码'"
+      }
+     },
+     {
+      "q": "这是第1条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第2条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第3条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第4条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第5条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第6条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "这是第7条填充消息。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试,请忽略本条内容但保持会话正常。",
+      "gold": {
+       "kind": "values",
+       "values": []
+      }
+     },
+     {
+      "q": "第一个问题我问的数码类商品数是多少? 如果记不住请重新查一次",
+      "gold": {
+       "kind": "values",
+       "values": [
+        20
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM products WHERE category='数码'"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  }
+ ]
+}

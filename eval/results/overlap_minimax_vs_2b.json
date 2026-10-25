@@ -1,0 +1,75 @@
+{
+ "n": 18,
+ "metric": "answer_ok",
+ "quads": {
+  "both_ok": [
+   "PY-P2-09",
+   "PY-P4-02",
+   "PY-P4-04",
+   "SQL-L1-01",
+   "SQL-L1-03",
+   "SQL-L3-02",
+   "SQL-L9-02",
+   "TOOL-T1-05",
+   "TOOL-T1-09",
+   "TOOL-T6-01"
+  ],
+  "both_bad": [
+   "PY-P1-02",
+   "SQL-L5-02",
+   "TOOL-T5-01"
+  ],
+  "only_2B": [
+   "TOOL-T4-08"
+  ],
+  "only_minimax": [
+   "PY-P3-06",
+   "SQL-L9-05",
+   "TOOL-T2-01",
+   "TOOL-T4-01"
+  ]
+ },
+ "by_level": {
+  "pandas-L2": {
+   "both_ok": 1
+  },
+  "pandas-L4": {
+   "both_ok": 2
+  },
+  "sql-L1": {
+   "both_ok": 2
+  },
+  "sql-L3": {
+   "both_ok": 1
+  },
+  "sql-L9": {
+   "both_ok": 1,
+   "only_minimax": 1
+  },
+  "tool-L1": {
+   "both_ok": 2
+  },
+  "tool-L6": {
+   "both_ok": 1
+  },
+  "pandas-L1": {
+   "both_bad": 1
+  },
+  "sql-L5": {
+   "both_bad": 1
+  },
+  "tool-L5": {
+   "both_bad": 1
+  },
+  "tool-L4": {
+   "only_2B": 1,
+   "only_minimax": 1
+  },
+  "pandas-L3": {
+   "only_minimax": 1
+  },
+  "tool-L2": {
+   "only_minimax": 1
+  }
+ }
+}

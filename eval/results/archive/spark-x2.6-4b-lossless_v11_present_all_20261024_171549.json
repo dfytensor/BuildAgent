@@ -1,0 +1,121 @@
+[
+ {
+  "case": "TOOL-T5-03",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年销售额最高的月份是12月，销售额为12314323.26。",
+   "根据查询结果，该月订单笔数为1笔。",
+   "查询失败+原因：工具返回行数为0，无法获取对应月份销售额与订单笔数，无法计算平均每单金额。"
+  ]
+ },
+ {
+  "case": "TOOL-T5-06",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": true,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "平均单价最高的类目对应的平均成交单价为3852.06",
+   "3852.06",
+   "该类目2024年已完成的销售额是40034924.07"
+  ]
+ },
+ {
+  "case": "TOOL-T5-07",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年订单最多的渠道是订单笔数为3029的渠道。",
+   "该渠道2024年已完成订单的金额为31151126.35",
+   "该渠道订单数占2024年总订单的百分比为89.93%"
+  ]
+ },
+ {
+  "case": "TOOL-T6-01",
+  "suite": "tool",
+  "level": 6,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "平台总客户数为500。",
+   "平台总客户数为500。",
+   "平台总客户数为500。",
+   "平台总客户数为500。",
+   "平台总客户数为500，总订单数为45208。",
+   "500"
+  ]
+ },
+ {
+  "case": "TOOL-T6-02",
+  "suite": "tool",
+  "level": 6,
+  "answer_ok": true,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "订单表总行数是45208。",
+   "订单表总行数为15988。",
+   "订单表总行数为15988。",
+   "15988",
+   "订单表总行数为45208。",
+   "47964"
+  ]
+ },
+ {
+  "case": "TOOL-T6-03",
+  "suite": "tool",
+  "level": 6,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "商品总数为120，类目数为6。",
+   "商品总数为120，类目数为6。",
+   "商品总数为1309，类目数为0；商品总数为7409，类目数为1；商品总数为7331，类目数为1；商品总数为7169，类目数为1；商品总数为7314，类目数为1；商品总数为7237，类目数为1；商品总数为7439，类目数为1。",
+   "商品总数为120，类目数为6。",
+   "商品总数为120，类目数为6。",
+   "商品总数为45208。",
+   "商品总数除以类目数等于20.00。"
+  ]
+ },
+ {
+  "case": "TOOL-T6-04",
+  "suite": "tool",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年订单数为8993笔。",
+   "2024年订单数为25241。",
+   "这是第2条填充消息，已按要求忽略压力测试内容，保持会话正常。",
+   "2024年订单数为25241。",
+   "查询失败+原因：工具返回数据异常（order_count_2024 数据为 0，且 year 数据缺少计数列），无法获取有效结果。",
+   "已收到您的消息，当前为长上下文压力测试填充内容，会话正常进行中。",
+   "2024年订单数为8993；2023年订单数为19967。"
+  ]
+ }
+]

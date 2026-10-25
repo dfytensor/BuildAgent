@@ -1,0 +1,302 @@
+[
+ {
+  "case": "SQL-L1-01",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "category | 数据\n美妆\n食品\n数码\n服饰\n家电\n家居"
+  ]
+ },
+ {
+  "case": "SQL-L2-02",
+  "suite": "sql",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "1. 名称：智能手机1号，价格：2930.6\n2. 名称：智能手机2号，价格：699.6\n3. 名称：智能手机3号，价格：874.2\n4. 名称：智能手机4号，价格：7725.6"
+  ]
+ },
+ {
+  "case": "SQL-L3-03",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "上海的客户有17个。"
+  ]
+ },
+ {
+  "case": "SQL-L4-04",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "无线耳机3号，数码\n智能手机4号，数码\n蓝牙音箱3号，数码\n无线耳机4号，数码\n洗衣机2号，家电\n冰箱3号，家电\n电饭煲4号，家电\n洗衣机4号，家电\n吸尘器4号，家电\n空调3号，家电\n空调2号，家电\n冰箱2号，家电\n无线耳机2号，数码"
+  ]
+ },
+ {
+  "case": "SQL-L5-05",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "用户0005，上海\n用户0005，上海\n用户0005，上海\n用户0005，上海\n用户0005，上海\n用户0005，上海\n用户0005，上海\n用户0005，上海\n用户0005，上海\n用户0005，上海"
+  ]
+ },
+ {
+  "case": "SQL-L7-01",
+  "suite": "sql",
+  "level": 7,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "用户0001\n用户0002\n用户0003\n用户0004\n用户0005\n用户0006\n用户0007\n用户0008\n用户0009\n用户0010\n用户0011\n用户0012\n用户0013\n用户0014\n用户0015"
+  ]
+ },
+ {
+  "case": "SQL-L8-03",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "10115, 贵阳\n10115, 贵阳\n10115, 贵阳\n10116, 苏州\n10116, 苏州\n10117, 大连\n10117, 大连\n10117, 大连\n10118, 福州\n10118, 福州"
+  ]
+ },
+ {
+  "case": "SQL-L9-05",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "用户0175，406154.716\n用户0242，391730.257\n用户0459，372254.642"
+  ]
+ },
+ {
+  "case": "PY-P1-07",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "客户分布在21个城市，具体城市及客户数量如下：\n石家庄（32）、太原（32）、南京（31）、重庆（29）、大连（29）、长春（27）、成都（27）、苏州（26）、深圳（26）、广州（25）、哈尔滨（25）、沈阳（23）、宁波（21）、福州（20）、昆明（20）、贵阳（19）、北京（19）、天津（18）、杭州（17）、厦门（17）、上海（17）。"
+  ]
+ },
+ {
+  "case": "PY-P2-04",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "最贵的商品叫“无线耳机3号”，价格为8082.7。"
+  ]
+ },
+ {
+  "case": "PY-P2-11",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "0.0720"
+  ]
+ },
+ {
+  "case": "PY-P3-03",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(状态, 数量)\n(\"cancelled\", 1309)\n(\"completed\", 40566)\n(\"pending\", 3333)"
+  ]
+ },
+ {
+  "case": "PY-P3-10",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年完成订单金额比2023年增长百分之几计算如下：增长率为（2024年销售额 - 2023年销售额）/ 2023年销售额 × 100%。\n2024年销售额为94458744.54，2023年销售额为75882330.38，增长率为（94458744.54 - 75882330.38）/ 75882330.38 × 100% ≈ 24.74%"
+  ]
+ },
+ {
+  "case": "PY-P4-02",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "FINAL 图表已生成并保存为 chart_02.png。(类型:bar, 维度:category, 指标:amount)"
+  ]
+ },
+ {
+  "case": "PY-P4-09",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "FINAL 图表已生成并保存为 chart_09.png。(类型:pie, 维度:status, 指标:count)"
+  ]
+ },
+ {
+  "case": "TOOL-T1-06",
+  "suite": "tool",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "商品'平板电脑1号'的价格为4639.0。"
+  ]
+ },
+ {
+  "case": "TOOL-T2-03",
+  "suite": "tool",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "数码类商品件数：19956件\n家电类商品件数：20324件\n数码类和家电类商品加起来一共：19956+20324=40280件"
+  ]
+ },
+ {
+  "case": "TOOL-T2-10",
+  "suite": "tool",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": false,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "买过'智能手机1号'的客户有279人，买过'冰箱1号'的客户有265人。"
+  ]
+ },
+ {
+  "case": "TOOL-T3-07",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "label: app渠道\nvalue: 2024年订单笔数（默认含所有状态）\n数据：\n[3029]\n[2995]\n[2969]",
+   "label: 3029\nvalue: 3029\nlabel: 2995\nvalue: 2995\nlabel: 2969\nvalue: 2969",
+   "小程序(mini_program)渠道2024年订单有3029笔。\n三个渠道合计：3029 + 2995 + 2969 = 9003笔。"
+  ]
+ },
+ {
+  "case": "TOOL-T4-06",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "上海有17个客户。",
+   "1+1等于2",
+   "保持坚持，定能收获更好的自己！",
+   "上海客户数17，北京客户数19，17+19=36，一共是36。"
+  ]
+ },
+ {
+  "case": "TOOL-T5-05",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "customer_id: 186, cancel_count: 9",
+   "客户姓名：用户0186\n城市：福州",
+   "客户ID为186的订单总数为122，取消订单数为9。"
+  ]
+ },
+ {
+  "case": "TOOL-T6-05",
+  "suite": "tool",
+  "level": 6,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "华南区客户数为88。",
+   "COUNT(DISTINCT customer_id) 的结果为：88",
+   "customer_count 数据为：88",
+   "customer_count 的值为 88。",
+   "customer_count 的值为 500",
+   "列: total_orders, total_customers | 数据: [[45208, 500]]",
+   "total_orders: 45208, total_customers: 500",
+   "华南区客户数为88，西南区客户数为95，两者相加为183。"
+  ]
+ }
+]

@@ -1,0 +1,288 @@
+[
+ {
+  "case": "SQL-L1-01",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "所有不重复商品类目（6个）：家居、家电、数码、服饰、美妆、食品。"
+  ]
+ },
+ {
+  "case": "SQL-L1-03",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "订单渠道共有 3 种：**web、app、mini_program（小程序）**。"
+  ]
+ },
+ {
+  "case": "SQL-L2-04",
+  "suite": "sql",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "| 排名 | 客户ID | VIP等级 |\n|---|---:|---:|\n| 1 | 276 | 3 |\n| 2 | 293 | 3 |\n| 3 | 240 | 1 |\n| 4 | 403 | 1 |\n| 5 | 440 | 2 |"
+  ]
+ },
+ {
+  "case": "SQL-L2-05",
+  "suite": "sql",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：查询结果仅包含 `products` 表结构（`id`、`cost` 字段），未返回商品数据，因此无法提供前5件商品的 id 和成本。"
+  ]
+ },
+ {
+  "case": "SQL-L2-06",
+  "suite": "sql",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "| 订单ID | 状态 | 渠道 |\n|---:|---|---|\n| 425 | completed | mini_program |\n| 375 | completed | web |\n| 231 | completed | app |\n| 199 | completed | mini_program |\n| 404 | completed | web |"
+  ]
+ },
+ {
+  "case": "SQL-L3-01",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "数码类商品一共有21640件。"
+  ]
+ },
+ {
+  "case": "SQL-L3-02",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "VIP等级为3的客户共有 **120名**。"
+  ]
+ },
+ {
+  "case": "SQL-L3-03",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "上海共有 **17 位客户**。"
+  ]
+ },
+ {
+  "case": "SQL-L3-04",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "已完成（completed）的订单共有 **13,574 个**，对应明细记录 **40,566 条**。"
+  ]
+ },
+ {
+  "case": "SQL-L3-05",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "价格超过1000元的商品共有 **162件**。"
+  ]
+ },
+ {
+  "case": "SQL-L3-06",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年1月1日当天共下了0单。"
+  ]
+ },
+ {
+  "case": "SQL-L4-01",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(回答失败)"
+  ]
+ },
+ {
+  "case": "SQL-L4-02",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：现有结果缺少客户姓名与VIP等级的对应关系，无法准确筛选vip3级客户。"
+  ]
+ },
+ {
+  "case": "SQL-L4-03",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "上海客户的姓名和注册日期如下：\n\n| 姓名 | 注册日期 |\n|---|---|\n| 用户0167 | 2022-02-17 |\n| 用户0344 | 2022-02-17 |\n| 用户0290 | 2022-04-04 |\n| 用户0005 | 2022-04-06 |\n| 用户0053 | 2022-04-25 |\n| 用户0009 | 2022-06-13 |\n| 用户0413 | 2022-06-28 |\n| 用户0132 | 2022-07-03 |\n| 用户0450 | 2022-07-04 |\n| 用户0452 | 2022-07-05 |\n| 用户0320 | 2022-10-17 |\n| 用户0480 | 2022-11-29 |\n| 用户0192 | 2022-12-27 |\n| 用户0225 | 2023-03-07 |\n| 用户0105 | 2023-04-15 |\n| 用户0150 | 2023-06-17 |\n| 用户0259 | 2023-08-11 |"
+  ]
+ },
+ {
+  "case": "SQL-L4-04",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(回答失败)"
+  ]
+ },
+ {
+  "case": "SQL-L4-05",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(回答失败)"
+  ]
+ },
+ {
+  "case": "SQL-L4-06",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "| 商品名称 | 类目 | 价格 |\n|---|---|---:|\n| 咖啡豆3号 | 食品 | 39.2 |\n| 进口牛奶4号 | 食品 | 49.1 |"
+  ]
+ },
+ {
+  "case": "SQL-L5-01",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "| 商品名 | 价格 |\n|---|---:|\n| 智能手机2号 | 699.6 |\n| 蓝牙音箱4号 | 779.0 |\n| 智能手机3号 | 874.2 |\n| 智能手表3号 | 1109.8 |\n| 智能手表2号 | 1526.6 |\n| 平板电脑4号 | 1596.0 |"
+  ]
+ },
+ {
+  "case": "SQL-L5-02",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "查询命中 **51人**：VIP等级2共 **32人**，VIP等级3共 **19人**。明细仅展示前20行，当前可见名单如下：\n\n| 客户姓名 | VIP等级 |\n|---|---:|\n| 用户0414 | 3 |\n| 用户0009 | 3 |\n| 用户0129 | 3 |\n| 用户0263 | 3 |\n| 用户0200 | 3 |\n| 用户0421 | 3 |\n| 用户0322 | 3 |\n| 用户0145 | 3 |\n| 用户0467 | 3 |\n| 用户0318 | 3 |\n| 用户0477 | 3 |\n| 用户0437 | 3 |\n| 用户0444 | 3 |\n| 用户0202 | 3 |\n| 用户0029 | 3 |\n| 用户022"
+  ]
+ },
+ {
+  "case": "SQL-L5-03",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(回答失败)"
+  ]
+ },
+ {
+  "case": "SQL-L5-04",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "符合条件的服饰类商品：**0个**。  \n给定结果中唯一服饰类商品为“T恤1号”，价格为 **1062.2**，不在 **100到500** 范围内，且未提供成本。"
+  ]
+ },
+ {
+  "case": "SQL-L5-05",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "| 序号 | 客户姓名 | 城市 |\n|---:|---|---|\n| 1 | 用户0293 | 北京 |\n| 2 | 用户0413 | 上海 |\n| 3 | 用户0009 | 上海 |\n| 4 | 用户0005 | 上海 |\n| 5 | 用户0450 | 上海 |\n| 6 | 用户0374 | 北京 |\n| 7 | 用户0480 | 上海 |\n| 8 | 用户0344 | 上海 |\n| 9 | 用户0053 | 上海 |\n| 10 | 用户0298 | 北京 |"
+  ]
+ }
+]

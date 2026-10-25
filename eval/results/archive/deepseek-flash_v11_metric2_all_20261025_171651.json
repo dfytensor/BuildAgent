@@ -1,0 +1,43 @@
+[
+ {
+  "case": "SQL-L9-01",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(回答失败)"
+  ]
+ },
+ {
+  "case": "SQL-L9-04",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(回答失败)"
+  ]
+ },
+ {
+  "case": "TOOL-T3-06",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(回答失败)",
+   "各区域2024年已完成订单总金额如下：\n- 东北：18710030.97\n- 华东：22426383.97\n- 华北：19148449.85\n- 华南：16139808.11\n- 西南：18034071.64",
+   "按该区域客户数计算，人均消费最高的区域是华东，人均消费为 200235.57。"
+  ]
+ }
+]

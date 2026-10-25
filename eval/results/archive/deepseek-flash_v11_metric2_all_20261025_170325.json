@@ -1,0 +1,250 @@
+[
+ {
+  "case": "SQL-L1-01",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "商品类目（不重复）共 7 项：null（空值）、家居、家电、数码、服饰、美妆、食品。"
+  ]
+ },
+ {
+  "case": "SQL-L1-03",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "订单渠道共有 3 种：app、mini_program、web。"
+  ]
+ },
+ {
+  "case": "SQL-L3-02",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "vip等级为3的客户有 120 人。\n\n全部vip等级客户数明细如下：\n- vip_level 0：128 人\n- vip_level 1：134 人\n- vip_level 2：118 人\n- vip_level 3：120 人"
+  ]
+ },
+ {
+  "case": "SQL-L5-02",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "华东区VIP等级>=2的客户共51位，姓名和等级如下：\n\n等级3（19位）：\n用户0009，等级3\n用户0029，等级3\n用户0118，等级3\n用户0129，等级3\n用户0145，等级3\n用户0200，等级3\n用户0202，等级3\n用户0225，等级3\n用户0239，等级3\n用户0263，等级3\n用户0318，等级3\n用户0322，等级3\n用户0359，等级3\n用户0414，等级3\n用户0421，等级3\n用户0437，等级3\n用户0444，等级3\n用户0467，等级3\n用户0477，等级3\n\n等级2（32位）：\n用户0020，等级2\n用户0044，等级2\n用户0053，等级2\n用户0078，等级2\n用户0091，等级2\n用户0103，等级2\n用户0132，等级2\n用户0140，等级2\n用户0153，等级2\n用户0165，等级2\n用户0192，等级2\n用户0221，等级2\n用户0226，等级2\n用户0253，等级2\n用户0259，等级2\n用户0265，等级2\n用户0301，等级2\n用户0320，等级2\n用户0334，等级2\n用户0344，等级2\n用户0345，等级2\n用户0355，等级2\n用户0370，等级2\n用户0372，等级2\n用户0399，等级2\n用户0411，等级2\n用户0413，等级2\n用户0424，等级2\n用户0426，等级2\n用户0440，等级2\n用户0450，等级2\n用户0470，等级2"
+  ]
+ },
+ {
+  "case": "SQL-L9-02",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "各类目销售额（已完成订单口径）如下：\n1. 家居：6927639.05\n2. 家电：72829932.03\n3. 数码：63715349.92\n4. 服饰：14524720.96\n5. 美妆：8819823.84\n6. 食品：3523609.12"
+  ]
+ },
+ {
+  "case": "SQL-L9-05",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年消费金额前3的客户姓名与消费额如下：\n1. 用户0175，消费额 406154.72\n2. 用户0242，消费额 391730.26\n3. 用户0459，消费额 372254.64"
+  ]
+ },
+ {
+  "case": "PY-P1-02",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "商品的平均价格为1507.16（平均成交单价）。"
+  ]
+ },
+ {
+  "case": "PY-P2-09",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "数码类商品的最高价格为 **8082.7**，对应最高单价 **8079.55**，商品是 **无线耳机3号（product_id=7）**。\n\n完整列表如下：\n- product_id=7，product_name=无线耳机3号，price=8082.7，max_unit_price=8079.55，records=388，qty=1160\n- product_id=4，product_name=智能手机4号，price=7725.6，max_unit_price=7715.44，records=346，qty=1064\n- product_id=8，product_name=无线耳机4号，price=7325.4，max_unit_price=7319.88，records=341，qty=1020\n- product_id=19，product_name=蓝牙音箱3号，price=7144.2，max_unit_price=7143.15，records=346，qty=1069\n- product_id=6，product_name=无线耳机2号，price=5077.0，max_unit_price=5076.6，records=373，qty=1120"
+  ]
+ },
+ {
+  "case": "PY-P3-06",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "各类目销售额（已完成订单，金额=件数×单价×(1-折扣)，保留2位小数）如下：\n- 家居：6927639.05\n- 家电：72829932.03\n- 数码：63715349.92\n- 服饰：14524720.96\n- 美妆：8819823.84\n- 食品：3523609.12"
+  ]
+ },
+ {
+  "case": "PY-P4-02",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "FINAL 图表已生成并保存为 chart_02.png。(类型:bar, 维度:category, 指标:amount)"
+  ]
+ },
+ {
+  "case": "PY-P4-04",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "FINAL 图表已生成并保存为 chart_04.png。(类型:hist, 维度:price, 指标:price)"
+  ]
+ },
+ {
+  "case": "TOOL-T1-05",
+  "suite": "tool",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "客户0001（名字为“用户0001”）的城市是长春，vip等级是0。"
+  ]
+ },
+ {
+  "case": "TOOL-T1-09",
+  "suite": "tool",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "美妆类有 20 个商品。"
+  ]
+ },
+ {
+  "case": "TOOL-T2-01",
+  "suite": "tool",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "orders 表行数多。customers 有 500 行，orders 有 15988 行，orders 比 customers 多 15488 行。"
+  ]
+ },
+ {
+  "case": "TOOL-T4-01",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年完成的订单笔数为 7628 笔（该数字已记住）。",
+   "我看不到你所在地的天气，没法判断，但适不适合加班主要看工作安排和你的状态。",
+   "1. 2024年完成了多少笔订单：你还没提供这个数，我无法知道；请告诉我具体数字，我才能“记住”。\n2. 今天天气是否适合加班：我不知道你所在地的天气，也不建议用天气决定加班；先看天气和安排吧。\n3. 1+1 = 2。",
+   "7628 × 2 = 15256"
+  ]
+ },
+ {
+  "case": "TOOL-T4-08",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "购买数量最大的一笔明细，数量是 **5**。统计结果显示最大数量为 **5**，对应记录数为 **8796**。",
+   "每天进步一点点，我一定能成为更好的自己。",
+   "1+1 = 2。",
+   "最大单笔购买数量为 5，平均单笔购买数量为 2.9986，二者相差 5 - 2.9986 = 2.00（保留2位小数），即多 2.00。"
+  ]
+ },
+ {
+  "case": "TOOL-T5-01",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "金额最大的订单 id 是 **5527**，金额为 **91255.92**。\n\n查询结果共 3 行（按订单聚合的金额排名，两工具结果一致）：\n1. order_id 5527 — 金额 91255.92\n2. order_id 3682 — 金额 89160.17\n3. order_id 8542 — 金额 86651.47",
+   "这笔订单（订单 id 5527，金额 91255.92）由客户 **用户0046**（customer_id 46）下单。该客户位于广州，属于华南地区，VIP 等级为 1。",
+   "这位客户（customer_id 46，用户0046）所在城市是：广州（华南，VIP等级1，共29笔订单）。",
+   "这位客户2024年在本平台共消费 259947.80 元，共 15 笔订单。"
+  ]
+ },
+ {
+  "case": "TOOL-T6-01",
+  "suite": "tool",
+  "level": 6,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "平台总客户数为 500。",
+   "平台总客户数为 500 个。",
+   "我没有收到平台客户数据或查询结果，无法确定“平台总客户数”。请提供数据源/查询结果；我已记住你需要关注“平台总客户数”这个指标。",
+   "根据工具查询结果，平台总客户数为 500（工具1：label/value 行 [[500]]；工具2：customer_cnt 行 [[500]]，两者一致）。本条为填充消息，已忽略其内容，会话正常。",
+   "已忽略本条填充消息内容，会话保持正常；当前查询结果显示平台总客户数为 500。",
+   "总客户数是 500。"
+  ]
+ }
+]

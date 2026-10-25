@@ -1,0 +1,15 @@
+[
+ {
+  "case": "PY-P2-07",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "平均每笔有商品明细的订单包含 2.83 行商品明细（商品明细行数 45208 / 有明细订单数 15988）。"
+  ]
+ }
+]

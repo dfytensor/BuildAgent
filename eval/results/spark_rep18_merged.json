@@ -1,0 +1,250 @@
+[
+ {
+  "case": "SQL-L1-01",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "美妆、食品、数码、服饰、家电、家居"
+  ]
+ },
+ {
+  "case": "SQL-L1-03",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "订单渠道有 web、mini_program、app 三种。"
+  ]
+ },
+ {
+  "case": "SQL-L3-02",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "vip等级为3的客户有120个。"
+  ]
+ },
+ {
+  "case": "SQL-L5-02",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "华东区vip等级>=2的客户姓名和等级如下：\n- 用户0009，3\n- 用户0020，2\n- 用户0029，3\n- 用户0044，2\n- 用户0053，2\n- 用户0078，2\n- 用户0091，2\n- 用户0103，2\n- 用户0118，3\n- 用户0129，3\n- 用户0132，2\n- 用户0140，2\n- 用户0145，3\n- 用户0153，2\n- 用户0165，2\n- 用户0192，2\n- 用户0200，3\n- 用户0202，3\n- 用户0221，2\n- 用户0225，3\n- 用户0226，2\n- 用户0239，3\n- 用户0253，2\n- 用户0259，2\n- 用户0263，3\n- 用户0265，2\n- 用户0301，2\n- 用户0318，3\n- 用户0320，2\n- 用户0322，3\n- 用户0334，2\n- 用户0344，2\n- 用户0345，2\n- 用户0355，2\n- 用户0359，3\n- 用户0370，2\n- 用户0372，2\n- 用户0399，2\n- 用户0411，2\n- 用户0413，2\n- 用户0414，3\n- 用户0421，3\n- 用户0424，2\n- 用户0426，2\n- 用户0437，3\n- 用户0440，2\n- 用户0444，3\n- 用户0450，2\n- 用户0467，3\n- 用户0470，2"
+  ]
+ },
+ {
+  "case": "SQL-L9-02",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "各类目销售额（仅已完成订单，类目，金额）如下：\n- 家电：72829932.027\n- 数码：63715349.9175\n- 服饰：14524720.9625\n- 美妆：8819823.8425\n- 家居：6927639.048\n- 食品：3523609.117"
+  ]
+ },
+ {
+  "case": "SQL-L9-05",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "用户0175，消费额406154.716；用户0242，消费额391730.257；用户0459，消费额372254.642。"
+  ]
+ },
+ {
+  "case": "PY-P1-02",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "商品的平均价格是1507.16。"
+  ]
+ },
+ {
+  "case": "PY-P2-09",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "8082.7"
+  ]
+ },
+ {
+  "case": "PY-P3-06",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "家居：6927639.05\n家电：72829932.03\n数码：63715349.92\n服饰：14524720.96\n美妆：8819823.84\n食品：3523609.12"
+  ]
+ },
+ {
+  "case": "PY-P4-02",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "FINAL 图表已生成并保存为 chart_02.png。(类型:bar, 维度:category, 指标:amount)"
+  ]
+ },
+ {
+  "case": "PY-P4-04",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "FINAL 图表已生成并保存为 chart_04.png。(类型:hist, 维度:price, 指标:count)"
+  ]
+ },
+ {
+  "case": "TOOL-T1-05",
+  "suite": "tool",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "客户0001（名字是'用户0001'）的城市是长春，vip等级是0。"
+  ]
+ },
+ {
+  "case": "TOOL-T1-09",
+  "suite": "tool",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "美妆类有20个商品"
+  ]
+ },
+ {
+  "case": "TOOL-T2-01",
+  "suite": "tool",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "orders表行数多，多15488行。"
+  ]
+ },
+ {
+  "case": "TOOL-T4-01",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年完成了0笔订单。",
+   "今天天气是否适合加班需结合具体天气状况判断，若天气舒适无极端天气则适合加班。",
+   "2",
+   "4.0"
+  ]
+ },
+ {
+  "case": "TOOL-T4-08",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "20266.35",
+   "别松懈，稳步前行，定能收获理想成果！",
+   "2",
+   "2.09"
+  ]
+ },
+ {
+  "case": "TOOL-T5-01",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "14073",
+   "用户0483",
+   "石家庄",
+   "该客户2024年在本平台共消费金额无法查询到有效数据（工具返回结果为空/无效），查询失败+无有效消费数据。"
+  ]
+ },
+ {
+  "case": "TOOL-T6-01",
+  "suite": "tool",
+  "level": 6,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "平台总客户数是 500。",
+   "平台总客户数为500。",
+   "(回答失败)",
+   "500",
+   "(回答失败)",
+   "500"
+  ]
+ }
+]

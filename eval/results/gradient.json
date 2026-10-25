@@ -1,0 +1,101 @@
+[
+ {
+  "version": "v0_bare",
+  "n": 150,
+  "tool_ok": 0.0,
+  "exec_ok": 0.0,
+  "answer_ok": 2.0,
+  "all_turns": 8.666666666666666,
+  "acc_sql": 0.0,
+  "acc_pandas": 4.0,
+  "acc_tool": 2.0
+ },
+ {
+  "version": "v1_react_sql",
+  "n": 150,
+  "tool_ok": 10.666666666666666,
+  "exec_ok": 0.0,
+  "answer_ok": 2.0,
+  "all_turns": 8.0,
+  "acc_sql": 0.0,
+  "acc_pandas": 4.0,
+  "acc_tool": 2.0
+ },
+ {
+  "version": "v2_schema",
+  "n": 150,
+  "tool_ok": 0.0,
+  "exec_ok": 0.0,
+  "answer_ok": 4.0,
+  "all_turns": 10.0,
+  "acc_sql": 6.0,
+  "acc_pandas": 4.0,
+  "acc_tool": 2.0
+ },
+ {
+  "version": "v3_selfheal",
+  "n": 150,
+  "tool_ok": 26.0,
+  "exec_ok": 0.0,
+  "answer_ok": 1.3333333333333333,
+  "all_turns": 8.0,
+  "acc_sql": 2.0,
+  "acc_pandas": 2.0,
+  "acc_tool": 0.0
+ },
+ {
+  "version": "v4_sandbox",
+  "n": 150,
+  "tool_ok": 28.666666666666668,
+  "exec_ok": 7.333333333333333,
+  "answer_ok": 4.0,
+  "all_turns": 10.0,
+  "acc_sql": 2.0,
+  "acc_pandas": 2.0,
+  "acc_tool": 8.0
+ },
+ {
+  "version": "v5_memory",
+  "n": 150,
+  "tool_ok": 30.0,
+  "exec_ok": 7.333333333333333,
+  "answer_ok": 4.0,
+  "all_turns": 8.666666666666666,
+  "acc_sql": 2.0,
+  "acc_pandas": 8.0,
+  "acc_tool": 2.0
+ },
+ {
+  "version": "v6_router",
+  "n": 150,
+  "tool_ok": 82.0,
+  "exec_ok": 25.333333333333332,
+  "answer_ok": 14.0,
+  "all_turns": 13.333333333333334,
+  "acc_sql": 4.0,
+  "acc_pandas": 30.0,
+  "acc_tool": 8.0
+ },
+ {
+  "version": "v7_general",
+  "n": 150,
+  "tool_ok": 95.33333333333333,
+  "exec_ok": 69.33333333333333,
+  "answer_ok": 31.333333333333332,
+  "all_turns": 30.666666666666668,
+  "acc_sql": 22.0,
+  "acc_pandas": 44.0,
+  "acc_tool": 28.0
+ },
+ {
+  "version": "v8_calculator",
+  "n": 50,
+  "tool_ok": 60.0,
+  "exec_ok": 14.0,
+  "answer_ok": 2.0,
+  "all_turns": 2.0,
+  "acc_sql": null,
+  "acc_pandas": null,
+  "acc_tool": 2.0
+ }
+]

@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+eval/_tmp_cases/
+artifacts/
+*.log

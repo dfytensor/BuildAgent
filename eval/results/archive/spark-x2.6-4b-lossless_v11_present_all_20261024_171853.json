@@ -1,0 +1,44 @@
+[
+ {
+  "case": "SQL-L4-04",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "product_name: 冰箱2号, category: 家电\nproduct_name: 冰箱3号, category: 家电\nproduct_name: 吸尘器4号, category: 家电\nproduct_name: 无线耳机2号, category: 数码\nproduct_name: 无线耳机3号, category: 数码\nproduct_name: 无线耳机4号, category: 数码\nproduct_name: 智能手机4号, category: 数码\nproduct_name: 洗衣机2号, category: 家电\nproduct_name: 洗衣机4号, category: 家电\nproduct_name: 电饭煲4号, category: 家电\nproduct_name: 空调2号, category: 家电\nproduct_name: 空调3号, category: 家电\nproduct_name: 蓝牙音箱3号, category: 数码"
+  ]
+ },
+ {
+  "case": "TOOL-T1-01",
+  "suite": "tool",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "500"
+  ]
+ },
+ {
+  "case": "TOOL-T4-08",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "购买数量最大的一笔明细为：order_id=7, order_date=2023-01-01 11:35:00, status=completed, channel=web, customer_id=294, customer_name=用户0294, city=太原, region=华北, vip_level=3, product_id=17, product_name=蓝牙音箱1号, category=数码, quantity=5, unit_price=2657.38, discount=0.0, amount=13286.9\n购买数量为5",
+   "保持专注与坚持，你一定能顺利达成目标！",
+   "1+1等于2",
+   "该数量比平均单笔购买数量多121640-121640/40566=120423.71（保留2位小数）"
+  ]
+ }
+]

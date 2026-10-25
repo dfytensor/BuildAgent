@@ -1,0 +1,254 @@
+{
+ "n": 150,
+ "metric": "answer_ok",
+ "quads": {
+  "both_ok": [
+   "PY-P1-01",
+   "PY-P1-03",
+   "PY-P1-05",
+   "PY-P1-06",
+   "PY-P1-07",
+   "PY-P2-01",
+   "PY-P2-03",
+   "PY-P2-04",
+   "PY-P2-05",
+   "PY-P2-06",
+   "PY-P2-09",
+   "PY-P2-11",
+   "PY-P2-12",
+   "PY-P3-01",
+   "PY-P3-02",
+   "PY-P3-03",
+   "PY-P3-04",
+   "PY-P3-05",
+   "PY-P3-06",
+   "PY-P3-07",
+   "PY-P3-08",
+   "PY-P3-13",
+   "PY-P4-01",
+   "PY-P4-02",
+   "PY-P4-03",
+   "PY-P4-04",
+   "PY-P4-05",
+   "PY-P4-06",
+   "PY-P4-08",
+   "PY-P4-09",
+   "PY-P4-10",
+   "SQL-L1-01",
+   "SQL-L1-02",
+   "SQL-L1-03",
+   "SQL-L1-04",
+   "SQL-L1-05",
+   "SQL-L2-01",
+   "SQL-L2-04",
+   "SQL-L2-05",
+   "SQL-L3-02",
+   "SQL-L3-03",
+   "SQL-L3-04",
+   "SQL-L3-05",
+   "SQL-L4-02",
+   "SQL-L4-04",
+   "SQL-L4-06",
+   "SQL-L5-02",
+   "SQL-L5-06",
+   "SQL-L6-01",
+   "SQL-L6-05",
+   "SQL-L7-04",
+   "SQL-L8-05",
+   "SQL-L9-01",
+   "SQL-L9-02",
+   "SQL-L9-03",
+   "SQL-L9-04",
+   "SQL-L9-05",
+   "TOOL-T1-01",
+   "TOOL-T1-02",
+   "TOOL-T1-03",
+   "TOOL-T1-04",
+   "TOOL-T1-05",
+   "TOOL-T1-06",
+   "TOOL-T1-07",
+   "TOOL-T1-08",
+   "TOOL-T1-09",
+   "TOOL-T1-10",
+   "TOOL-T2-01",
+   "TOOL-T2-02",
+   "TOOL-T2-04",
+   "TOOL-T2-05",
+   "TOOL-T2-06",
+   "TOOL-T2-07",
+   "TOOL-T2-08",
+   "TOOL-T2-09",
+   "TOOL-T3-02",
+   "TOOL-T3-04",
+   "TOOL-T3-06",
+   "TOOL-T3-07",
+   "TOOL-T3-08",
+   "TOOL-T4-01",
+   "TOOL-T4-04",
+   "TOOL-T4-06",
+   "TOOL-T5-06",
+   "TOOL-T6-01",
+   "TOOL-T6-02",
+   "TOOL-T6-03",
+   "TOOL-T6-04",
+   "TOOL-T6-06",
+   "TOOL-T6-07"
+  ],
+  "both_bad": [
+   "PY-P1-02",
+   "PY-P1-04",
+   "PY-P2-07",
+   "SQL-L6-02",
+   "SQL-L6-04",
+   "SQL-L7-01",
+   "SQL-L7-02",
+   "TOOL-T2-03",
+   "TOOL-T3-05",
+   "TOOL-T4-03",
+   "TOOL-T5-02",
+   "TOOL-T5-03",
+   "TOOL-T5-04"
+  ],
+  "only_spark4B": [
+   "PY-P2-10",
+   "PY-P3-11",
+   "SQL-L4-01",
+   "SQL-L8-02",
+   "TOOL-T2-10",
+   "TOOL-T4-02",
+   "TOOL-T5-07",
+   "TOOL-T6-05"
+  ],
+  "only_deepseek": [
+   "PY-P1-08",
+   "PY-P1-09",
+   "PY-P1-10",
+   "PY-P2-02",
+   "PY-P2-08",
+   "PY-P2-13",
+   "PY-P2-14",
+   "PY-P2-15",
+   "PY-P3-09",
+   "PY-P3-10",
+   "PY-P3-12",
+   "PY-P3-14",
+   "PY-P3-15",
+   "PY-P4-07",
+   "SQL-L1-06",
+   "SQL-L2-02",
+   "SQL-L2-03",
+   "SQL-L2-06",
+   "SQL-L3-01",
+   "SQL-L3-06",
+   "SQL-L4-03",
+   "SQL-L4-05",
+   "SQL-L5-01",
+   "SQL-L5-03",
+   "SQL-L5-04",
+   "SQL-L5-05",
+   "SQL-L6-03",
+   "SQL-L7-03",
+   "SQL-L7-05",
+   "SQL-L8-01",
+   "SQL-L8-03",
+   "SQL-L8-04",
+   "TOOL-T3-01",
+   "TOOL-T3-03",
+   "TOOL-T4-05",
+   "TOOL-T4-07",
+   "TOOL-T4-08",
+   "TOOL-T5-01",
+   "TOOL-T5-05"
+  ]
+ },
+ "by_level": {
+  "pandas-L1": {
+   "both_ok": 5,
+   "both_bad": 2,
+   "only_deepseek": 3
+  },
+  "pandas-L2": {
+   "both_ok": 8,
+   "both_bad": 1,
+   "only_spark4B": 1,
+   "only_deepseek": 5
+  },
+  "pandas-L3": {
+   "both_ok": 9,
+   "only_spark4B": 1,
+   "only_deepseek": 5
+  },
+  "pandas-L4": {
+   "both_ok": 9,
+   "only_deepseek": 1
+  },
+  "sql-L1": {
+   "both_ok": 5,
+   "only_deepseek": 1
+  },
+  "sql-L2": {
+   "both_ok": 3,
+   "only_deepseek": 3
+  },
+  "sql-L3": {
+   "both_ok": 4,
+   "only_deepseek": 2
+  },
+  "sql-L4": {
+   "both_ok": 3,
+   "only_spark4B": 1,
+   "only_deepseek": 2
+  },
+  "sql-L5": {
+   "both_ok": 2,
+   "only_deepseek": 4
+  },
+  "sql-L6": {
+   "both_ok": 2,
+   "both_bad": 2,
+   "only_deepseek": 1
+  },
+  "sql-L7": {
+   "both_ok": 1,
+   "both_bad": 2,
+   "only_deepseek": 2
+  },
+  "sql-L8": {
+   "both_ok": 1,
+   "only_spark4B": 1,
+   "only_deepseek": 3
+  },
+  "sql-L9": {
+   "both_ok": 5
+  },
+  "tool-L1": {
+   "both_ok": 10
+  },
+  "tool-L2": {
+   "both_ok": 8,
+   "both_bad": 1,
+   "only_spark4B": 1
+  },
+  "tool-L3": {
+   "both_ok": 5,
+   "both_bad": 1,
+   "only_deepseek": 2
+  },
+  "tool-L4": {
+   "both_ok": 3,
+   "both_bad": 1,
+   "only_spark4B": 1,
+   "only_deepseek": 3
+  },
+  "tool-L5": {
+   "both_ok": 1,
+   "both_bad": 3,
+   "only_spark4B": 1,
+   "only_deepseek": 2
+  },
+  "tool-L6": {
+   "both_ok": 6,
+   "only_spark4B": 1
+  }
+ }
+}

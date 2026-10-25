@@ -1,0 +1,176 @@
+[
+ {
+  "case": "SQL-L6-04",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "买过数码类商品且去重后的前15位客户姓名如下：\n1. 用户0001（customer_id=1）\n2. 用户0002（customer_id=2）\n3. 用户0003（customer_id=3）\n4. 用户0004（customer_id=4）\n5. 用户0005（customer_id=5）\n6. 用户0006（customer_id=6）\n7. 用户0007（customer_id=7）\n8. 用户0008（customer_id=8）\n9. 用户0009（customer_id=9）\n10. 用户0010（customer_id=10）\n11. 用户0011（customer_id=11）\n12. 用户0012（customer_id=12）\n13. 用户0013（customer_id=13）\n14. 用户0014（customer_id=14）\n15. 用户0015（customer_id=15）"
+  ]
+ },
+ {
+  "case": "SQL-L7-01",
+  "suite": "sql",
+  "level": 7,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年下过订单的客户姓名（去重，前15位）如下：\n\n1. 用户0001\n2. 用户0002\n3. 用户0003\n4. 用户0004\n5. 用户0005\n6. 用户0006\n7. 用户0007\n8. 用户0008\n9. 用户0009\n10. 用户0010\n11. 用户0011\n12. 用户0012\n13. 用户0013\n14. 用户0014\n15. 用户0015\n\n（对应的客户ID依次为1至15；去重后客户总数为500人。）"
+  ]
+ },
+ {
+  "case": "SQL-L7-02",
+  "suite": "sql",
+  "level": 7,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "买过“智能手机1号”的客户姓名（前15）如下：\n1. 用户0001（customer_id: 1）\n2. 用户0003（customer_id: 3）\n3. 用户0004（customer_id: 4）\n4. 用户0005（customer_id: 5）\n5. 用户0008（customer_id: 8）\n6. 用户0009（customer_id: 9）\n7. 用户0011（customer_id: 11）\n8. 用户0012（customer_id: 12）\n9. 用户0013（customer_id: 13）\n10. 用户0019（customer_id: 19）\n11. 用户0021（customer_id: 21）\n12. 用户0022（customer_id: 22）\n13. 用户0023（customer_id: 23）\n14. 用户0026（customer_id: 26）\n15. 用户0027（customer_id: 27）"
+  ]
+ },
+ {
+  "case": "PY-P1-02",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "商品表(products)共 120 行，price 列的平均值为 1592.71。"
+  ]
+ },
+ {
+  "case": "PY-P1-04",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "order_items 表的 quantity 列总和是 131697，共涉及 43899 行。"
+  ]
+ },
+ {
+  "case": "PY-P2-02",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "数码类商品有20款。"
+  ]
+ },
+ {
+  "case": "PY-P2-07",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "平均每笔订单包含 2.83 行商品明细（商品明细行数共 45208 行，订单数共 15988 笔，保留 2 位小数）。"
+  ]
+ },
+ {
+  "case": "PY-P2-13",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "有效商品中，被购买次数最多的商品id是 **73**，按订单明细行数统计为 **404 行**。\n\n完整有效商品排行：\n- 73，进口牛奶1号，404\n- 81，精华液1号，403\n- 105，收纳箱1号，403\n- 44，羽绒服4号，400\n- 50，牛仔裤2号，399\n\n另有 **product_id 为空** 的记录 **1309 行**，但它不是具体商品id；若把空值也计入，则空值行数最多。"
+  ]
+ },
+ {
+  "case": "PY-P3-11",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "已完成订单口径下，各渠道销售额及占总销售额百分比（按渠道排序）：\n- app：56579932.12，占比 33.22%\n- mini_program：56210943.02，占比 33.00%\n- web：57550199.77，占比 33.79%"
+  ]
+ },
+ {
+  "case": "PY-P3-15",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年取消率最高的月份是 2024-05，取消率为 3.83%。"
+  ]
+ },
+ {
+  "case": "TOOL-T2-03",
+  "suite": "tool",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "数码类商品有 20 款，家电类商品有 20 款，两类合计 40 款。"
+  ]
+ },
+ {
+  "case": "TOOL-T4-03",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "数码类商品（products表）的平均售价为 3636.53，共统计 20 件商品。",
+   "1+1等于2。",
+   "别怕慢，只要不停，你就在靠近更好的自己。",
+   "3636.53 ÷ 2 = 1818.27（保留2位小数）"
+  ]
+ },
+ {
+  "case": "TOOL-T5-04",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "被购买件数最多的商品id是 **105**（收纳箱1号，购买件数 **1236**）。\n\n全部查询结果：\n- 105 收纳箱1号 1236\n- 73 进口牛奶1号 1229\n- 50 牛仔裤2号 1228\n- 44 羽绒服4号 1223\n- 81 精华液1号 1212",
+   "商品ID 105：名称「收纳箱1号」，类目「家居」；单价不是单一值，查询结果中的价格区间为 **52.56 至 58.40**（最低 **52.56**，最高 **58.40**）。",
+   "商品ID 105（收纳箱1号，类目家居）贡献的销售额（含已取消订单）为 **63989.14**，对应购买件数 1236，记录行数 403。"
+  ]
+ }
+]

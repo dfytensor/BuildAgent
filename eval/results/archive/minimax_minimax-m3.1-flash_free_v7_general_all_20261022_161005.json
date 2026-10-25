@@ -1,0 +1,337 @@
+[
+ {
+  "case": "TOOL-T2-09",
+  "suite": "tool",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "已完成订单 **13,574笔**，已取消订单 **1,309笔**。"
+  ]
+ },
+ {
+  "case": "TOOL-T2-10",
+  "suite": "tool",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(回答失败)"
+  ]
+ },
+ {
+  "case": "TOOL-T3-01",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年一共有 **8,245笔订单**。",
+   "2024年已完成的订单有 **7628笔**。",
+   "2024年未完成的订单（取消+待处理）共有 **0笔**。"
+  ]
+ },
+ {
+  "case": "TOOL-T3-02",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "平台一共有 **500名注册客户**。",
+   "一共产生了 **14,679 笔订单**。",
+   "平均每位客户下 **29.36 单**。"
+  ]
+ },
+ {
+  "case": "TOOL-T3-03",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "数码类商品共有 **19,956件**。",
+   "数码类商品的平均价格为 **3192.79**（总销售额 63715349.9175 ÷ 总件数 19956）。",
+   "买空全部20件数码类商品（每件按平均价）需要 **63855.83元**。"
+  ]
+ },
+ {
+  "case": "TOOL-T3-04",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(回答失败)",
+   "2023年同口径（已完成订单）销售额为 **75882330.38元**。",
+   "2024年比2023年增长 **24.48%**。\n\n计算：\\((94,458,744.5355-75,882,330.379)÷75,882,330.379×100%=24.48%\\)。"
+  ]
+ },
+ {
+  "case": "TOOL-T3-05",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "最贵的商品是**无线耳机3号**，最高单价为**8079.55元**。",
+   "无线耳机3号累计被购买 **1027件**。",
+   "按原价计算，这些销售总额为 **9,375,932.00**。"
+  ]
+ },
+ {
+  "case": "TOOL-T3-06",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "各区域客户数如下：\n\n- 华东：112\n- 东北：104\n- 华北：101\n- 西南：95\n- 华南：88\n\n合计：500",
+   "各区域2024年已完成订单总金额如下：\n\n- 华东：22,426,383.97\n- 华北：19,148,449.85\n- 东北：18,710,030.97\n- 西南：18,034,071.64\n- 华南：16,139,808.11",
+   "(回答失败)"
+  ]
+ },
+ {
+  "case": "TOOL-T3-07",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "app渠道2024年订单共 **2772笔**（已完成2569笔，待处理203笔）。",
+   "(回答失败)",
+   "小程序（mini_program）渠道2024年订单有 **2754笔**。\n\n三个渠道合计：**2772 + 2754 + 2719 = 8245笔**。"
+  ]
+ },
+ {
+  "case": "TOOL-T3-08",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "一共有 **6种** 商品类目。",
+   "按“件数”统计：\n\n- 家电：20,324 件\n- 数码：19,956 件\n- 服饰：20,232 件\n- 美妆：20,099 件\n- 家居：20,594 件\n- 食品：20,435 件\n\n合计：121,640 件。",
+   "商品总数为 **120件**（6个商品类目，每个类目20件）。"
+  ]
+ },
+ {
+  "case": "TOOL-T4-01",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年完成了 **22650笔订单**，已记住这个数。",
+   "如果你身体状态不错、天气安全且任务不急，今天可以适度加班；否则建议早点下班。",
+   "1+1等于2。",
+   "15256"
+  ]
+ },
+ {
+  "case": "TOOL-T4-02",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "华东区有 **112 个客户**，已记住这个数。",
+   "慢慢来，你一定可以！",
+   "状态好、效率高，今天就适合加班。",
+   "华东区客户数占全部客户的 **22.40%**（112 ÷ 500 × 100）。"
+  ]
+ },
+ {
+  "case": "TOOL-T4-03",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "数码类商品平均价格为 **3196.76**，已按要求保留2位小数并记住。",
+   "1+1=2",
+   "相信自己，你一定可以！",
+   "3196.76 ÷ 2 = 1598.38，保留2位小数为 **1598.38**。"
+  ]
+ },
+ {
+  "case": "TOOL-T4-04",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(回答失败)",
+   "只要不是极端天气且通勤安全，今天适合加班，但别熬得太晚。",
+   "1+1=2",
+   "2024年订单比2023年多 **1,682笔**（7,628 − 5,946 = 1,682）。"
+  ]
+ },
+ {
+  "case": "TOOL-T4-05",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "最贵的商品是**无线耳机3号**，价格为 **8079.55元**。",
+   "相信自己，你一定可以！",
+   "只要天气舒适、身体状态良好，今天很适合加班。",
+   "无线耳机3号打8折后是6463.64元。"
+  ]
+ },
+ {
+  "case": "TOOL-T4-06",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "上海共有 **17 个客户**，已记住这个数。",
+   "2",
+   "我可以的，一步一步来！",
+   "上海和北京客户总数为 17 + 19 = 36。"
+  ]
+ },
+ {
+  "case": "TOOL-T4-07",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "已完成订单的销售额是 **170341074.91**，已保留2位小数。",
+   "如果今天天气凉爽，就挺适合加班，但还是要注意劳逸结合。",
+   "再坚持一下，你一定可以！",
+   "销售额除以订单量：170341074.9145 ÷ 13574 = 12549.0699，取整为 **12549**。"
+  ]
+ },
+ {
+  "case": "TOOL-T4-08",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "购买数量最大的一笔明细，数量是 **5**。",
+   "坚持一下，你一定可以！",
+   "1+1等于2。",
+   "这个数量比平均单笔购买数量多 **2.00**（5 − 2.9986 = 2.0014，保留2位小数）。"
+  ]
+ },
+ {
+  "case": "TOOL-T5-01",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "金额最大的已完成订单 ID 是 **5527**，金额为 **91255.92**。",
+   "客户姓名：用户0046。",
+   "这位客户在**广州**。",
+   "该客户（用户0046）2024年在本平台共消费 **0.00**，2024年订单数为 **0**。"
+  ]
+ },
+ {
+  "case": "TOOL-T5-02",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "按明细件数合计，最多的是客户 **77** 和客户 **288**，均为 **384 件**，并列第一。",
+   "客户ID 77（用户0077）的城市是**长春**，VIP等级是**0**。",
+   "这位客户一共下过 **47 单**。"
+  ]
+ },
+ {
+  "case": "TOOL-T5-03",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": true,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：按月查询结果为0行，现有数据仅显示2024年已完成订单的年度销售额为 **94458744.5355**、订单数为 **22650**，未提供月份明细，因此无法确定销售额最高的具体月份。",
+   "(回答失败)",
+   "2024年11月平均每单 **13,226.99元**。"
+  ]
+ },
+ {
+  "case": "TOOL-T5-04",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "被购买件数最多的商品 ID 是 **105**，共购买 **1159 件**，比第二名多 **18 件**。",
+   "商品名称：收纳箱1号  \n类目：家居  \n单价：58.4",
+   "该商品贡献的销售额为 **60133.13**。"
+  ]
+ }
+]

@@ -1,0 +1,28 @@
+[
+ {
+  "case": "SQL-L4-04",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "单价大于5000的商品名称和类目如下：\n1. 电饭煲4号，家电\n2. 洗衣机2号，家电\n3. 吸尘器4号，家电\n4. 无线耳机4号，数码\n5. 冰箱2号，家电\n6. 空调3号，家电\n7. 无线耳机3号，数码\n8. 洗衣机4号，家电\n9. 空调2号，家电\n10. 无线耳机2号，数码\n11. 蓝牙音箱3号，数码\n12. 智能手机4号，数码\n13. 冰箱3号，家电"
+  ]
+ },
+ {
+  "case": "SQL-L6-02",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "被购买过的商品名(去重,前15)为：T恤1号、T恤2号、T恤3号、T恤4号、冰箱1号、冰箱2号、冰箱3号、冰箱4号、口红1号、口红2号、口红3号、口红4号、台灯1号、台灯2号"
+  ]
+ }
+]

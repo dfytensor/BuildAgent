@@ -1,0 +1,69 @@
+[
+ {
+  "case": "SQL-L5-05",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "查询结果如下（共10行）：\n1. 客户ID 5，客户姓名：用户0005，城市：上海\n2. 客户ID 9，客户姓名：用户0009，城市：上海\n3. 客户ID 22，客户姓名：用户0022，城市：北京\n4. 客户ID 53，客户姓名：用户0053，城市：上海\n5. 客户ID 88，客户姓名：用户0088，城市：北京\n6. 客户ID 96，客户姓名：用户0096，城市：北京\n7. 客户ID 105，客户姓名：用户0105，城市：上海\n8. 客户ID 121，客户姓名：用户0121，城市：北京\n9. 客户ID 131，客户姓名：用户0131，城市：北京\n10. 客户ID 132，客户姓名：用户0132，城市：上海"
+  ]
+ },
+ {
+  "case": "SQL-L9-01",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(回答失败)"
+  ]
+ },
+ {
+  "case": "SQL-L9-04",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(回答失败)"
+  ]
+ },
+ {
+  "case": "PY-P3-13",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(回答失败)"
+  ]
+ },
+ {
+  "case": "TOOL-T3-06",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "各区域客户数如下：\n东北：104\n华东：112\n华北：101\n华南：88\n西南：95",
+   "各区域2024年已完成订单总金额如下：\n- 东北：18710030.97\n- 华东：22426383.97\n- 华北：19148449.85\n- 华南：16139808.11\n- 西南：18034071.64",
+   "查询失败：本次查询返回结果为空（5 条工具结果均为空列表），无法获得各区域客户数及各区域消费金额数据，因此无法比较人均消费并给出保留2位的数值。"
+  ]
+ }
+]

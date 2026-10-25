@@ -1,0 +1,59 @@
+[
+ {
+  "case": "SQL-L8-03",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "order_id: 10115, 客户城市: 贵阳\norder_id: 10115, 客户城市: 贵阳\norder_id: 10115, 客户城市: 贵阳\norder_id: 10116, 客户城市: 苏州\norder_id: 10116, 客户城市: 苏州\norder_id: 10117, 客户城市: 大连\norder_id: 10117, 客户城市: 大连\norder_id: 10117, 客户城市: 大连\norder_id: 10118, 客户城市: 福州\norder_id: 10118, 客户城市: 福州"
+  ]
+ },
+ {
+  "case": "SQL-L9-01",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(2024-01, 1463)\n(2024-02, 1134)\n(2024-03, 1722)\n(2024-04, 1725)\n(2024-05, 1741)\n(2024-06, 1859)\n(2024-07, 1769)\n(2024-08, 1787)\n(2024-09, 1891)\n(2024-10, 2089)\n(2024-11, 2816)\n(2024-12, 2654)"
+  ]
+ },
+ {
+  "case": "TOOL-T5-01",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "order_id: 14073",
+   "用户0483",
+   "石家庄",
+   "148928.18"
+  ]
+ },
+ {
+  "case": "TOOL-T5-06",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": true,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "根据工具2结果，平均单价最高的类目是家电，其平均单价为3854.9029。",
+   "4844.10",
+   "revenue：40034924.07"
+  ]
+ }
+]

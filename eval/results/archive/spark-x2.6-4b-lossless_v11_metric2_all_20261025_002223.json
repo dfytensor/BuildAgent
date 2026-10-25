@@ -1,0 +1,59 @@
+[
+ {
+  "case": "SQL-L9-01",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(2024-01, 1463)\n(2024-02, 1134)\n(2024-03, 1722)\n(2024-04, 1725)\n(2024-05, 1741)\n(2024-06, 1859)\n(2024-07, 1769)\n(2024-08, 1787)\n(2024-09, 1891)\n(2024-10, 2089)\n(2024-11, 2816)\n(2024-12, 2654)"
+  ]
+ },
+ {
+  "case": "SQL-L9-05",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "1. 客户姓名：用户0175，消费额：406154.72\n2. 客户姓名：用户0242，消费额：391730.26\n3. 客户姓名：用户0459，消费额：372254.64"
+  ]
+ },
+ {
+  "case": "TOOL-T5-01",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "order_id: 5527\nvalue: 91255.92",
+   "用户0046",
+   "广州",
+   "259947.80"
+  ]
+ },
+ {
+  "case": "TOOL-T5-06",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": true,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "根据工具2结果，平均单价最高的类目是家电，平均单价为3583.0215。",
+   "3852.06",
+   "家电类目2024年已完成的销售额是40034924.07"
+  ]
+ }
+]

@@ -1,0 +1,44 @@
+[
+ {
+  "case": "SQL-L9-01",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "(2024年1月, 504)\n(2024年2月, 385)\n(2024年3月, 574)\n(2024年4月, 585)\n(2024年5月, 599)\n(2024年6月, 624)\n(2024年7月, 597)\n(2024年8月, 603)\n(2024年9月, 658)\n(2024年10月, 686)\n(2024年11月, 931)\n(2024年12月, 882)"
+  ]
+ },
+ {
+  "case": "SQL-L9-05",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "1. 客户姓名：用户0175，消费额：406154.72\n2. 客户姓名：用户0242，消费额：391730.26\n3. 客户姓名：用户0459，消费额：372254.64"
+  ]
+ },
+ {
+  "case": "TOOL-T5-01",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "order_id: 5527\nvalue: 91255.92",
+   "用户0046",
+   "广州",
+   "259947.79"
+  ]
+ }
+]
