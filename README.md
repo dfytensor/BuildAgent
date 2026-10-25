@@ -93,6 +93,11 @@ eval/
   verify_goldens.py     黄金答案执行审计
   results/              逐题快照 + 56 份归档（archive/）
 docs/methodology.md     方法论全文
+dev/                    部署指纹探针 / 诊断脚本 / 机制补丁（过程档案，密钥已清洗）
+  README.md             7 步部署体检流程 + 五类陷阱速查
+  probes/               OpenRouter / 本地 llama.cpp / DeepSeek 行为探针
+  diagnostics/          失败解剖、黄金查证、口径验证、轮次分解
+  patches/              v11 各机制轮次的精确改动
 ```
 
 ---
