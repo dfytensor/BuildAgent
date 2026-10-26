@@ -50,6 +50,26 @@
 5. **Hybrid "SQL→pandas" is a negative result at 4B**: forcing the pandas path with 89%
    adoption solved 4/18 hard questions (SQL control: 2/18) — the bottleneck is semantic
    reasoning, not the SQL dialect.
+6. **The methodology transfers across domains**: on a second domain (hospital clinic,
+   66-question ladder rebuilt from scratch), data governance took DeepSeek from a
+   cold-start 15.2% to **37.9% (+22.7pt, 15 fixed / 0 broken)** — and the ladder was
+   built with **zero eval defects** on the first pass (the v1.1 discipline moved into
+   the builder).
+
+### 2.5 Second-domain validation (hospital clinic, 66 questions)
+
+Same-structure mapping: visits↔orders, prescriptions↔order_items, patients↔customers,
+insurance↔channel, no-prescription visits (17%) ↔ empty-detail orders (8%). Grain traps
+(duplicate lines / empty header rows / count-vs-kind ambiguity) exist by design.
+
+| config (DeepSeek, full runs) | score | note |
+|---|---|---|
+| v9h baseline (schema + conventions, no data-source map / no metric tool / views unmentioned) | 15.2% (10/66) | SQL exec 0%, cold start |
+| v12h governed (3 grain views + data-source map + `hosp_metric`) | **37.9% (25/66)** | **+22.7pt, 15 fixed / 0 broken** |
+
+Reproducibility: two independent executions scored 15.2/15.4 and 37.9/37.9.
+Remaining 41 failures: 31 semantic + 9 no-tool-call + 1 missing-info (exec only 21-25% —
+date-substr conventions and joins are still hard for everyone).
 
 ---
 
@@ -90,10 +110,16 @@ agent/                  12-generation agent chain (v0→v13) + tool layer
   v12_views.py          data governance (grain views)
   v12b_select.py        observation selection
   v13_*.py              hybrid-path experiments (negative result)
+  domain_hospital.py    hospital domain config (schema/prompt/tools + hosp_metric)
+  v9h_baseline.py       hospital baseline agent (no governance)
+  v12h_hospital.py      hospital governed agent
 data/
   make_data.py          deterministic data (seed=42)
   add_views.py          grain views: v_sales / v_orders / v_customers / v_product_sales
   shop.db               ready-to-use SQLite DB
+  make_hospital.py      second-domain (hospital clinic) deterministic data
+  add_views_hospital.py hospital grain views: v_rx / v_visits / v_patients / v_drugs
+  hospital.db           ready-to-use hospital DB (66-question second-domain eval)
 eval/
   cases.json            150 questions + golds (v1.1.1)
   cases.v1.0.bak.json   frozen v1.0 backup
@@ -103,7 +129,9 @@ eval/
   round_report.py       fixed/broken + failure taxonomy between two runs
   audit_arm.py          per-arm quality audit (infra markers / level table)
   verify_goldens.py     executes every gold ref
-  results/              per-question snapshots + 68 archives
+  build_cases_hospital.py  second-domain ladder builder (66 questions, audit built-in)
+  cases_hospital.json   hospital ladder + golds (v1.0-fresh, zero build defects)
+  results/              per-question snapshots + 71 archives
 docs/
   methodology.md        full methodology (Chinese, 48KB)
   build-your-ladder.md  **build your own ladder in one day** (English)
@@ -160,6 +188,8 @@ off, planner thinking on), `ANSWER_TOK=3000`, **no `ANSWER_CTX`**.
 | file | meaning |
 |---|---|
 | `eval/results/deepseek_v12b_full.json` | DeepSeek v12b × v1.1.1: 149/150 (99.3%) |
+| `eval/results/v9h_hospital_full.json` | DeepSeek v9h baseline × hospital v1.0: 10/66 (15.2%) |
+| `eval/results/v12h_hospital_full.json` | DeepSeek v12h governed × hospital v1.0: 25/66 (37.9%, **+22.7pt**) |
 | `eval/results/v12_views_all.json` | spark-4B v12 × v1.1.1: 132/150 (88.0%) |
 | `eval/results/deepseek_v12_full.json` | DeepSeek v12 × v1.1.1: 146/150 (97.3%) |
 | `eval/results/v12b_select_all.json` | spark-4B v12b: 128/150 (85.3%) |

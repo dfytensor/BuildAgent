@@ -1,0 +1,876 @@
+[
+ {
+  "case": "SQL-L1-01",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在 doctors 表（no such table: doctors），无法统计全院医生数量。当前可用数据表 v_sales 仅包含销售相关字段（如 month、year、region、category、amount 等），不含医生信息。"
+  ]
+ },
+ {
+  "case": "SQL-L1-02",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：患者档案相关表（patients、v_patients）不存在，无法统计患者数量。\n补充：现有销售视图 v_sales 中，不同客户数为 500（customer_cnt=500，distinct_customers=500），但这是客户数，并非患者数。"
+  ]
+ },
+ {
+  "case": "SQL-L1-03",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "处方表（prescriptions）不存在，无法直接查询处方明细；但按可用销售视图 v_sales 中的 product_name（药品名）去重统计，不同药品数量为 **120** 种（全部记录数 120，已完成记录数 120）。"
+  ]
+ },
+ {
+  "case": "SQL-L1-04",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在 doctors 表，无法获取内科医生数量。可用数据表为 v_sales（销售数据），其中不含医生或科室相关信息。"
+  ]
+ },
+ {
+  "case": "SQL-L1-05",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在 `v_visits` 表，无法统计“就诊人次”。现有结果中的 15988 是订单/销售记录计数，不是就诊人次。"
+  ]
+ },
+ {
+  "case": "SQL-L1-06",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "2024年一共有 8993 次就诊。"
+  ]
+ },
+ {
+  "case": "SQL-L2-01",
+  "suite": "sql",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询中不存在患者表（v_patients、patients 均报错：no such table），因此无法给出“患者”姓名。可用数据中按 customer_id 排序的前 5 位客户姓名为：\n1. 用户0001\n2. 用户0002\n3. 用户0003\n4. 用户0004\n5. 用户0005"
+  ]
+ },
+ {
+  "case": "SQL-L2-02",
+  "suite": "sql",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在医生相关表（no such table: doctors，另 v_visits 表也不存在），无法获取医生姓名和职称。"
+  ]
+ },
+ {
+  "case": "SQL-L2-03",
+  "suite": "sql",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询结果中无 visits/v_visits 表，可用结果为订单ID与下单日期；前5条按ID顺序如下：\n1，2023-01-03 10:42:00\n2，2023-01-22 05:01:00\n3，2023-01-19 04:33:00\n4，2023-01-15 06:39:00\n5，2023-01-07 03:08:00"
+  ]
+ },
+ {
+  "case": "SQL-L2-04",
+  "suite": "sql",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在患者表（v_patients），可用数据（v_sales 及客户信息）中也没有\"医保类型\"字段，唯一成功返回的结果仅含 customer_id、customer_name、city、region、vip_level、signup_date、order_count、completed_order_count、completed_amount，无法提供患者 id 与医保类型。"
+  ]
+ },
+ {
+  "case": "SQL-L2-05",
+  "suite": "sql",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在医生相关表（doctors、v_visits），无法获取医生 id 和挂号费。现有可用数据仅为销售视图 v_sales 及客户统计结果（如 id=1 用户0001、id=2 用户0002 等），其中不含医生信息。"
+  ]
+ },
+ {
+  "case": "SQL-L3-01",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "儿科一共有 45208 次就诊。"
+  ]
+ },
+ {
+  "case": "SQL-L3-02",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "2024年1月1日当天有 16 次就诊。"
+  ]
+ },
+ {
+  "case": "SQL-L3-03",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "处方中出现过的药品类目共有 6 种：美妆、食品、数码、服饰、家电、家居。"
+  ]
+ },
+ {
+  "case": "SQL-L3-04",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在就诊记录表（no such table: visits / v_visits），现有数据仅有销售表(v_sales)的字段，无法统计急诊就诊次数。"
+  ]
+ },
+ {
+  "case": "SQL-L3-05",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在患者相关数据表（no such table: patients / v_patients），现有可用数据仅有销售表 v_sales 及用户信息（customer_id、customer_name、city、region、vip_level、signup_date、order_count、completed_order_count、completed_amount），其中没有患者身份或性别字段，因此无法统计女性患者人数。"
+  ]
+ },
+ {
+  "case": "SQL-L3-06",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "自费医保的患者有 0 人。"
+  ]
+ },
+ {
+  "case": "SQL-L4-01",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在 v_patients 表（错误信息：no such table: v_patients），现有可用数据仅为 v_sales 及客户表（字段为 customer_id、customer_name、city、region、vip_level、signup_date、order_count、completed_order_count、completed_amount），其中不含“性别”和“医保类型（自费医保）”字段，因此无法筛选出女性自费医保患者，也无法按患者id序给出前5名姓名。"
+  ]
+ },
+ {
+  "case": "SQL-L4-02",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "2024年已完成且为急诊的就诊次数为 **7628** 次。\n\n（说明：查询中多次尝试访问 visits/v_visits 表均报错——no such table，可用表仅有 v_sales；最终成功返回的结果列名为 orders_cnt，数值为 7628，除此之外无其他就诊相关数据可核实。）"
+  ]
+ },
+ {
+  "case": "SQL-L4-03",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "v_patients 查询失败：no such table: v_patients；以下为可用的 customer 维度结果（未含城市字段，无法在结果内核验“上海”），按ID排序前5条为：\n1. 患者ID 5，姓名 用户0005，建档日期 2022-04-06\n2. 患者ID 9，姓名 用户0009，建档日期 2022-06-13\n3. 患者ID 53，姓名 用户0053，建档日期 2022-04-25\n4. 患者ID 105，姓名 用户0105，建档日期 2023-04-15\n5. 患者ID 132，姓名 用户0132，建档日期 2022-07-03"
+  ]
+ },
+ {
+  "case": "SQL-L4-04",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在就诊记录表（v_visits），可用数据仅为销售表（v_sales），其中没有“就诊类型/复诊”相关字段，因此无法统计复诊类型的就诊次数。"
+  ]
+ },
+ {
+  "case": "SQL-H-L4-05",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在医生相关表（v_doctors），可用数据仅涉及销售表（v_sales），无法获取主任医师人数。"
+  ]
+ },
+ {
+  "case": "SQL-L5-01",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：原因是不存在表 v_rx（no such table: v_rx），当前可用数据表为 v_sales，且其中不包含处方/开药相关字段，因此无法取得“开过阿莫西林胶囊的患者姓名”结果。"
+  ]
+ },
+ {
+  "case": "SQL-L5-02",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在所需的数据表。工具1报错为 no such table: doctors；工具2至工具5报错为 no such table: v_visits。现有可用表仅为 v_sales，其中包含 month、year、day、region、category 等销售字段，无法查询“在骨科出诊过的医生姓名”。"
+  ]
+ },
+ {
+  "case": "SQL-L5-03",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询结果中无 patients 表（错误：no such table: patients），且返回字段不含年份/来院记录，无法严格确认“2024年来过本院”的患者；可用结果按 customer_id 序前10为：\n1 用户0001\n2 用户0002\n3 用户0003\n4 用户0004\n5 用户0005\n6 用户0006\n7 用户0007\n8 用户0008\n9 用户0009\n10 用户0010"
+  ]
+ },
+ {
+  "case": "SQL-L5-04",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在处方相关表（`prescriptions`、`v_rx`），仅有销售表 `v_sales`。可用列中也没有“诊断/就诊/处方药品”字段，无法按“开过布洛芬缓释胶囊的就诊患者”筛选，因此无法给出患者姓名前10条结果。"
+  ]
+ },
+ {
+  "case": "SQL-L5-05",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在 v_visits 表和 doctors 表，无法获取主任医师的姓名和挂号费数据。"
+  ]
+ },
+ {
+  "case": "SQL-L5-06",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": false,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   ""
+  ]
+ },
+ {
+  "case": "SQL-L6-01",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "按患者ID（customer_id）升序去重后，前15名患者姓名为：\n1. 用户0001\n2. 用户0002\n3. 用户0003\n4. 用户0004\n5. 用户0005\n6. 用户0006\n7. 用户0007\n8. 用户0008\n9. 用户0009\n10. 用户0010\n11. 用户0011\n12. 用户0012\n13. 用户0013\n14. 用户0014\n15. 用户0015\n共15人。"
+  ]
+ },
+ {
+  "case": "SQL-L6-02",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "被开过处方的药品名（去重后前15条）为：\n1. T恤1号\n2. T恤2号\n3. T恤3号\n4. T恤4号\n5. 冰箱1号\n6. 冰箱2号\n7. 冰箱3号\n8. 冰箱4号\n9. 口红1号\n10. 口红2号\n11. 口红3号\n12. 口红4号\n13. 台灯1号\n14. 台灯2号\n15. 台灯3号"
+  ]
+ },
+ {
+  "case": "SQL-L6-03",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在就诊记录表和患者表（v_visits、v_patients 均报 \"no such table\"）。现有可用数据仅为销售表 v_sales（含订单、商品、地区、金额等列）和用户表（id、name、city、region、signup_date、vip_level），其中没有“就诊记录”字段，也没有“年龄”字段，因此无法按年龄去重升序返回前 10 条结果。"
+  ]
+ },
+ {
+  "case": "SQL-L6-04",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": false,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   ""
+  ]
+ },
+ {
+  "case": "SQL-L6-05",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：no such table: v_visits（无法核验“2023年来过本院”的到访记录）。现有按 patient id 排序的前15条姓名结果为：\n1. 用户0001\n2. 用户0002\n3. 用户0003\n4. 用户0004\n5. 用户0005\n6. 用户0006\n7. 用户0007\n8. 用户0008\n9. 用户0009\n10. 用户0010\n11. 用户0011\n12. 用户0012\n13. 用户0013\n14. 用户0014\n15. 用户0015\n另：结果中 customers_2023 为 500。"
+  ]
+ },
+ {
+  "case": "SQL-L6-06",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": false,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "无法从当前信息确定；请提供处方表及药品类目字段或数据，我可返回去重并按类目名排序的结果。"
+  ]
+ },
+ {
+  "case": "SQL-L7-01",
+  "suite": "sql",
+  "level": 7,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "全部就诊人次（order_cnt）为 15988，患者人数（customer_cnt）为 500，因此全部就诊人次比患者人数多 15488。"
+  ]
+ },
+ {
+  "case": "SQL-L7-02",
+  "suite": "sql",
+  "level": 7,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "处方明细行数为45208行，按药品名去重后的药品种类数为120种，处方明细行数比药品种类数多45088。"
+  ]
+ },
+ {
+  "case": "SQL-L7-03",
+  "suite": "sql",
+  "level": 7,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "2024年就诊人次为 8993 人次，2023年为 6995 人次，2024年比2023年多 1998 人次（8993 − 6995 = 1998）。"
+  ]
+ },
+ {
+  "case": "SQL-L7-04",
+  "suite": "sql",
+  "level": 7,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "全部就诊人次为 15988，患者人数为 500，人均就诊次数 = 15988 ÷ 500 = 31.98（保留2位小数）。"
+  ]
+ },
+ {
+  "case": "SQL-L7-05",
+  "suite": "sql",
+  "level": 7,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在表 v_visits（no such table: v_visits），无法获取内科和外科的就诊人次数据。可用表 v_sales 仅包含销售相关字段（month、year、day、region、category、status、channel、city、vip_level、amount、unit_price、discount、price、product_name、customer_name、order_id、product_id、customer_id），没有就诊人次信息。"
+  ]
+ },
+ {
+  "case": "SQL-L7-06",
+  "suite": "sql",
+  "level": 7,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": false,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "请提供儿科就诊人次和全部就诊人次数据，否则无法计算该百分比。"
+  ]
+ },
+ {
+  "case": "SQL-L8-01",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：结果中不存在 visits/v_visits 表，无法取得“就诊类型”。可用的是订单数据；按 order_id 升序，2024年前10条对应记录如下（最后一列为 channel，渠道，并非就诊类型）：\n\n1. 6996 | 2024-01-06 15:47:00 | 用户0364 | web\n2. 6997 | 2024-01-22 04:55:00 | 用户0446 | mini_program\n3. 6998 | 2024-01-07 09:34:00 | 用户0471 | web\n4. 6999 | 2024-01-21 18:58:00 | 用户0174 | app\n5. 7000 | 2024-01-21 18:29:00 | 用户0472 | mini_program\n6. 7001 | 2024-01-04 03:56:00 | 用户0125 | mini_program\n7. 7002 | 2024-01-13 13:07:00 | 用户0132 | mini_program\n8. 7003 | 2024-01-12 17:31:00 | 用户0041 | web\n9. 7004 | 2024-01-31 22:19:00 | 用户0075 | web\n10. 7005 | 2024-01-14 00:51:00 | 用户0293 | mini_program"
+  ]
+ },
+ {
+  "case": "SQL-L8-02",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在就诊表（visits / v_visits），因此无法获取2024年6月就诊的id和患者城市。可用表仅有 v_sales（字段包括 month、year、day、region、category、status、channel、city、vip_level、amount、unit_price、discount、price、product_name、customer_name、order_id、product_id、customer_id），其中不包含就诊记录及患者城市相关信息。"
+  ]
+ },
+ {
+  "case": "SQL-L8-03",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "华东区患者就诊记录前10条（按就诊id升序）如下：\n1. 就诊id：5，日期：2023-01-07，状态：completed\n2. 就诊id：8，日期：2023-01-17，状态：pending\n3. 就诊id：13，日期：2023-01-15，状态：completed\n4. 就诊id：16，日期：2023-01-13，状态：completed\n5. 就诊id：20，日期：2023-01-05，状态：completed\n6. 就诊id：27，日期：2023-01-28，状态：completed\n7. 就诊id：37，日期：2023-01-25，状态：completed\n8. 就诊id：38，日期：2023-01-27，状态：completed\n9. 就诊id：39，日期：2023-01-02，状态：cancelled\n10. 就诊id：40，日期：2023-01-08，状态：completed"
+  ]
+ },
+ {
+  "case": "SQL-L8-04",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "已完成就诊（订单）的 id 和日期如下（按就诊 id 排序）：\n1. id=1，日期=2023-01-03 10:42:00\n2. id=2，日期=2023-01-22 05:01:00\n3. id=3，日期=2023-01-19 04:33:00\n4. id=5，日期=2023-01-07 03:08:00\n5. id=6，日期=2023-01-03 17:34:00\n6. id=7，日期=2023-01-01 11:35:00\n7. id=9，日期=2023-01-07 20:35:00\n8. id=10，日期=2023-01-11 18:02:00\n9. id=11，日期=2023-01-25 18:26:00\n10. id=12，日期=2023-01-15 06:21:00"
+  ]
+ },
+ {
+  "case": "SQL-L8-05",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在急诊就诊表（visits / v_visits），现有可用表为销售表 v_sales，其中没有就诊 id、患者姓名、科室等字段，因此无法查询急诊就诊记录。"
+  ]
+ },
+ {
+  "case": "SQL-L8-06",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在 visits 表（错误信息：no such table: visits）。可用的只有 v_sales 销售数据，其列包括 order_id、order_date、customer_id、customer_name、city、region、vip_level、product_name、amount 等，没有医生姓名，也没有就诊 id 字段；返回的样例记录日期为 2023-01-03，因此无法提供 2024年6月就诊的 id 和医生姓名。"
+  ]
+ },
+ {
+  "case": "SQL-L9-01",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": false,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "我目前没有2024年每月就诊人次数据，请提供原始数据或指定来源，我可整理为("
+  ]
+ },
+ {
+  "case": "SQL-L9-02",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "2024年每月已完成就诊的处方金额如下：\n- 2024-01：6223229.29\n- 2024-02：4841963.86\n- 2024-03：7099127.34\n- 2024-04：7387746.72\n- 2024-05：7061970.59\n- 2024-06：7224920.28\n- 2024-07：7483638.54\n- 2024-08：6918971.43\n- 2024-09：7829912.48\n- 2024-10：9290554.84\n- 2024-11：12314323.26\n- 2024-12：10782385.90"
+  ]
+ },
+ {
+  "case": "SQL-L9-03",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "2024年就诊人次最多的月份是 **2024-11**，人次为 **1102**。\n\n完整查询结果（共12行，逐行列出）：\n- 2024-01: 587\n- 2024-02: 440\n- 2024-03: 661\n- 2024-04: 697\n- 2024-05: 734\n- 2024-06: 734\n- 2024-07: 697\n- 2024-08: 734\n- 2024-09: 771\n- 2024-10: 808\n- 2024-11: 1102\n- 2024-12: 1028\n\n注：另有两次查询报错（no such table: visits），已采用完整12行的成功结果。"
+  ]
+ },
+ {
+  "case": "SQL-L9-04",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": false,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "请提供2024年就诊人次数据表或数据库查询权限，我才能按科室名排序列出各科室就诊人次。"
+  ]
+ },
+ {
+  "case": "SQL-L9-05",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "2024年就诊人次最少的月份是 2024-02，共计 385 人次。"
+  ]
+ },
+ {
+  "case": "SQL-L9-06",
+  "suite": "sql",
+  "level": 9,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": false,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "我无法直接获取你系统的2024年每月取消就诊明细；请提供数据源或明细，我即可按“月份,数量”汇总。"
+  ]
+ },
+ {
+  "case": "PY-L1-01",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在 v_patients 表（报错 no such table: v_patients），现有 v_sales 及用户数据均无患者年龄字段，无法计算平均年龄。"
+  ]
+ },
+ {
+  "case": "PY-L1-02",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "处方明细一共有 43899 行。"
+  ]
+ },
+ {
+  "case": "PY-L2-01",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在患者表 v_patients（no such table: v_patients），可用数据中没有患者性别信息，无法统计女性患者人数。"
+  ]
+ },
+ {
+  "case": "PY-L2-02",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": false,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "无法确定，请提供就诊记录或相关信息。"
+  ]
+ },
+ {
+  "case": "PY-L3-01",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": false,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "目前没有提供各科室就诊人次数据，无法判断哪个科室最多。"
+  ]
+ },
+ {
+  "case": "PY-L3-02",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年已完成就诊的处方总额为 94,458,744.54 元。"
+  ]
+ },
+ {
+  "case": "PY-L4-01",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "2024年处方金额最高的月份是 2024-11，金额为 12314323.2605。\n\n（各月金额按从高到低依次为：2024-11：12314323.2605；2024-12：10782385.9035；2024-10：9290554.837；2024-09：7829912.4835；2024-07：7483638.535；2024-04：7387746.721；2024-06：7224920.2785；2024-03：7099127.3445；2024-05：7061970.5915；2024-08：6918971.432；2024-01：6223229.292；2024-02：4841963.8565）"
+  ]
+ },
+ {
+  "case": "PY-L4-02",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中没有患者表（no such table: v_patients），现有数据表也没有\"年龄\"字段，无法计算患者年龄的标准差。"
+  ]
+ },
+ {
+  "case": "TOOL-T3-H01",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "2024年一共有8993次就诊。",
+   "2024年已完成的就诊共有 7628 次（同期 cancelled 748 次、pending 617 次，合计 8993 次，与全年就诊总数一致）。",
+   "未完成（取消+待诊）共有 1365 次。其中：\n- cancelled（已取消）：748 次\n- pending（待诊）：617 次\n合计：748 + 617 = 1365 次。"
+  ]
+ },
+ {
+  "case": "TOOL-T3-H02",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败：数据库中不存在 v_visits 表（no such table: v_visits），因此无法获取内科就诊人次数据。现有可用表仅为 v_sales（销售数据），其中不含就诊人次相关字段。",
+   "同样无法获取：数据库中不存在 v_visits 表（no such table: v_visits），现有 v_sales 表也不含就诊人次字段，故外科就诊人次同样查不到。",
+   "查询失败：数据库中不存在就诊记录相关表（no such table: visits、no such table: v_visits），无法获取内科、外科的就诊人次数据。现有可用的销售数据表 v_sales 仅包含商品类别（食品、家居、家电、服饰、美妆、数码）等销售字段，不含科室或就诊人次信息，因此无法计算内科加外科的总人次。"
+  ]
+ },
+ {
+  "case": "TOOL-T3-H03",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "2024年11月已完成就诊的处方金额为 12314323.26。已记住该数。",
+   "2024年11月就诊总人次为 1102 人次（查询结果：cnt=1102，qty=9238）。",
+   "12314323.26 ÷ 1102 = 11174.52"
+  ]
+ },
+ {
+  "case": "TOOL-T4-H01",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "全院患者档案一共有 500 人。\n\n（说明：查询“patients”表时失败，错误为 no such table: patients；随后按可用数据查询得到的患者/客户数量为 500。）",
+   "我无法得知你所在地的实时天气，请告诉我城市或当前天气情况，我才能判断是否适合出去跑步。",
+   "别等风停，跑起来就是好天气。",
+   "2024年的就诊人次为 8993 次，患者人数为 500 人，就诊人次除以患者人数 = 8993 ÷ 500 = 17.99（保留2位小数）。"
+  ]
+ },
+ {
+  "case": "TOOL-T5-H01",
+  "suite": "tool",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询结果中不含“科室”字段，也没有 2024 年的数据（工具1为 2023 年订单明细；工具2的 dept 为商品类别维度，未标注年份），因此无法确认“2024年处方金额最高的科室”。\n\n现有结果（工具2，类别维度，非科室、未标年份）金额从高到低为：\n- 家电 40034924.07\n- 数码 35458238.23\n- 服饰 8169368.22\n- 美妆 4898198.2\n- 家居 3921156.85\n- 食品 1976858.97\n其中最高的是“家电”40034924.07，但该结果不是科室口径，不能作为本题答案。",
+   "查询失败：数据库中不存在处方/就诊相关表（v_rx、v_visits、prescriptions 均报 no such table），现有 v_sales 仅有商品类别销售金额，不含“科室”“就诊状态”“处方金额”等字段，因此无法给出该科室2024年已完成就诊的处方金额（保留2位）。",
+   "查询失败：数据库中不存在处方/就诊相关表（v_rx 报 no such table），也不存在科室表（departments 报 no such table），因此无法获取“该科室2024年处方金额”与“全院已完成处方金额”，无法计算占比。\n\n现有 v_sales 仅提供商品类别维度的销售金额及占比（家电 40034924.07，占 42.38%；数码 35458238.23，占 37.54%；服饰 8169368.22，占 8.65%；美妆 4898198.2，占 5.19%；家居 3921156.85，占 4.15%；食品 1976858.97，占 2.09%），这些是商品类别而非科室，也不含处方/就诊状态字段，不能用于回答该问题。"
+  ]
+ },
+ {
+  "case": "TOOL-T6-H01",
+  "suite": "tool",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "华东区的患者人数为 112 人。\n\n（说明：首次查询因不存在 patients 表而失败，改用可用数据查询后得到计数结果 cnt = 112。）",
+   "已忽略该填充消息，会话保持正常。此前确认华东区患者人数为 112 人。按地区统计的患者人数完整结果如下：\n- 华东：112\n- 东北：104\n- 华北：101\n- 西南：95\n- 华南：88",
+   "西南区的患者人数为 95 人。\n\n完整分地区结果如下：\n- 华东：112\n- 东北：104\n- 华北：101\n- 西南：95\n- 华南：88",
+   "已忽略填充消息，会话正常。西南区患者人数为 95 人。",
+   "华东区 112 人，西南区 95 人，合计 207 人。",
+   "人数更多的区是华东区，为 112 人。"
+  ]
+ }
+]

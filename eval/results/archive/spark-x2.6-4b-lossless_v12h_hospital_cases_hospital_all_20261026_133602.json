@@ -1,0 +1,43 @@
+[
+ {
+  "case": "SQL-L1-01",
+  "suite": "sql",
+  "level": 1,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "40"
+  ]
+ },
+ {
+  "case": "SQL-L6-01",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询失败+原因：所有查询均返回错误，执行SQL时提示“no such table: v_patients”，即数据库不存在v_patients表，无法获取来过本院的患者姓名数据。"
+  ]
+ },
+ {
+  "case": "TOOL-T3-H01",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年一共有8995次就诊。",
+   "year: 2024, value: 7177",
+   "未完成的（取消+待诊）有1818次。计算过程：2024年总就诊次数8995次，已完成7177次，未完成次数=8995-7177=1818次。"
+  ]
+ }
+]

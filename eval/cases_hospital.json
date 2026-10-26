@@ -1,0 +1,1715 @@
+{
+ "sql": [
+  {
+   "id": "SQL-L1-01",
+   "suite": "sql",
+   "level": 1,
+   "q": "全院有多少名医生?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     40
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM doctors"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L1-02",
+   "suite": "sql",
+   "level": 1,
+   "q": "患者档案里一共有多少位患者?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     500
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM patients"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L1-03",
+   "suite": "sql",
+   "level": 1,
+   "q": "处方里出现过多少种不同的药品(按药品名去重)?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     24
+    ],
+    "ref_sql": "SELECT COUNT(DISTINCT drug_name) FROM prescriptions"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L1-04",
+   "suite": "sql",
+   "level": 1,
+   "q": "内科有多少名医生?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     5
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM doctors doc JOIN departments d ON d.id=doc.department_id WHERE d.name='内科'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L1-05",
+   "suite": "sql",
+   "level": 1,
+   "q": "全部就诊一共多少人次?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     15989
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM visits"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L1-06",
+   "suite": "sql",
+   "level": 1,
+   "q": "2024年一共有多少次就诊?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     8995
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM visits WHERE visit_date>='2024-01-01' AND visit_date<'2025-01-01'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L2-01",
+   "suite": "sql",
+   "level": 2,
+   "q": "按id序给前5位患者的姓名",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "患者0001",
+     "患者0002",
+     "患者0003",
+     "患者0004",
+     "患者0005"
+    ],
+    "ref_sql": "SELECT name FROM patients ORDER BY id LIMIT 5"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L2-02",
+   "suite": "sql",
+   "level": 2,
+   "q": "给前5位医生的姓名和职称(按医生id序)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "医生001",
+     "主任医师",
+     "医生002",
+     "副主任医师",
+     "医生003",
+     "主治医师",
+     "医生004",
+     "住院医师",
+     "医生005",
+     "主任医师"
+    ],
+    "ref_sql": "SELECT name, title FROM doctors ORDER BY id LIMIT 5"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L2-03",
+   "suite": "sql",
+   "level": 2,
+   "q": "给前5次就诊的id和就诊时间(按就诊id序)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     1,
+     "2023-01-20 12:51:00",
+     2,
+     "2023-01-12 20:17:00",
+     3,
+     "2023-01-20 20:20:00",
+     4,
+     "2023-01-29 11:36:00",
+     5,
+     "2023-01-06 10:17:00"
+    ],
+    "ref_sql": "SELECT id, visit_date FROM visits ORDER BY id LIMIT 5"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L2-04",
+   "suite": "sql",
+   "level": 2,
+   "q": "给前5位患者的id和医保类型(按患者id序)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     1,
+     "城镇职工",
+     2,
+     "城乡居民",
+     3,
+     "城乡居民",
+     4,
+     "自费",
+     5,
+     "自费"
+    ],
+    "ref_sql": "SELECT id, insurance FROM patients ORDER BY id LIMIT 5"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L2-05",
+   "suite": "sql",
+   "level": 2,
+   "q": "给前5位医生的id和挂号费(按医生id序)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     1,
+     42.0,
+     2,
+     11.0,
+     3,
+     24.0,
+     4,
+     21.0,
+     5,
+     47.0
+    ],
+    "ref_sql": "SELECT id, fee FROM doctors ORDER BY id LIMIT 5"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L3-01",
+   "suite": "sql",
+   "level": 3,
+   "q": "儿科一共有多少次就诊?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     1961
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM visits v JOIN doctors doc ON doc.id=v.doctor_id JOIN departments d ON d.id=doc.department_id WHERE d.name='儿科'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L3-02",
+   "suite": "sql",
+   "level": 3,
+   "q": "2024年1月1日当天有多少次就诊?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     47
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM visits WHERE substr(visit_date,1,10)='2024-01-01'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L3-03",
+   "suite": "sql",
+   "level": 3,
+   "q": "处方中出现过的药品类目有几种?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     6
+    ],
+    "ref_sql": "SELECT COUNT(DISTINCT drug_category) FROM prescriptions"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L3-04",
+   "suite": "sql",
+   "level": 3,
+   "q": "急诊有多少次就诊?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     2816
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM visits WHERE vtype='急诊'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L3-05",
+   "suite": "sql",
+   "level": 3,
+   "q": "女性患者有多少人?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     270
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM patients WHERE gender='女'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L3-06",
+   "suite": "sql",
+   "level": 3,
+   "q": "自费医保的患者有多少人?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     119
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM patients WHERE insurance='自费'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L4-01",
+   "suite": "sql",
+   "level": 4,
+   "q": "自费医保的女性患者姓名(按患者id序,前5)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "患者0004",
+     "患者0010",
+     "患者0016",
+     "患者0028",
+     "患者0046"
+    ],
+    "ref_sql": "SELECT name FROM patients WHERE insurance='自费' AND gender='女' ORDER BY id LIMIT 5"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L4-02",
+   "suite": "sql",
+   "level": 4,
+   "q": "2024年已完成且为急诊的就诊有多少次?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     1201
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM visits WHERE substr(visit_date,1,4)='2024' AND status='completed' AND vtype='急诊'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L4-03",
+   "suite": "sql",
+   "level": 4,
+   "q": "上海的患者姓名和建档日期(按患者id序,前5)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "患者0020",
+     "2022-09-27",
+     "患者0031",
+     "2023-08-26",
+     "患者0032",
+     "2022-03-14",
+     "患者0043",
+     "2022-04-06",
+     "患者0066",
+     "2022-12-08"
+    ],
+    "ref_sql": "SELECT name, signup_date FROM patients WHERE city='上海' ORDER BY id LIMIT 5"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L4-04",
+   "suite": "sql",
+   "level": 4,
+   "q": "复诊类型的就诊有多少次?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     1962
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM visits WHERE vtype='复诊'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-H-L4-05",
+   "suite": "sql",
+   "level": 4,
+   "q": "主任医师有多少名?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     16
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM doctors WHERE title='主任医师'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L5-01",
+   "suite": "sql",
+   "level": 5,
+   "q": "开过'阿莫西林胶囊'的患者姓名(去重,按患者id序,前10)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "患者0001",
+     "患者0002",
+     "患者0003",
+     "患者0004",
+     "患者0005",
+     "患者0006",
+     "患者0007",
+     "患者0008",
+     "患者0009",
+     "患者0010"
+    ],
+    "ref_sql": "SELECT DISTINCT p.name FROM prescriptions rx JOIN visits v ON v.id=rx.visit_id JOIN patients p ON p.id=v.patient_id WHERE rx.drug_name='阿莫西林胶囊' ORDER BY p.id LIMIT 10"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L5-02",
+   "suite": "sql",
+   "level": 5,
+   "q": "在骨科出诊过的医生姓名(去重,按医生id序,前5)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "医生016",
+     "医生017",
+     "医生018",
+     "医生019",
+     "医生020"
+    ],
+    "ref_sql": "SELECT DISTINCT doc.name FROM visits v JOIN doctors doc ON doc.id=v.doctor_id JOIN departments d ON d.id=doc.department_id WHERE d.name='骨科' ORDER BY doc.id LIMIT 5"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L5-03",
+   "suite": "sql",
+   "level": 5,
+   "q": "2024年来过本院的患者姓名(去重,按患者id序,前10)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "患者0001",
+     "患者0002",
+     "患者0003",
+     "患者0004",
+     "患者0005",
+     "患者0006",
+     "患者0007",
+     "患者0008",
+     "患者0009",
+     "患者0010"
+    ],
+    "ref_sql": "SELECT DISTINCT p.name FROM visits v JOIN patients p ON p.id=v.patient_id WHERE substr(v.visit_date,1,4)='2024' ORDER BY p.id LIMIT 10"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L5-04",
+   "suite": "sql",
+   "level": 5,
+   "q": "开过'布洛芬缓释胶囊'的就诊的患者姓名(去重,按患者id序,前10)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "患者0001",
+     "患者0002",
+     "患者0003",
+     "患者0004",
+     "患者0005",
+     "患者0006",
+     "患者0008",
+     "患者0009",
+     "患者0010",
+     "患者0011"
+    ],
+    "ref_sql": "SELECT DISTINCT p.name FROM prescriptions rx JOIN visits v ON v.id=rx.visit_id JOIN patients p ON p.id=v.patient_id WHERE rx.drug_name='布洛芬缓释胶囊' ORDER BY p.id LIMIT 10"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L5-05",
+   "suite": "sql",
+   "level": 5,
+   "q": "主任医师的姓名和挂号费(按挂号费降序,前3)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "医生025",
+     58.0,
+     "医生021",
+     50.0,
+     "医生031",
+     50.0
+    ],
+    "ref_sql": "SELECT name, fee FROM doctors WHERE title='主任医师' ORDER BY fee DESC LIMIT 3"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L5-06",
+   "suite": "sql",
+   "level": 5,
+   "q": "内科医生的姓名和职称(按医生id序,全部5名)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "医生001",
+     "主任医师",
+     "医生002",
+     "副主任医师",
+     "医生003",
+     "主治医师",
+     "医生004",
+     "住院医师",
+     "医生005",
+     "主任医师"
+    ],
+    "ref_sql": "SELECT doc.name, doc.title FROM doctors doc JOIN departments d ON d.id=doc.department_id WHERE d.name='内科' ORDER BY doc.id"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L6-01",
+   "suite": "sql",
+   "level": 6,
+   "q": "来过本院的患者姓名(去重,按患者id序,前15)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "患者0001",
+     "患者0002",
+     "患者0003",
+     "患者0004",
+     "患者0005",
+     "患者0006",
+     "患者0007",
+     "患者0008",
+     "患者0009",
+     "患者0010",
+     "患者0011",
+     "患者0012",
+     "患者0013",
+     "患者0014",
+     "患者0015"
+    ],
+    "ref_sql": "SELECT DISTINCT p.name FROM visits v JOIN patients p ON p.id=v.patient_id ORDER BY p.id LIMIT 15"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L6-02",
+   "suite": "sql",
+   "level": 6,
+   "q": "被开过处方的药品名(去重,按药品名排序,前15)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "二甲双胍片",
+     "双氯芬酸钠肠溶片",
+     "复合维生素B片",
+     "多潘立酮片",
+     "头孢克肟片",
+     "奥美拉唑肠溶胶囊",
+     "对乙酰氨基酚片",
+     "尼美舒利颗粒",
+     "布洛芬缓释胶囊",
+     "感冒灵颗粒",
+     "板蓝根颗粒",
+     "硝苯地平缓释片",
+     "碳酸钙D3片",
+     "维生素C片",
+     "维生素D滴剂"
+    ],
+    "ref_sql": "SELECT DISTINCT drug_name FROM prescriptions ORDER BY drug_name LIMIT 15"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L6-03",
+   "suite": "sql",
+   "level": 6,
+   "q": "有就诊记录的患者年龄(去重,按年龄升序,前10)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "ref_sql": "SELECT DISTINCT p.age FROM visits v JOIN patients p ON p.id=v.patient_id ORDER BY p.age LIMIT 10"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L6-04",
+   "suite": "sql",
+   "level": 6,
+   "q": "开过处方的就诊所在的科室名称(去重,按科室名排序)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "儿科",
+     "内科",
+     "外科",
+     "妇产科",
+     "皮肤科",
+     "眼科",
+     "耳鼻喉科",
+     "骨科"
+    ],
+    "ref_sql": "SELECT DISTINCT dep.name FROM prescriptions rx JOIN visits v ON v.id=rx.visit_id JOIN doctors doc ON doc.id=v.doctor_id JOIN departments dep ON dep.id=doc.department_id ORDER BY dep.name"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L6-05",
+   "suite": "sql",
+   "level": 6,
+   "q": "2023年来过本院的患者姓名(去重,按患者id序,前15)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "患者0001",
+     "患者0002",
+     "患者0003",
+     "患者0004",
+     "患者0005",
+     "患者0006",
+     "患者0007",
+     "患者0008",
+     "患者0009",
+     "患者0010",
+     "患者0011",
+     "患者0012",
+     "患者0013",
+     "患者0014",
+     "患者0015"
+    ],
+    "ref_sql": "SELECT DISTINCT p.name FROM visits v JOIN patients p ON p.id=v.patient_id WHERE substr(v.visit_date,1,4)='2023' ORDER BY p.id LIMIT 15"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L6-06",
+   "suite": "sql",
+   "level": 6,
+   "q": "处方中出现过的药品类目(去重,按类目名排序)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "中成药",
+     "慢性病用药",
+     "抗生素",
+     "消化用药",
+     "维生素",
+     "解热镇痛"
+    ],
+    "ref_sql": "SELECT DISTINCT drug_category FROM prescriptions ORDER BY drug_category"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L7-01",
+   "suite": "sql",
+   "level": 7,
+   "q": "全部就诊人次比患者人数多多少?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     15489
+    ],
+    "ref_sql": "SELECT (SELECT COUNT(*) FROM visits) - (SELECT COUNT(*) FROM patients)"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L7-02",
+   "suite": "sql",
+   "level": 7,
+   "q": "处方明细行数比药品种类数(按药品名去重)多多少?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     46510
+    ],
+    "ref_sql": "SELECT (SELECT COUNT(*) FROM prescriptions) - (SELECT COUNT(DISTINCT drug_name) FROM prescriptions)"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L7-03",
+   "suite": "sql",
+   "level": 7,
+   "q": "2024年就诊人次比2023年多多少?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     2001
+    ],
+    "ref_sql": "SELECT (SELECT COUNT(*) FROM visits WHERE substr(visit_date,1,4)='2024') - (SELECT COUNT(*) FROM visits WHERE substr(visit_date,1,4)='2023')"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L7-04",
+   "suite": "sql",
+   "level": 7,
+   "q": "全部就诊人次除以患者人数等于多少(人均就诊次数,保留2位)?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     31.98
+    ],
+    "ref_sql": "SELECT ROUND((SELECT COUNT(*) FROM visits)*1.0/(SELECT COUNT(*) FROM patients),2)"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L7-05",
+   "suite": "sql",
+   "level": 7,
+   "q": "内科和外科的就诊人次合计是多少?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     4012
+    ],
+    "ref_sql": "SELECT COUNT(*) FROM visits v JOIN doctors doc ON doc.id=v.doctor_id JOIN departments d ON d.id=doc.department_id WHERE d.name IN ('内科','外科')"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L7-06",
+   "suite": "sql",
+   "level": 7,
+   "q": "儿科就诊人次占全部就诊人次的百分比(保留2位)?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     12.26
+    ],
+    "ref_sql": "SELECT ROUND(COUNT(*)*100.0/(SELECT COUNT(*) FROM visits),2) FROM visits v JOIN doctors doc ON doc.id=v.doctor_id JOIN departments d ON d.id=doc.department_id WHERE d.name='儿科'"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L8-01",
+   "suite": "sql",
+   "level": 8,
+   "q": "2024年就诊的日期、患者姓名、就诊类型(按就诊id序,前10)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "2024-01-22",
+     "患者0105",
+     "复诊",
+     "2024-01-26",
+     "患者0272",
+     "门诊",
+     "2024-01-19",
+     "患者0035",
+     "门诊",
+     "2024-01-31",
+     "患者0035",
+     "门诊",
+     "2024-01-14",
+     "患者0151",
+     "门诊",
+     "2024-01-30",
+     "患者0460",
+     "急诊",
+     "2024-01-07",
+     "患者0234",
+     "急诊",
+     "2024-01-25",
+     "患者0021",
+     "门诊",
+     "2024-01-24",
+     "患者0290",
+     "门诊",
+     "2024-01-31",
+     "患者0421",
+     "门诊"
+    ],
+    "ref_sql": "SELECT substr(v.visit_date,1,10), p.name, v.vtype FROM visits v JOIN patients p ON p.id=v.patient_id WHERE substr(v.visit_date,1,4)='2024' ORDER BY v.id LIMIT 10"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L8-02",
+   "suite": "sql",
+   "level": 8,
+   "q": "2024年6月就诊的id和患者城市(按就诊id序,前10)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     10941,
+     "成都",
+     10942,
+     "广州",
+     10943,
+     "宁波",
+     10944,
+     "成都",
+     10945,
+     "杭州",
+     10946,
+     "哈尔滨",
+     10947,
+     "杭州",
+     10948,
+     "昆明",
+     10949,
+     "成都",
+     10950,
+     "沈阳"
+    ],
+    "ref_sql": "SELECT v.id, p.city FROM visits v JOIN patients p ON p.id=v.patient_id WHERE substr(v.visit_date,1,7)='2024-06' ORDER BY v.id LIMIT 10"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L8-03",
+   "suite": "sql",
+   "level": 8,
+   "q": "华东区患者的就诊id、日期、状态(按就诊id序,前10)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     8,
+     "2023-01-15",
+     "completed",
+     12,
+     "2023-01-03",
+     "completed",
+     14,
+     "2023-01-04",
+     "completed",
+     17,
+     "2023-01-23",
+     "completed",
+     18,
+     "2023-01-08",
+     "completed",
+     19,
+     "2023-01-14",
+     "completed",
+     25,
+     "2023-01-23",
+     "completed",
+     27,
+     "2023-01-27",
+     "pending",
+     31,
+     "2023-01-26",
+     "cancelled",
+     39,
+     "2023-01-23",
+     "completed"
+    ],
+    "ref_sql": "SELECT v.id, substr(v.visit_date,1,10), v.status FROM visits v JOIN patients p ON p.id=v.patient_id WHERE p.region='华东' ORDER BY v.id LIMIT 10"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L8-04",
+   "suite": "sql",
+   "level": 8,
+   "q": "已完成就诊的id和日期(按就诊id序,前10)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     1,
+     "2023-01-20",
+     2,
+     "2023-01-12",
+     3,
+     "2023-01-20",
+     5,
+     "2023-01-06",
+     6,
+     "2023-01-14",
+     7,
+     "2023-01-20",
+     8,
+     "2023-01-15",
+     9,
+     "2023-01-26",
+     11,
+     "2023-01-27",
+     12,
+     "2023-01-03"
+    ],
+    "ref_sql": "SELECT id, substr(visit_date,1,10) FROM visits WHERE status='completed' ORDER BY id LIMIT 10"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L8-05",
+   "suite": "sql",
+   "level": 8,
+   "q": "急诊就诊的id、患者姓名、科室(按就诊id序,前10)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     11,
+     "患者0210",
+     "皮肤科",
+     13,
+     "患者0337",
+     "妇产科",
+     14,
+     "患者0262",
+     "皮肤科",
+     18,
+     "患者0283",
+     "儿科",
+     29,
+     "患者0122",
+     "儿科",
+     35,
+     "患者0290",
+     "皮肤科",
+     41,
+     "患者0196",
+     "外科",
+     42,
+     "患者0289",
+     "内科",
+     50,
+     "患者0328",
+     "皮肤科",
+     54,
+     "患者0033",
+     "骨科"
+    ],
+    "ref_sql": "SELECT v.id, p.name, dep.name FROM visits v JOIN patients p ON p.id=v.patient_id JOIN doctors doc ON doc.id=v.doctor_id JOIN departments dep ON dep.id=doc.department_id WHERE v.vtype='急诊' ORDER BY v.id LIMIT 10"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L8-06",
+   "suite": "sql",
+   "level": 8,
+   "q": "2024年6月就诊的id和医生姓名(按就诊id序,前10)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     10941,
+     "医生021",
+     10942,
+     "医生017",
+     10943,
+     "医生017",
+     10944,
+     "医生004",
+     10945,
+     "医生028",
+     10946,
+     "医生012",
+     10947,
+     "医生029",
+     10948,
+     "医生031",
+     10949,
+     "医生031",
+     10950,
+     "医生012"
+    ],
+    "ref_sql": "SELECT v.id, doc.name FROM visits v JOIN doctors doc ON doc.id=v.doctor_id WHERE substr(v.visit_date,1,7)='2024-06' ORDER BY v.id LIMIT 10"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L9-01",
+   "suite": "sql",
+   "level": 9,
+   "q": "2024年每月的就诊人次(月份,数量)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "2024-01",
+     1090,
+     "2024-02",
+     902,
+     "2024-03",
+     714,
+     "2024-04",
+     639,
+     "2024-05",
+     601,
+     "2024-06",
+     563,
+     "2024-07",
+     526,
+     "2024-08",
+     541,
+     "2024-09",
+     639,
+     "2024-10",
+     714,
+     "2024-11",
+     939,
+     "2024-12",
+     1127
+    ],
+    "ref_sql": "SELECT substr(visit_date,1,7), COUNT(*) FROM visits WHERE substr(visit_date,1,4)='2024' GROUP BY substr(visit_date,1,7) ORDER BY substr(visit_date,1,7)"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L9-02",
+   "suite": "sql",
+   "level": 9,
+   "q": "2024年每月已完成就诊的处方金额(月份,金额保留2位)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "2024-01",
+     865210.86,
+     "2024-02",
+     727019.22,
+     "2024-03",
+     555092.93,
+     "2024-04",
+     506808.25,
+     "2024-05",
+     481747.02,
+     "2024-06",
+     414799.01,
+     "2024-07",
+     405026.68,
+     "2024-08",
+     400489.25,
+     "2024-09",
+     498451.78,
+     "2024-10",
+     550225.43,
+     "2024-11",
+     734058.71,
+     "2024-12",
+     877205.04
+    ],
+    "ref_sql": "SELECT substr(v.visit_date,1,7), ROUND(SUM(rx.quantity*rx.unit_price),2) FROM visits v JOIN prescriptions rx ON rx.visit_id=v.id WHERE v.status='completed' AND substr(v.visit_date,1,4)='2024' GROUP BY substr(v.visit_date,1,7) ORDER BY substr(v.visit_date,1,7)"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L9-03",
+   "suite": "sql",
+   "level": 9,
+   "q": "2024年就诊人次最多的月份是几月(格式如 2024-05)?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "2024-12"
+    ],
+    "ref_sql": "SELECT substr(visit_date,1,7) m FROM visits WHERE substr(visit_date,1,4)='2024' GROUP BY m ORDER BY COUNT(*) DESC, m LIMIT 1"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L9-04",
+   "suite": "sql",
+   "level": 9,
+   "q": "2024年各科室的就诊人次(科室,人次,按科室名排序)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "儿科",
+     1131,
+     "内科",
+     1064,
+     "外科",
+     1161,
+     "妇产科",
+     1124,
+     "皮肤科",
+     1171,
+     "眼科",
+     1060,
+     "耳鼻喉科",
+     1149,
+     "骨科",
+     1135
+    ],
+    "ref_sql": "SELECT dep.name, COUNT(*) FROM visits v JOIN doctors doc ON doc.id=v.doctor_id JOIN departments dep ON dep.id=doc.department_id WHERE substr(v.visit_date,1,4)='2024' GROUP BY dep.name ORDER BY dep.name"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L9-05",
+   "suite": "sql",
+   "level": 9,
+   "q": "2024年就诊人次最少的月份是几月(格式如 2024-05)?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "2024-07"
+    ],
+    "ref_sql": "SELECT substr(visit_date,1,7) m FROM visits WHERE substr(visit_date,1,4)='2024' GROUP BY m ORDER BY COUNT(*) ASC, m LIMIT 1"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  },
+  {
+   "id": "SQL-L9-06",
+   "suite": "sql",
+   "level": 9,
+   "q": "2024年每月取消的就诊数(月份,数量)",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "2024-01",
+     103,
+     "2024-02",
+     88,
+     "2024-03",
+     64,
+     "2024-04",
+     63,
+     "2024-05",
+     69,
+     "2024-06",
+     55,
+     "2024-07",
+     53,
+     "2024-08",
+     67,
+     "2024-09",
+     64,
+     "2024-10",
+     75,
+     "2024-11",
+     106,
+     "2024-12",
+     108
+    ],
+    "ref_sql": "SELECT substr(visit_date,1,7), COUNT(*) FROM visits WHERE status='cancelled' AND substr(visit_date,1,4)='2024' GROUP BY substr(visit_date,1,7) ORDER BY substr(visit_date,1,7)"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "sql"
+   ]
+  }
+ ],
+ "pandas": [
+  {
+   "id": "PY-L1-01",
+   "suite": "pandas",
+   "level": 1,
+   "q": "患者的平均年龄是多少(保留2位)?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     45.22
+    ],
+    "ref_py": "round(dfs['patients']['age'].mean(), 2)"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ]
+  },
+  {
+   "id": "PY-L1-02",
+   "suite": "pandas",
+   "level": 1,
+   "q": "处方明细一共有多少行?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     46534
+    ],
+    "ref_py": "int(len(dfs['prescriptions']))"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ]
+  },
+  {
+   "id": "PY-L2-01",
+   "suite": "pandas",
+   "level": 2,
+   "q": "女性患者有多少人?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     270
+    ],
+    "ref_py": "int((dfs['patients']['gender'] == '女').sum())"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ]
+  },
+  {
+   "id": "PY-L2-02",
+   "suite": "pandas",
+   "level": 2,
+   "q": "最晚一次就诊的时间是什么时候?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "2024-12-31 20:48:00"
+    ],
+    "ref_py": "dfs['visits']['visit_date'].max()"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ]
+  },
+  {
+   "id": "PY-L3-01",
+   "suite": "pandas",
+   "level": 3,
+   "q": "就诊人次最多的科室是哪个?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "骨科"
+    ],
+    "ref_py": "(lambda: (lambda v: v.merge(dfs['departments'], left_on='department_id', right_on='id', suffixes=('', '_dep'))['name_dep'].value_counts().idxmax())(dfs['visits'].merge(dfs['doctors'], left_on='doctor_id', right_on='id')))()"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ]
+  },
+  {
+   "id": "PY-L3-02",
+   "suite": "pandas",
+   "level": 3,
+   "q": "2024年已完成就诊的处方总额是多少(保留2位)?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     7016134.18
+    ],
+    "ref_py": "(lambda: (lambda v24: round(dfs['prescriptions'][dfs['prescriptions']['visit_id'].isin(v24['id'])].assign(amt=lambda x: x['quantity'] * x['unit_price'])['amt'].sum(), 2))(dfs['visits'][(dfs['visits']['visit_date'].str[:4] == '2024') & (dfs['visits']['status'] == 'completed')]))()"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ]
+  },
+  {
+   "id": "PY-L4-01",
+   "suite": "pandas",
+   "level": 4,
+   "q": "2024年处方金额最高的月份是几月(格式如 2024-05)?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     "2024-12"
+    ],
+    "ref_py": "(lambda: (lambda v24: (lambda rx: (rx.merge(v24[['id', 'visit_date']], left_on='visit_id', right_on='id').assign(m=lambda x: x['visit_date'].str[:7]).assign(amt=lambda x: x['quantity'] * x['unit_price']).groupby('m')['amt'].sum().idxmax()))(dfs['prescriptions'][dfs['prescriptions']['visit_id'].isin(v24['id'])]))(dfs['visits'][(dfs['visits']['visit_date'].str[:4] == '2024') & (dfs['visits']['status'] == 'completed')]))()"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ]
+  },
+  {
+   "id": "PY-L4-02",
+   "suite": "pandas",
+   "level": 4,
+   "q": "患者年龄的标准差是多少(保留4位)?",
+   "gold": {
+    "kind": "values",
+    "values": [
+     25.0088
+    ],
+    "ref_py": "round(dfs['patients']['age'].std(), 4)"
+   },
+   "min_calls": 1,
+   "need_tools": [
+    "code"
+   ]
+  }
+ ],
+ "tool": [
+  {
+   "id": "TOOL-T3-H01",
+   "suite": "tool",
+   "level": 3,
+   "desc": "三轮: 总量->完成->未完成",
+   "q": "3轮对话",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "2024年一共有多少次就诊?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        8995
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM visits WHERE substr(visit_date,1,4)='2024'"
+      }
+     },
+     {
+      "q": "其中已完成的有多少次?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        7177
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM visits WHERE substr(visit_date,1,4)='2024' AND status='completed'"
+      }
+     },
+     {
+      "q": "那未完成的(取消+待诊)还有多少次?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        1818
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM visits WHERE substr(visit_date,1,4)='2024' AND status!='completed'"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T3-H02",
+   "suite": "tool",
+   "level": 3,
+   "desc": "三轮: 内科/外科/合计",
+   "q": "3轮对话",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "内科的就诊有多少人次?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        1978
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM visits v JOIN doctors doc ON doc.id=v.doctor_id JOIN departments d ON d.id=doc.department_id WHERE d.name='内科'"
+      }
+     },
+     {
+      "q": "外科的呢?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        2034
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM visits v JOIN doctors doc ON doc.id=v.doctor_id JOIN departments d ON d.id=doc.department_id WHERE d.name='外科'"
+      }
+     },
+     {
+      "q": "内科加外科一共多少人次?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        4012
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM visits v JOIN doctors doc ON doc.id=v.doctor_id JOIN departments d ON d.id=doc.department_id WHERE d.name IN ('内科','外科')"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T3-H03",
+   "suite": "tool",
+   "level": 3,
+   "desc": "三轮: 月份金额/人次/均值",
+   "q": "3轮对话",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "2024年11月已完成就诊的处方金额是多少(保留2位)? 记住这个数",
+      "gold": {
+       "kind": "values",
+       "values": [
+        734058.71
+       ],
+       "ref_sql": "SELECT ROUND(SUM(rx.quantity*rx.unit_price),2) FROM visits v JOIN prescriptions rx ON rx.visit_id=v.id WHERE v.status='completed' AND substr(v.visit_date,1,7)='2024-11'"
+      }
+     },
+     {
+      "q": "2024年11月的就诊总人次是多少?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        939
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM visits WHERE substr(visit_date,1,7)='2024-11'"
+      }
+     },
+     {
+      "q": "11月已完成处方金额除以就诊总人次是多少(保留2位)?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        781.75
+       ],
+       "ref_sql": "SELECT ROUND((SELECT SUM(rx.quantity*rx.unit_price) FROM visits v JOIN prescriptions rx ON rx.visit_id=v.id WHERE v.status='completed' AND substr(v.visit_date,1,7)='2024-11') / (SELECT COUNT(*) FROM visits WHERE substr(visit_date,1,7)='2024-11'), 2)"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T4-H01",
+   "suite": "tool",
+   "level": 4,
+   "desc": "四轮: 记忆+闲聊+人均",
+   "q": "4轮对话",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "全院患者档案一共有多少人? 记住这个数",
+      "gold": {
+       "kind": "values",
+       "values": [
+        500
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM patients"
+      }
+     },
+     {
+      "q": "你觉得今天的天气适合出去跑步吗?",
+      "gold": null
+     },
+     {
+      "q": "给我一句鼓励的话, 要简短",
+      "gold": null
+     },
+     {
+      "q": "2024年的就诊人次除以患者人数是多少(保留2位)?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        17.99
+       ],
+       "ref_sql": "SELECT ROUND((SELECT COUNT(*) FROM visits WHERE substr(visit_date,1,4)='2024')*1.0/(SELECT COUNT(*) FROM patients), 2)"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T5-H01",
+   "suite": "tool",
+   "level": 5,
+   "desc": "三轮链式: 科室金额/占比",
+   "q": "3轮对话",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "2024年处方金额最高的科室是哪个? 记住科室名",
+      "gold": {
+       "kind": "values",
+       "values": [
+        "外科"
+       ],
+       "ref_sql": "SELECT dep.name FROM visits v JOIN prescriptions rx ON rx.visit_id=v.id JOIN doctors doc ON doc.id=v.doctor_id JOIN departments dep ON dep.id=doc.department_id WHERE v.status='completed' GROUP BY dep.name ORDER BY SUM(rx.quantity*rx.unit_price) DESC, dep.name LIMIT 1"
+      }
+     },
+     {
+      "q": "该科室2024年已完成就诊的处方金额是多少(保留2位)?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        1638808.0
+       ],
+       "ref_sql": "SELECT ROUND(SUM(rx.quantity*rx.unit_price),2) FROM visits v JOIN prescriptions rx ON rx.visit_id=v.id JOIN doctors doc ON doc.id=v.doctor_id JOIN departments dep ON dep.id=doc.department_id WHERE v.status='completed' AND dep.name=(SELECT dep2.name FROM visits v2 JOIN prescriptions rx2 ON rx2.visit_id=v2.id JOIN doctors doc2 ON doc2.id=v2.doctor_id JOIN departments dep2 ON dep2.id=doc2.department_id WHERE v2.status='completed' GROUP BY dep2.name ORDER BY SUM(rx2.quantity*rx2.unit_price) DESC, dep2.name LIMIT 1)"
+      }
+     },
+     {
+      "q": "该科室2024年的处方金额占全院已完成处方金额的百分比是多少(保留2位)?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        13.09
+       ],
+       "ref_sql": "SELECT ROUND(SUM(rx.quantity*rx.unit_price)*100.0/(SELECT SUM(rx2.quantity*rx2.unit_price) FROM visits v2 JOIN prescriptions rx2 ON rx2.visit_id=v2.id WHERE v2.status='completed'),2) FROM visits v JOIN prescriptions rx ON rx.visit_id=v.id JOIN doctors doc ON doc.id=v.doctor_id JOIN departments dep ON dep.id=doc.department_id WHERE v.status='completed' AND dep.name=(SELECT dep2.name FROM visits v2 JOIN prescriptions rx2 ON rx2.visit_id=v2.id JOIN doctors doc2 ON doc2.id=v2.doctor_id JOIN departments dep2 ON dep2.id=doc2.department_id WHERE v2.status='completed' GROUP BY dep2.name ORDER BY SUM(rx2.quantity*rx2.unit_price) DESC, dep2.name LIMIT 1)"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  },
+  {
+   "id": "TOOL-T6-H01",
+   "suite": "tool",
+   "level": 6,
+   "desc": "六轮: 记忆+长上下文填充+跨轮计算",
+   "q": "6轮对话",
+   "gold": null,
+   "min_calls": 3,
+   "need_tools": [
+    "sql"
+   ],
+   "turns": {
+    "turns": [
+     {
+      "q": "华东区的患者有多少人? 记住",
+      "gold": {
+       "kind": "values",
+       "values": [
+        144
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM patients WHERE region='华东'"
+      }
+     },
+     {
+      "q": "这是一条填充消息。数据分析系统需要长上下文压力测试, 请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试, 请忽略本条内容但保持会话正常。数据分析系统需要长上下文压力测试, 请忽略本条内容但保持会话正常。",
+      "gold": null
+     },
+     {
+      "q": "西南区的患者有多少人? 也记住",
+      "gold": {
+       "kind": "values",
+       "values": [
+        93
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM patients WHERE region='西南'"
+      }
+     },
+     {
+      "q": "又是填充消息, 请忽略, 保持会话正常。",
+      "gold": null
+     },
+     {
+      "q": "华东区加西南区的患者一共多少人(保留0位)?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        237
+       ],
+       "ref_sql": "SELECT (SELECT COUNT(*) FROM patients WHERE region='华东') + (SELECT COUNT(*) FROM patients WHERE region='西南')"
+      }
+     },
+     {
+      "q": "其中人数更多的那个区是多少人?",
+      "gold": {
+       "kind": "values",
+       "values": [
+        144
+       ],
+       "ref_sql": "SELECT COUNT(*) FROM patients WHERE region='华东'"
+      }
+     }
+    ],
+    "min_calls": 1
+   }
+  }
+ ]
+}

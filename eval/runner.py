@@ -95,6 +95,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--agent", required=True)
     ap.add_argument("--suite", default="all", choices=["all", "sql", "pandas", "tool"])
+    ap.add_argument("--cases", default="",
+                    help="题集文件名(相对eval/, 默认 cases.json; 例: cases_hospital.json)")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--only", default="", help="逗号分隔case id")
     ap.add_argument("--workers", type=int, default=4)
@@ -102,7 +104,10 @@ def main():
                     help="每题独立子进程(崩溃隔离), 不稳定后端使用")
     args = ap.parse_args()
 
-    with open(os.path.join(BASE, "eval", "cases.json"), encoding="utf-8") as f:
+    cls = agent_class(args.agent)
+    cases_name = args.cases or "cases.json"
+    cases_stem = os.path.splitext(os.path.basename(cases_name))[0]
+    with open(os.path.join(BASE, "eval", cases_name), encoding="utf-8") as f:
         CASES = json.load(f)
     todo = []
     for suite, lst in CASES.items():
@@ -115,8 +120,9 @@ def main():
     if args.limit:
         todo = todo[:args.limit]
 
-    cls = agent_class(args.agent)
-    out = os.path.join(BASE, "eval", "results", f"{args.agent}_{args.suite}.json")
+    pointer = (f"{args.agent}_{args.suite}.json" if cases_stem == "cases"
+               else f"{args.agent}_{cases_stem}_{args.suite}.json")
+    out = os.path.join(BASE, "eval", "results", pointer)
     # 断点续跑: 已有结果且答案非"(agent异常"的用例跳过
     done_map = {}
     if os.path.exists(out) and not args.only:
@@ -161,7 +167,7 @@ def main():
         from common import MODEL_ID
         arch_dir = os.path.join(BASE, "eval", "results", "archive")
         os.makedirs(arch_dir, exist_ok=True)
-        arch = os.path.join(arch_dir, f"{MODEL_ID.replace('/', '_').replace(':', '_')}_{args.agent}_{args.suite}_{time.strftime('%Y%m%d_%H%M%S')}.json")
+        arch = os.path.join(arch_dir, f"{MODEL_ID.replace('/', '_').replace(':', '_')}_{args.agent}_{cases_stem}_{args.suite}_{time.strftime('%Y%m%d_%H%M%S')}.json")
         shutil.copyfile(out, arch)
         print("archived ->", arch)
 

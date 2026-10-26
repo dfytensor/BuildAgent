@@ -16,6 +16,13 @@ ARTIFACTS = os.path.join(BASE, "artifacts")
 TRACE_DIR = os.path.join(ARTIFACTS, "trace")
 os.makedirs(TRACE_DIR, exist_ok=True)
 
+# 领域扩展工具注册表(医院等第二领域通过 register_tool 注入, 见 agent/domain_hospital.py)
+EXTRA_TOOLS = {}
+
+
+def register_tool(name, fn):
+    EXTRA_TOOLS[name] = fn
+
 BASE_URL = os.environ.get("LLM_BASE_URL", "http://127.0.0.1:8080/v1")
 MODEL_ID = os.environ.get("LLM_MODEL", "spark-x2.6-4b-lossless")
 API_KEY = os.environ.get("LLM_API_KEY", "none")

@@ -148,6 +148,9 @@ class BaseAgent:
             if tool == "query_metric":
                 from query_metric import tool_query_metric
                 return tool_query_metric(args, {"session_id": self.session_id, "trace": self.trace})
+            from common import EXTRA_TOOLS
+            if tool in EXTRA_TOOLS:
+                return EXTRA_TOOLS[tool](args, {"session_id": self.session_id, "trace": self.trace})
             return {"ok": False, "error": f"工具不可用: {tool}"}
         except Exception as e:
             return {"ok": False, "error": str(e)}
