@@ -172,6 +172,10 @@ def tool_run_python(args: dict, state: dict):
         if b in code:
             return {"ok": False, "error": f"代码包含被禁止的调用: {b}"}
     task = {"code": code, "db": DB_PATH, "out_dir": ARTIFACTS}
+    if args.get("_ns_file"):
+        task["_ns_file"] = args["_ns_file"]
+    if args.get("keep_ns"):
+        task["keep_ns"] = True
     task_id = len(state.get("trace", []))
     tfile = os.path.join(TRACE_DIR, f"_task_{state.get('session_id', 'x')}_{task_id}.json")
     with open(tfile, "w", encoding="utf-8") as f:
@@ -194,6 +198,7 @@ class SandboxSession:
     def __init__(self):
         self._ns_file = os.path.join(TRACE_DIR, f"_ns_{id(self)}.pkl")
         self.calls = 0
+        self.df_seq = 0
 
     def run(self, args, state):
         self.calls += 1
@@ -201,6 +206,31 @@ class SandboxSession:
         args["_ns_file"] = self._ns_file
         args["keep_ns"] = True
         return tool_run_python(args, state)
+
+    def load(self, sql, state):
+        """把一条简单SELECT加载为沙盒DataFrame(df_1,df_2...), 供 run_python 做复杂处理"""
+        sql = str(sql or "").strip()
+        if not sql:
+            return {"ok": False, "error": "sql为空"}
+        self.df_seq += 1
+        name = f"df_{self.df_seq}"
+        no_head = os.environ.get("LOAD_DF_NO_HEAD") == "1"
+        code = (
+            "import json as _json\n"
+            f"{name} = pd.read_sql({sql!r}, conn)\n"
+            f"_info = {{'df': {name!r}, 'columns': [str(c) for c in {name}.columns], 'rows': int(len({name}))}}\n"
+            f"if {not no_head}:\n"
+            f"    _info['head'] = {name}.head(3).to_dict('records')\n"
+            "print(_json.dumps(_info, ensure_ascii=False, default=str))\n"
+        )
+        res = self.run({"code": code}, state)
+        try:
+            inner = json.loads(res.get("stdout") or "")
+            res.update(inner)
+        except Exception:
+            pass
+        res["df"] = name
+        return res
 
     def cleanup(self):
         try:

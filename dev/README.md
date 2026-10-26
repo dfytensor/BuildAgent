@@ -53,8 +53,11 @@ diagnostics/
   t_repro1.py, t_repro2.py, t_ds_l901*.py       确定性答败/提示病态的精确复现
   t_rep18_compare.py, t_spark_v11d_report.py    代表集与轮次分解报告
   t_tax.py, t_v11d_check.py, t_v11_1_values.py  口径/黄金修正的验证
+  t_spark_fail_structure.py                     失败结构分析（单轮/多轮/跨轮）
+  t_v13b_check.py, t_v13b/c/d_report.py         混合路径试验（load_df / 采纳率）
 patches/
   patch_v11b.py, patch_v11c.py, patch_v11_1.py  机制轮次的精确改动（可审计）
+  patch_v12b.py                                观测选择（调用SQL入上下文 + 优先级）
   patch_budget.py, patch_answertok.py           回答器预算
   patch_thinkoff.py, patch_emptyretry.py        思考姿态与空答重试
   patch_infra.py                                错误日志 + stderr 落盘

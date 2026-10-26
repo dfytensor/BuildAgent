@@ -1,0 +1,241 @@
+[
+ {
+  "case": "SQL-L3-06",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "16"
+  ]
+ },
+ {
+  "case": "SQL-L4-02",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "无符合条件的结果。工具1中vip_level为3级的客户不存在，无法获取vip3级客户的姓名和城市信息。"
+  ]
+ },
+ {
+  "case": "SQL-L4-03",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "上海客户的姓名和注册日期如下：\n用户0005，2022-04-06"
+  ]
+ },
+ {
+  "case": "SQL-L4-05",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "1, completed, app\n10, completed, app\n11, completed, app\n15, completed, app\n19, completed, app\n24, completed, app\n27, completed, app\n29, cancelled, app\n31, cancelled, app\n32, completed, app"
+  ]
+ },
+ {
+  "case": "SQL-L5-02",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "工具1结果中，华东区vip等级>=2的客户无匹配记录。具体如下：\n- 列: customer_id, customer_name, city, region, vip_level, signup_date, order_count, completed_order_count, completed_amount\n- 数据: 无符合条件（region为华东且vip_level>=2）的客户记录"
+  ]
+ },
+ {
+  "case": "SQL-L6-02",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "进口牛奶1号\n收纳箱1号\n羽绒服4号\n精华液1号\n牛仔裤2号\n花瓶2号\n进口牛奶2号\nT恤1号\n坚果礼盒3号\n咖啡豆1号\n花瓶3号\n冰箱1号\n运动鞋2号\n坚果礼盒1号\n进口牛奶4号"
+  ]
+ },
+ {
+  "case": "SQL-L6-03",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "有订单的客户的注册日期(去重,前15)如下：\n1. customer_id: 1, customer_name: 用户0001, city: 长春, region: 东北, vip_level: 0, signup_date: 2022-04-25, order_count: 33, completed_order_count: 30, completed_amount: 326106.41\n2. customer_id: 303, customer_name: 用户0303, city: 贵阳, region: 西南, vip_level: 3, signup_date: 2022-01-02, order_count: 30, completed_order_count: 22, completed_amount: 224910.55\n3. customer_id: 275, customer_name: 用户0275, city: 北京, region: 华北, vip_level: 3, signup_date: 2022-01-03, order_count: 35, completed_order_count: 32, completed_amount: 331534.12\n4. customer_id: 47, customer_name: 用户0047, city: 重庆, region: 西南, vip_level: 2, signup_date: 2022-01-04, order_count: 26, completed_order_count: 23, completed_amount: 295793.99\n5. customer_id: 362, customer_name: 用户0362, city: 太原, region: 华北, vip_level: 0, signup_date: 2022-01-09, order_count: 28, completed_order_count: 25, completed_amount: 254591.38\n6. customer_id: 122, customer_name: 用户0122, city: 沈阳, region: 东北, vip_level: 0, signup_date: 2022-01-10, order_count: 32, completed_order_count: 30, completed_amount: 345703.62\n7. customer_id: 238, customer_name: 用户0238, city: 沈阳, region: 东北, vip_level: 1, signup_date: 2022-01-11, order_count: 34, completed_order_count: 32, completed_amount: 525528.6\n8. customer_id: 255, customer_name: 用户0255, city: 广州, region: 华南, vip_level: 1, signup_date: 2022-01-15, order_count: 39, completed_order_count: 32, completed_amount: 363190.38\n9. customer_id: 379, customer_name: 用户0379, city: 福州, region: 华南, vip_level: 2, signup_date: 2022-01-15, order_count: 37, completed_order_count: 33, completed_amount: 361607.72\n10. customer_id: 411, customer_name: 用户0411, city: 宁波, region: 华东, vip_level: 2, signup_date: 2022-01-16, order_count: 38, completed_order_count: 34, completed_amount: 476219.98\n11. customer_id: 242, customer_name: 用户0242, city: 重庆, region: 西南, vip_level: 0, signup_date: 2022-01-18, order_count: 47, completed_order_count: 39, completed_amount: 467900.65\n12. customer_id: 476, customer_name: 用户0476, city: 成都, region: 西南, vip_level: 3, signup_date: 2022-01-20, order_count: 24, completed_order_count: 17, completed_amount: 260149.76\n13. customer_id: 361, customer_name: 用户0361, city: 广州, region: 华南, vip_level: 3, signup_date: 2022-01-23, order_count: 28, completed_order_count: 24, completed_amount: 392259.33\n14. customer_id: 138, customer_name: 用户0138, city: 石家庄, region: 华北, vip_level: 1, signup_date: 2022-01-25, order_count: 37, completed_order_count: 29, completed_amount: 517467.72\n15. customer_id: 384, customer_name: 用户0384, city: 昆明, region: 西南, vip_level: 2, signup_date: 2022-01-26, order_count: 27, completed_order_count: 22, completed_amount: 228209.42\n16. customer_id: 217, customer_name: 用户0217, city: 大连, region: 东北, vip_level: 2, signup_date: 2022-01-27, order_count: 25, completed_order_count: 21, completed_amount: 308465.76"
+  ]
+ },
+ {
+  "case": "SQL-L8-01",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "日期：2024-11-08、2024-12-13、2024-07-26、2024-04-29、2024-12-21、2024-03-25、2024-01-29、2024-10-14、2024-09-11、2024-03-14\n客户姓名：用户0483、用户0351、用户0009、用户0059、用户0126、用户0046、用户0120、用户0326、用户0005、用户0139\n渠道：mini_program、web、mini_program、mini_program、mini_program、mini_program、mini_program、app、web、app"
+  ]
+ },
+ {
+  "case": "SQL-L8-05",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "订单id: 1, 客户姓名: 用户0152, 日期: 2023-01-03 10:42:00"
+  ]
+ },
+ {
+  "case": "PY-P2-14",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "订单按时间排序后第100笔订单的id为406"
+  ]
+ },
+ {
+  "case": "PY-P2-15",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "商品价格的标准差为 1592.7100"
+  ]
+ },
+ {
+  "case": "PY-P3-09",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "复购率: 下过2单及以上的客户占全部下单客户的比例(保留4位)为 1.0000，计算过程为：复购客户数500 ÷ 全部下单客户数500 = 1.0000。"
+  ]
+ },
+ {
+  "case": "PY-P3-11",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "渠道: app, 百分比: 56.58%\n渠道: mini_program, 百分比: 56.21%\n渠道: web, 百分比: 57.55%"
+  ]
+ },
+ {
+  "case": "PY-P3-14",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年ARPU人均消费（已完成订单总金额/下单人数，保留2位）为94458744.54"
+  ]
+ },
+ {
+  "case": "PY-P3-15",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024-11"
+  ]
+ },
+ {
+  "case": "PY-P4-07",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": false,
+  "answers": [
+   "FINAL 查询失败: 图表生成未成功(TypeError: 'value' must be an instance of str or bytes, not a float)"
+  ]
+ },
+ {
+  "case": "TOOL-T3-05",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "最贵的商品是无线耳机3号，价格为8082.7。",
+   "最贵的商品是无线耳机3号，其被买过的件数为131697件。",
+   "这些销售按它原价算是8082.70元。"
+  ]
+ },
+ {
+  "case": "TOOL-T4-07",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "销售额为170341074.91",
+   "今天天气视具体状况而定，若天气舒适无恶劣天气则适合加班，若天气不佳则不太适合。",
+   "保持专注，定能顺利完成当前任务！",
+   "170341074.91 ÷ 13574 = 1254.91（保留2位小数）"
+  ]
+ }
+]

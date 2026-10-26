@@ -1,0 +1,241 @@
+[
+ {
+  "case": "SQL-L3-06",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "order_count: 16"
+  ]
+ },
+ {
+  "case": "SQL-L4-02",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "无符合条件的结果。工具1中vip_level为3的客户不存在，工具2未包含vip_level信息，无法匹配出vip3级客户的姓名和城市。"
+  ]
+ },
+ {
+  "case": "SQL-L4-03",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "上海客户的姓名和注册日期如下：\n用户0005，2022-04-06"
+  ]
+ },
+ {
+  "case": "SQL-L4-05",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "app渠道订单的id和状态(前10个)如下：\n[6, \"completed\"]\n[10, \"completed\"]\n[11, \"completed\"]\n[15, \"completed\"]\n[19, \"completed\"]\n[24, \"completed\"]\n[27, \"completed\"]\n[29, \"cancelled\"]\n[31, \"cancelled\"]\n[32, \"completed\"]"
+  ]
+ },
+ {
+  "case": "SQL-L5-02",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "用户0009, 3\n用户0020, 2\n用户0029, 3\n用户0044, 2\n用户0053, 2\n用户0078, 2\n用户0091, 2\n用户0103, 2\n用户0118, 3\n用户0129, 3\n用户0132, 2\n用户0140, 2\n用户0145, 3\n用户0153, 2\n用户0165, 2\n用户0192, 2\n用户0200, 3\n用户0202, 3\n用户0221, 2\n用户0225, 3\n用户0226, 2\n用户0239, 3\n用户0253, 2\n用户0259, 2\n用户0263, 3\n用户0265, 2\n用户0301, 2\n用户0318, 3\n用户0320, 2\n用户0322, 3\n用户0334, 2\n用户0344, 2\n用户0345, 2\n用户0355, 2\n用户0359, 3\n用户0370, 2\n用户0372, 2\n用户0399, 2\n用户0411, 2\n用户0413, 2\n用户0414, 3\n用户0421, 3\n用户0424, 2\n用户0426, 2\n用户0437, 3\n用户0440, 2\n用户0444, 3\n用户0450, 2\n用户0467, 3\n用户0470, 2"
+  ]
+ },
+ {
+  "case": "SQL-L6-02",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "T恤1号\nT恤2号\nT恤3号\nT恤4号\n冰箱1号\n冰箱2号\n冰箱3号\n冰箱4号\n口红1号\n口红2号\n口红3号\n口红4号\n台灯1号\n台灯2号\n台灯3号"
+  ]
+ },
+ {
+  "case": "SQL-L6-03",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "有订单的客户的注册日期(去重,前15)如下：\n1. 303, 用户0303, 贵阳, 西南, 3, 2022-01-02\n2. 275, 用户0275, 北京, 华北, 3, 2022-01-03\n3. 47, 用户0047, 重庆, 西南, 2, 2022-01-04\n4. 362, 用户0362, 太原, 华北, 0, 2022-01-09\n5. 122, 用户0122, 沈阳, 东北, 0, 2022-01-10\n6. 238, 用户0238, 沈阳, 东北, 1, 2022-01-11\n7. 255, 用户0255, 广州, 华南, 1, 2022-01-15\n8. 379, 用户0379, 福州, 华南, 2, 2022-01-15\n9. 411, 用户0411, 宁波, 华东, 2, 2022-01-16\n10. 242, 用户0242, 重庆, 西南, 0, 2022-01-18\n11. 476, 用户0476, 成都, 西南, 3, 2022-01-20\n12. 361, 用户0361, 广州, 华南, 3, 2022-01-23\n13. 138, 用户0138, 石家庄, 华北, 1, 2022-01-25\n14. 384, 用户0384, 昆明, 西南, 2, 2022-01-26\n15. 217, 用户0217, 大连, 东北, 2, 2022-01-27"
+  ]
+ },
+ {
+  "case": "SQL-L8-01",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年订单的日期、客户姓名、渠道(前10)如下：\n1. 日期：2024-01-06 15:47:00，客户姓名：用户0364，渠道：web\n2. 日期：2024-01-22 04:55:00，客户姓名：用户0446，渠道：mini_program\n3. 日期：2024-01-07 09:34:00，客户姓名：用户0471，渠道：web\n4. 日期：2024-01-21 18:58:00，客户姓名：用户0174，渠道：app\n5. 日期：2024-01-21 18:29:00，客户姓名：用户0472，渠道：mini_program\n6. 日期：2024-01-04 03:56:00，客户姓名：用户0125，渠道：mini_program\n7. 日期：2024-01-13 13:07:00，客户姓名：用户0132，渠道：mini_program\n8. 日期：2024-01-12 17:31:00，客户姓名：用户0041，渠道：web\n9. 日期：2024-01-31 22:19:00，客户姓名：用户0075，渠道：web\n10. 日期：2024-01-14 00:51:00，客户姓名：用户0293，渠道：mini_program"
+  ]
+ },
+ {
+  "case": "SQL-L8-05",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "订单id: 1, 客户姓名: 用户0152, 日期: 2023-01-03 10:42:00\n订单id: 2, 客户姓名: 用户0074, 日期: 2023-01-22 05:01:00\n订单id: 3, 客户姓名: 用户0188, 日期: 2023-01-19 04:33:00\n订单id: 5, 客户姓名: 用户0437, 日期: 2023-01-07 03:08:00\n订单id: 7, 客户姓名: 用户0294, 日期: 2023-01-01 11:35:00\n订单id: 9, 客户姓名: 用户0141, 日期: 2023-01-07 20:35:00\n订单id: 10, 客户姓名: 用户0423, 日期: 2023-01-11 18:02:00\n订单id: 11, 客户姓名: 用户0317, 日期: 2023-01-25 18:26:00\n订单id: 13, 客户姓名: 用户0050, 日期: 2023-01-15 07:09:00\n订单id: 14, 客户姓名: 用户0484, 日期: 2023-01-16 00:05:00"
+  ]
+ },
+ {
+  "case": "PY-P2-14",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "353"
+  ]
+ },
+ {
+  "case": "PY-P2-15",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "商品价格的标准差为无法计算（当前结果仅包含部分价格数据，且未提供完整价格列表用于计算标准差）。"
+  ]
+ },
+ {
+  "case": "PY-P3-09",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "复购率: 下过2单及以上的客户占全部下单客户的比例为500.0000（下过2单及以上的客户数为500，全部下单客户数为500，500÷500=1，保留4位小数为500.0000）"
+  ]
+ },
+ {
+  "case": "PY-P3-11",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "渠道: app, 百分比: 56.58%\n渠道: mini_program, 百分比: 56.21%\n渠道: web, 百分比: 57.55%"
+  ]
+ },
+ {
+  "case": "PY-P3-14",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "2024年ARPU人均消费为94458744.54"
+  ]
+ },
+ {
+  "case": "PY-P3-15",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024-11"
+  ]
+ },
+ {
+  "case": "PY-P4-07",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": false,
+  "answers": [
+   "FINAL 查询失败: 图表生成未成功(TypeError: 'value' must be an instance of str or bytes, not a float)"
+  ]
+ },
+ {
+  "case": "TOOL-T3-05",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "最贵的商品是无线耳机3号，价格为8082.7。",
+   "最贵的商品是无线耳机3号，被买过1160件。",
+   "8082.70"
+  ]
+ },
+ {
+  "case": "TOOL-T4-07",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "销售额为170341074.91",
+   "今天天气视具体状况而定，若天气舒适无恶劣天气则适合加班，若天气不佳则不太适合。",
+   "保持专注，定能顺利完成当前任务！",
+   "170341074.91 ÷ 13574 = 1254.81"
+  ]
+ }
+]

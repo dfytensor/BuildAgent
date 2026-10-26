@@ -1,0 +1,241 @@
+[
+ {
+  "case": "SQL-L3-06",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "查询失败+原因：未找到2024年1月1日的订单数据，相关查询结果为空。"
+  ]
+ },
+ {
+  "case": "SQL-L4-02",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "查询失败+原因：未获取到vip3级客户的姓名和城市数据（相关查询结果为空）。"
+  ]
+ },
+ {
+  "case": "SQL-L4-03",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "上海客户的姓名和注册日期如下：\n1. customer_id: 5, customer_name: 用户0005, city: 上海, signup_date: 2022-04-06\n2. customer_id: 9, customer_name: 用户0009, city: 上海, signup_date: 2022-06-13\n3. customer_id: 53, customer_name: 用户0053, city: 上海, signup_date: 2022-04-25\n4. customer_id: 105, customer_name: 用户01, city: 上海, signup_date: （未完整显示）"
+  ]
+ },
+ {
+  "case": "SQL-L4-05",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "order_id     status\n0         6  completed\n1        10  completed\n2        11  completed\n3        15  completed\n4        19  completed\n5        24  completed\n6        27  completed\n7        29  can"
+  ]
+ },
+ {
+  "case": "SQL-L5-02",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "查询失败+原因：未获取到符合条件的客户数据（华东区vip等级>=2的客户姓名和等级信息为空）。"
+  ]
+ },
+ {
+  "case": "SQL-L6-02",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "进口牛奶1号\n收纳箱1号\n羽绒服4号\n精华液1号\n牛仔裤2号\n花瓶2号\n进口牛奶2号\nT恤1号\n坚果礼盒3号\n咖啡豆1号\n花瓶3号"
+  ]
+ },
+ {
+  "case": "SQL-L6-03",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "有订单客户数: 15\ncustomer_id customer_name signup_date order_count\n1 用户0001 2022-04-25 33\n2 用户0002 2022-09-08 20\n3 用户0003 2022-04-15"
+  ]
+ },
+ {
+  "case": "SQL-L8-01",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "order_id | order_date | customer_name | channel\n6996 | 2024-01-06 15:47:00 | 用户0364 | web\n6997 | 2024-01-22 04:55:00 | 用户0446 | mini_program\n6998 | 2024-01-07 09:34:00 | 用户0446 | mini_program"
+  ]
+ },
+ {
+  "case": "SQL-L8-05",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "order_id: 1, customer_name: 用户0152, order_date: 2023-01-03 10:42:00, qty: 15\norder_id: 2, customer_name: 用户0074, order_date: 2023-01-22 05:01:00, qty: 13\norder_id: 3, customer_name: 用户0188, order_date: 2023-01-19 04:33:00, qty: 9"
+  ]
+ },
+ {
+  "case": "PY-P2-14",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "查询失败+原因：工具返回结果为空，无法获取订单数据，无法按时间排序后获取第100笔订单的id。"
+  ]
+ },
+ {
+  "case": "PY-P2-15",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "商品价格的标准差（pop std，保留4位）为2054.4458；若按样本标准差（ddof=1）计算，保留4位为2063.0599。"
+  ]
+ },
+ {
+  "case": "PY-P3-09",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "复购率: 下过2单及以上的客户占全部下单客户的比例无法计算。原因: 工具返回的数据为空，且未提供可用于计算复购率的订单数量明细（缺少下过2单及以上的客户数量与全部下单客户数量的具体数据）。"
+  ]
+ },
+ {
+  "case": "PY-P3-11",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "channel    百分比\napp        33.22\nmini_program    33.00\nweb        33.79"
+  ]
+ },
+ {
+  "case": "PY-P3-14",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年ARPU人均消费为188917.49"
+  ]
+ },
+ {
+  "case": "PY-P3-15",
+  "suite": "pandas",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "2024-05"
+  ]
+ },
+ {
+  "case": "PY-P4-07",
+  "suite": "pandas",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": false,
+  "answers": [
+   "FINAL 查询失败: 图表生成未成功(TypeError: 'value' must be an instance of str or bytes, not a float)"
+  ]
+ },
+ {
+  "case": "TOOL-T3-05",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "id: 7, name: 无线耳机3号, category: 数码, price: 8082.7, cost: 5354.3\n最贵的商品是无线耳机3号，价格为8082.7。",
+   "无线耳机3号被买过1160件。",
+   "按原价计算，无线耳机3号（id: 7）的销售总金额为3637861616.00元。"
+  ]
+ },
+ {
+  "case": "TOOL-T4-07",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "已完成订单的销售额为170341074.91",
+   "今天天气视具体状况而定，若天气舒适无恶劣天气则适合加班，若天气不佳则不太适合。",
+   "保持专注，定能顺利完成当前任务！",
+   "已完成订单的销售额为170341074.91，订单量取整后为1（根据工具结果，completed_order_count数据为空，无法获取有效订单量，无法计算该除法结果）。"
+  ]
+ }
+]

@@ -120,6 +120,22 @@ def tool_query_metric(args: dict, state: dict):
         return {"ok": True, "metric": metric, "columns": ["label", "value"], "rows": rows[:50],
                 "note": "口径: 见工具描述"}
 
+    if metric == "avg_list_price":
+        where, params = [], []
+        for k, v in (filters or {}).items():
+            if k == "category":
+                where.append("category = ?")
+                params.append(v)
+        sql = "SELECT ROUND(AVG(price),2) AS value FROM products"
+        if where:
+            sql += " WHERE " + " AND ".join(where)
+        try:
+            rows = [tuple(r) for r in sqlite3.connect(DB_PATH).execute(sql, params).fetchall()]
+        except Exception as e:
+            return {"ok": False, "error": f"{type(e).__name__}: {e}"}
+        return {"ok": True, "metric": metric, "columns": ["value"], "rows": rows[:1],
+                "note": "商品表售价均值(products.price)"}
+
     if metric not in METRICS_VS:
         return {"ok": False, "error": f"metric须为 {sorted(list(METRICS_VS) + list(COUNT_TABLES))}, 得到 {metric}"}
     agg = METRICS_VS[metric][0]

@@ -24,7 +24,15 @@ PLANNER_SYS = """你是电商数据分析规划器, 已连接本电商数据库(
 SQL方言(SQLite, 必须遵守):
 - 没有YEAR()/MONTH()/NOW()/FORMAT函数; 年月日用 year/month/day 列, 或 substr(order_date,1,4)='2024'
 - year/month/day 是 TEXT 列: 必须用字符串比较如 year='2024'; 写成 year=2024(数字)会查不到任何数据
-- 推荐查宽表 v_sales(含 year/month/day/status/channel/region/city/category/amount 等列), 单表即可, 不用JOIN
+数据源地图(按问题粒度选表, 避免重复行, 不需要JOIN):
+- products: 商品属性(名称/类目/售价price/成本cost), 一行=一个商品
+- orders: 订单头(状态/渠道/客户id/下单时间), 一行=一笔订单
+- order_items: 订单明细(件数quantity/成交单价unit_price/折扣discount), 一行=一个明细
+- v_sales: 销售明细宽表(一行=一个订单明细), 适合按维度汇总销售额/件数; 直接列订单会重复
+- v_orders: 订单宽表(一行=一笔订单, 含客户/城市/区域/vip/时间/status/channel/item_lines/qty/amount), 用于"前N个订单/订单总数/每单金额"
+- v_customers: 客户宽表(一行=一位客户, 含order_count/completed_order_count/completed_amount), 用于客户级统计
+- v_product_sales: 商品销售汇总(一行=一个商品, 含qty/line_count/amount/order_count), 用于商品排行
+选表规则: 订单级问题用 v_orders; 商品排行用 v_product_sales; 客户统计用 v_customers; 明细/维度汇总用 v_sales; 商品属性用 products。
 - 别名用 AS, 字符串用单引号, 不要用反引号
 任务: 需要查数据/计算/画图时, 调用工具(一次一步); 闲聊或无需数据时直接文字回答。
 计算规则: 对已查到的数值做乘/除/加减/百分比/折扣/倍数运算时, 必须调用 calculator 工具, expression 用上下文中的具体数值组装, 禁止心算。
@@ -35,9 +43,14 @@ SQL方言(SQLite, 必须遵守):
 TOOLS_SPEC = [
     {"type": "function", "function": {
         "name": "sqlite_query",
-        "description": "执行只读SQL查询。优先用宽表视图 v_sales(一行=一个订单明细, 字段: order_id,order_date,order_day,order_month,order_year,status,channel,customer_id,customer_name,city,region,vip_level,product_id,product_name,category,price,quantity,unit_price,discount,amount销售额), 单表即可回答绝大多数问题, 无需JOIN。",
+        "description": "执行只读SQL查询。按粒度选表: products(商品属性)、orders(订单头)、order_items(明细)、v_sales(销售明细宽表,一行=一个明细,按维度汇总用)、v_orders(订单宽表,一行=一笔订单,订单级问题用)、v_customers(客户宽表)、v_product_sales(商品销售汇总,商品排行用)。除v_sales外单表即可回答,无需JOIN。",
         "parameters": {"type": "object", "properties": {
             "sql": {"type": "string", "description": "SQLite SELECT语句"}}, "required": ["sql"]}}},
+    {"type": "function", "function": {
+        "name": "load_df",
+        "description": "把一条简单SELECT的结果加载为沙盒里的 DataFrame(df_1,df_2...), 供 run_python 做 JOIN/聚合/排序/多步计算。只写简单SQL(选列+基本WHERE/LIMIT), 不要多表JOIN/子查询。",
+        "parameters": {"type": "object", "properties": {
+            "sql": {"type": "string", "description": "简单SELECT语句"}}, "required": ["sql"]}}},
     {"type": "function", "function": {
         "name": "run_python",
         "description": "执行pandas/matplotlib代码。已预置pd,np,plt,conn(sqlite连接),out_dir(图目录); 严禁import和connect; 8行内; 最后print结果; 图用plt.savefig(out_dir+'/文件名')",
@@ -53,7 +66,7 @@ TOOLS_SPEC = [
             "required": ["type", "dim", "metric"]}}},
     {"type": "function", "function": {
         "name": "query_metric",
-        "description": "业务指标查询(推荐, 口径自动保证, 优先于手写SQL)。metric与口径: revenue=销售额(默认只算已完成订单)/order_count=订单笔数(默认含全部状态)/qty=销售件数(默认只算已完成)/completed_order_count=已完成订单笔数/product_count=商品款数(不是销售记录数)/customer_count=客户数/avg_price=平均成交单价; 需要全状态(含已取消)时传 status='all'。dim分组: month/year/region/category/channel/city/status/vip_level或none。year仅填问题中出现的年份如\"2024\"。limit=取前N行; grain=order/customer/product 时做实体级Top-N排名(配top=N)",
+        "description": "业务指标查询(推荐, 口径自动保证, 优先于手写SQL)。metric与口径: revenue=销售额(默认只算已完成订单)/order_count=订单笔数(默认含全部状态)/qty=销售件数(默认只算已完成)/completed_order_count=已完成订单笔数/product_count=商品款数(不是销售记录数)/customer_count=客户数/avg_price=平均成交单价(unit_price)/avg_list_price=商品表售价均值(products.price); 需要全状态(含已取消)时传 status='all'。dim分组: month/year/region/category/channel/city/status/vip_level或none。year仅填问题中出现的年份如\"2024\"。limit=取前N行; grain=order/customer/product 时做实体级Top-N排名(配top=N)",
         "parameters": {"type": "object", "properties": {
             "metric": {"type": "string"}, "dim": {"type": "string"},
             "grain": {"type": "string"}, "top": {"type": "integer"},
@@ -66,9 +79,13 @@ TOOLS_SPEC = [
             "expression": {"type": "string"}}, "required": ["expression"]}}},
 ]
 
-ANSWER_SYS = """你是数据分析回答器。只依据给定的查询结果回答用户问题。
+_ANSWER_BASE = """你是数据分析回答器。只依据给定的查询结果回答用户问题。
 规则: 第一行输出 FINAL; 答案必须包含具体数字或文本结果; 数字不要用万/亿, 按题目要求保留小数; 结果里没有的信息不要编造; 若结果是错误信息(error)则回答 查询失败+原因。
-若结果是多行列表, 必须逐行完整列出全部行(不要只列第一行或做摘要)。若多条工具结果内容冲突, 选择能回答问题且最完整的一条(通常行数最多); 不要用中间探查的小结果覆盖完整结果, 若最后一条是空结果/错误则参考前面成功的结果。若 calculator 已给出计算结果, 直接采用该结果作答, 不要再说无法计算。"""
+若结果是多行列表, 必须逐行完整列出全部行(不要只列第一行或做摘要)。"""
+_ANSWER_SIMPLE = "若多条工具结果内容冲突, 选择能回答问题且最完整的一条(通常行数最多); 不要用中间探查的小结果覆盖完整结果, 若最后一条是空结果/错误则参考前面成功的结果。若 calculator 已给出计算结果, 直接采用该结果作答, 不要再说无法计算。"
+_ANSWER_RICH = "选结果优先级: ①同一指标多次查询时, 以最后一次成功的查询为准(修订优先); ②问题要求列表时, 选行数最多且字段匹配的成功结果; ③忽略 SELECT * ... LIMIT 小数字 这类探查性结果, 不要用它回答; ④若最后一条是0行/错误, 用前一条成功结果。若 calculator 已给出计算结果, 直接采用该结果作答, 不要再说无法计算。"
+# 观测上下文丰富化: 强模型(ANSWER_CTX=1)增益, 4B 默认简版(避免提示截断)
+ANSWER_SYS = _ANSWER_BASE + "\n" + (_ANSWER_RICH if os.environ.get("ANSWER_CTX") == "1" else _ANSWER_SIMPLE)
 
 
 def parse_tool_call(out):
@@ -138,10 +155,11 @@ class AgentV4(BaseAgent):
 
     def _plan_call(self, msgs):
         """原生function calling规划; 返回 (tool_call_dict|None, raw_content)"""
+        spec = getattr(self, "tool_spec", TOOLS_SPEC)
         try:
             r = client().chat.completions.create(
                 model=MODEL_ID, messages=msgs, temperature=0.0,
-                max_tokens=1500, tools=TOOLS_SPEC)
+                max_tokens=1500, tools=spec)
             msg = r.choices[0].message
             if msg.tool_calls:
                 tc = msg.tool_calls[0]
@@ -156,7 +174,7 @@ class AgentV4(BaseAgent):
             # 部署不识别tools参数(模型自述无工具): 降级文本协议再规划一次
             tools_text = "; ".join(
                 f'{t["function"]["name"]}({t["function"]["description"][:80]})'
-                for t in TOOLS_SPEC)
+                for t in spec)
             msgs2 = msgs + [
                 {"role": "assistant", "content": content[:400]},
                 {"role": "user", "content":
@@ -167,7 +185,7 @@ class AgentV4(BaseAgent):
             try:
                 r2 = client().chat.completions.create(
                     model=MODEL_ID, messages=msgs2, temperature=0.0,
-                    max_tokens=1500, tools=TOOLS_SPEC)
+                    max_tokens=1500, tools=spec)
                 m2 = r2.choices[0].message
                 if m2.tool_calls:
                     tc = m2.tool_calls[0]

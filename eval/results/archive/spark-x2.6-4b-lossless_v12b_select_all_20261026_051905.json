@@ -1,0 +1,106 @@
+[
+ {
+  "case": "SQL-L3-06",
+  "suite": "sql",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "2024年1月1日当天下了16单。"
+  ]
+ },
+ {
+  "case": "SQL-L4-02",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "查询结果为空，未找到vip3级客户的姓名和城市信息。"
+  ]
+ },
+ {
+  "case": "SQL-L4-03",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "上海客户的姓名和注册日期如下：\n1. 姓名：用户0005，注册日期：2022-04-06\n2. 姓名：用户0009，注册日期：2022-06-13\n3. 姓名：用户0053，注册日期：2022-04-25\n4. 姓名：用户0105，注册日期：2023-04-15\n5. 姓名：用户0132，注册日期：2022-07-03\n6. 姓名：用户0150，注册日期：2023-06-17\n7. 姓名：用户0167，注册日期：2022-02-17\n8. 姓名：用户0192，注册日期：2022-12-27\n9. 姓名：用户0225，注册日期：2023-03-07\n10. 姓名：用户0259，注册日期：2023-08-11\n11. 姓名：用户0290，注册日期：2022-04-04\n12. 姓名：用户0320，注册日期：2022-10-17\n13. 姓名：用户0344，注册日期：2022-02-17\n14. 姓名：用户0413，注册日期：2022-06-28\n15. 姓名：用户0450，注册日期：2022-07-04\n16. 姓名：用户0452，注册日期：2022-07-05\n17. 姓名：用户0480，注册日期：2022-11-29"
+  ]
+ },
+ {
+  "case": "SQL-L5-02",
+  "suite": "sql",
+  "level": 5,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "客户姓名和等级如下（共51行，以下为前50行，完整数据共51行）：\n[\"用户0009\", 3], [\"用户0020\", 2], [\"用户0029\", 3], [\"用户0044\", 2], [\"用户0053\", 2], [\"用户0078\", 2], [\"用户0091\", 2], [\"用户0103\", 2], [\"用户0118\", 3], [\"用户0129\", 3], [\"用户0132\", 2], [\"用户0140\", 2], [\"用户0145\", 3], [\"用户0153\", 2], [\"用户0165\", 2], [\"用户0192\", 2], [\"用户0200\", 3], [\"用户0202\", 3], [\"用户0221\", 2], [\"用户0225\", 3], [\"用户0226\", 2], [\"用户0239\", 3], [\"用户0253\", 2], [\"用户0259\", 2], [\"用户0263\", 3], [\"用户0265\", 2], [\"用户0301\", 2], [\"用户0318\", 3], [\"用户0320\", 2], [\"用户0322\", 3], [\"用户0334\", 2], [\"用户0344\", 2], [\"用户0345\", 2], [\"用户0355\", 2], [\"用户0359\", 3], [\"用户0370\", 2], [\"用户0372\", 2], [\"用户0399\", 2], [\"用户0411\", 2], [\"用户0413\", 2], [\"用户0414\", 3], [\"用户0421\", 3], [\"用户0424\", 2], [\"用户0426\", 2], [\"用户0437\", 3], [\"用户0440\", 2], [\"用户0444\", 3], [\"用户0450\", 2], [\"用户0467\", 3], [\"用户0470\", 2]\n（注：完整数据共51行，上述为前50行，第51行数据未在返回结果中展示）"
+  ]
+ },
+ {
+  "case": "SQL-L6-01",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "下过订单的客户姓名（去重，前15）如下：\n1. 用户0001\n2. 用户0002\n3. 用户0003\n4. 用户0004\n5. 用户0005\n6. 用户0006\n7. 用户0007\n8. 用户0008\n9. 用户0009\n10. 用户0010\n11. 用户0011\n12. 用户0012\n13. 用户0013\n14. 用户0014\n15. 用户0015"
+  ]
+ },
+ {
+  "case": "SQL-L6-04",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "1. customer_id: 1, customer_name: 用户0001\n2. customer_id: 2, customer_name: 用户0002\n3. customer_id: 3, customer_name: 用户0003\n4. customer_id: 4, customer_name: 用户0004\n5. customer_id: 5, customer_name: 用户0005\n6. customer_id: 6, customer_name: 用户0006\n7. customer_id: 7, customer_name: 用户0007\n8. customer_id: 8, customer_name: 用户0008\n9. customer_id: 9, customer_name: 用户0009\n10. customer_id: 10, customer_name: 用户0010\n11. customer_id: 11, customer_name: 用户0011\n12. customer_id: 12, customer_name: 用户0012\n13. customer_id: 13, customer_name: 用户0013\n14. customer_id: 14, customer_name: 用户0014\n15. customer_id: 15, customer_name: 用户0015"
+  ]
+ },
+ {
+  "case": "SQL-L8-05",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "order_id: 1, customer_name: 用户0152, year: 2023, month: 2023-01, day: 2023-01-03\norder_id: 1, customer_name: 用户0152, year: 2023, month: 2023-01, day: 2023-01-03\norder_id: 2, customer_name: 用户0074, year: 2023, month: 2023-01, day: 2023-01-22\norder_id: 3, customer_name: 用户0188, year: 2023, month: 2023-01, day: 2023-01-19\norder_id: 5, customer_name: 用户0437, year: 2023, month: 2023-01, day: 2023-01-07\norder_id: 7, customer_name: 用户0294, year: 2023, month: 2023-01, day: 2023-01-01\norder_id: 7, customer_name: 用户0294, year: 2023, month: 2023-01, day: 2023-01-01\norder_id: 7, customer_name: 用户0294, year: 2023, month: 2023-01, day: 2023-01-01\norder_id: 7, customer_name: 用户0294, year: 2023, month: 2023-01, day: 2023-01-01\norder_id: 9, customer_name: 用户0141, year: 2023, month: 2023-01, day: 2023-01-07"
+  ]
+ },
+ {
+  "case": "PY-P1-08",
+  "suite": "pandas",
+  "level": 1,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "最早一笔订单的时间是2023-01-03 10:42:00"
+  ]
+ }
+]

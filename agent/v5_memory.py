@@ -5,6 +5,7 @@
 解决: 长对话上下文溢出、跨maxlen依赖丢失、过程可溯源
 """
 import json
+import os
 
 from base_agent import BaseAgent
 from common import summarize_result
@@ -31,7 +32,13 @@ class AgentV5(AgentV4):
     def _answer_msgs(self, user_text, observations):
         from v4_sandbox import ANSWER_SYS
         content = f"用户问题: {user_text}"
+        ctx_rich = os.environ.get("ANSWER_CTX") == "1"
         for i, (call, res) in enumerate(observations):
+            if ctx_rich:
+                args = (call or {}).get("args", {}) if isinstance(call, dict) else {}
+                brief = args.get("sql") or args.get("expression") or args.get("metric") or ""
+                if brief:
+                    content += f"\n[工具{i+1}调用] {str(brief)[:200]}"
             content += f"\n[工具{i+1}结果] {summarize_result(res)}"
         f = self._facts_text()
         if f:

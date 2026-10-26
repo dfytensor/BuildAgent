@@ -137,6 +137,8 @@ class BaseAgent:
                 return tool_sqlite_query(args, {"session_id": self.session_id, "trace": self.trace})
             if tool == "run_python" and self.sandbox:
                 return self.sandbox.run(args, {"session_id": self.session_id, "trace": self.trace})
+            if tool == "load_df" and self.sandbox:
+                return self.sandbox.load(args.get("sql", ""), {"session_id": self.session_id, "trace": self.trace})
             if tool == "make_chart" and self.sandbox:
                 from common import tool_make_chart
                 return tool_make_chart(args, {"session_id": self.session_id, "trace": self.trace})
