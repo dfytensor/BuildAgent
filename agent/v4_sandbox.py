@@ -90,6 +90,24 @@ ANSWER_SYS = _ANSWER_BASE + "\n" + (_ANSWER_RICH if os.environ.get("ANSWER_CTX")
 
 def parse_tool_call(out):
     """宽容解析1B的准JSON工具调用(r"前缀/漏引号/垃圾前缀/坏转义)"""
+    # RWKV/llama.cpp 风格: <tool_calls>[{"name":...,"arguments":{...}}]</tool_calls>
+    mtc = re.search(r"<tool_calls>\s*(\[.*?\])\s*</tool_calls>", out or "", re.S)
+    if mtc:
+        try:
+            arr = json.loads(mtc.group(1))
+            if isinstance(arr, list) and arr:
+                item = arr[0]
+                name = item.get("name")
+                args = item.get("arguments")
+                if isinstance(args, str):
+                    try:
+                        args = json.loads(args)
+                    except Exception:
+                        args = {}
+                if name:
+                    return {"tool": name, "args": args or {}}
+        except Exception:
+            pass
     m = re.search(r"TOOL", out)
     if not m:
         return None
