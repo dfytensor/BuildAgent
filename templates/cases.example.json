@@ -1,0 +1,91 @@
+{
+  "_comment": "Example ladder slice. Copy this schema: every case has a deterministic gold (values) plus an executable reference (ref_sql / ref_py). Ordering must be explicit in both the question and the reference.",
+  "sql": [
+    {
+      "id": "SQL-L1-01",
+      "level": 1,
+      "desc": "single-table count",
+      "q": "How many products are there in total?",
+      "gold": {
+        "kind": "values",
+        "values": [120],
+        "ref_sql": "SELECT COUNT(*) FROM products"
+      },
+      "min_calls": 1,
+      "need_tools": ["sql"]
+    },
+    {
+      "id": "SQL-L2-03",
+      "level": 2,
+      "desc": "ordered list (ordering explicit in question AND reference)",
+      "q": "List the id and created_at of the first 5 orders (ordered by id)",
+      "gold": {
+        "kind": "values",
+        "values": [1, "2023-01-03 10:42:00", 2, "2023-01-22 05:01:00"],
+        "ref_sql": "SELECT id, created_at FROM orders ORDER BY id LIMIT 5"
+      },
+      "min_calls": 1,
+      "need_tools": ["sql"]
+    },
+    {
+      "id": "SQL-L7-01",
+      "level": 7,
+      "desc": "arithmetic across two query results",
+      "q": "By how many rows does the orders table exceed the customers table?",
+      "gold": {
+        "kind": "values",
+        "values": [15488],
+        "ref_sql": "SELECT (SELECT COUNT(*) FROM orders) - (SELECT COUNT(*) FROM customers)"
+      },
+      "min_calls": 1,
+      "need_tools": ["sql"]
+    }
+  ],
+  "pandas": [
+    {
+      "id": "PY-P1-01",
+      "level": 1,
+      "desc": "dataframe single operator",
+      "q": "What is the average listing price in the products table?",
+      "gold": {
+        "kind": "values",
+        "values": [1592.71],
+        "ref_py": "round(dfs['products']['price'].mean(), 2)"
+      },
+      "min_calls": 1,
+      "need_tools": ["code"]
+    }
+  ],
+  "tool": [
+    {
+      "id": "TOOL-T4-07",
+      "level": 4,
+      "desc": "multi-turn with cross-turn reference (4 turns)",
+      "q": "four-turn dialog",
+      "gold": null,
+      "min_calls": 2,
+      "need_tools": ["sql"],
+      "turns": {
+        "turns": [
+          {
+            "q": "How many orders were completed in 2024? Remember this number.",
+            "gold": {"kind": "values", "values": [7628]}
+          },
+          {
+            "q": "Do you think today's weather is suitable for overtime?",
+            "gold": {"kind": "values", "values": []}
+          },
+          {
+            "q": "What is 1+1? No need to query the database.",
+            "gold": {"kind": "values", "values": []}
+          },
+          {
+            "q": "Multiply that number by 2. Keep 0 decimals.",
+            "gold": {"kind": "values", "values": [15256]}
+          }
+        ],
+        "min_calls": 1
+      }
+    }
+  ]
+}
