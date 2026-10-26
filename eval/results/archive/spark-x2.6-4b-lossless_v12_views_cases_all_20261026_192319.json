@@ -1,0 +1,69 @@
+[
+ {
+  "case": "SQL-L4-05",
+  "suite": "sql",
+  "level": 4,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": false,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "(回答失败)"
+  ]
+ },
+ {
+  "case": "SQL-L6-03",
+  "suite": "sql",
+  "level": 6,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": false,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "(回答失败)"
+  ]
+ },
+ {
+  "case": "SQL-L8-01",
+  "suite": "sql",
+  "level": 8,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": false,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "(回答失败)"
+  ]
+ },
+ {
+  "case": "PY-P2-14",
+  "suite": "pandas",
+  "level": 2,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": false,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "(回答失败)"
+  ]
+ },
+ {
+  "case": "TOOL-T3-05",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": false,
+  "all_turns_ok": false,
+  "tool_ok": true,
+  "exec_ok": false,
+  "chart_ok": true,
+  "answers": [
+   "(回答失败)",
+   "131697",
+   "193159450.60"
+  ]
+ }
+]

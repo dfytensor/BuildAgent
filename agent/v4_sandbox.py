@@ -25,10 +25,10 @@ SQL方言(SQLite, 必须遵守):
 - 没有YEAR()/MONTH()/NOW()/FORMAT函数; 年月日用 year/month/day 列, 或 substr(order_date,1,4)='2024'
 - year/month/day 是 TEXT 列: 必须用字符串比较如 year='2024'; 写成 year=2024(数字)会查不到任何数据
 数据源地图(按问题粒度选表, 避免重复行, 不需要JOIN):
-- products: 商品属性(名称/类目/售价price/成本cost), 一行=一个商品
+- products: 商品属性, 一行=一个商品, 列: id,name(商品名),category(类目),price(售价),cost(成本)
 - orders: 订单头(状态/渠道/客户id/下单时间), 一行=一笔订单
 - order_items: 订单明细(件数quantity/成交单价unit_price/折扣discount), 一行=一个明细
-- v_sales: 销售明细宽表(一行=一个订单明细), 适合按维度汇总销售额/件数; 直接列订单会重复
+- v_sales: 销售明细宽表(一行=一个订单明细), 列清单: order_id,order_date,day,month,year,status,channel,customer_id,customer_name,city,region,vip_level,product_id,product_name,category,price,quantity,unit_price,discount,amount; 注意: 没有单独的 id 列也没有 name 列(订单号=order_id, 商品名=product_name); 适合按维度汇总销售额/件数; 直接列订单会重复
 - v_orders: 订单宽表(一行=一笔订单, 含客户/城市/区域/vip/时间/status/channel/item_lines/qty/amount), 用于"前N个订单/订单总数/每单金额"
 - v_customers: 客户宽表(一行=一位客户, 含order_count/completed_order_count/completed_amount), 用于客户级统计
 - v_product_sales: 商品销售汇总(一行=一个商品, 含qty/line_count/amount/order_count), 用于商品排行

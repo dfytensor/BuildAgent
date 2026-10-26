@@ -15,7 +15,7 @@
 | Model × config | tool OK | exec OK | **final correct** | SQL | pandas | tool |
 |---|---|---|---|---|---|---|
 | **deepseek-flash (V4.1-1017) + v12b** (`ANSWER_CTX=1`) | 99.3% | 86.0% | **99.3% (149/150)** | 100% | 100% | 98% |
-| **spark-x2.6-4b-lossless (local llama.cpp) + v12** | 98.7% | 79.3% | **88.0% (132/150)** | 82% | 86% | 96% |
+| **spark-x2.6-4b-lossless (local llama.cpp) + v12c** | 98.7% | 84.7% | **92.0% (138/150)** | 86% | 94% | 96% |
 
 ### 1.1 Frozen v1.0 ladder (historical baseline)
 
@@ -40,7 +40,7 @@
    data governance, but 17 pure-semantic gaps vs DeepSeek remain (only 1 shared failure).
 2. **Constraints work better lower in the stack**: `prompt < tool interface < data model`.
    Adding three grain views (`v_orders`, `v_customers`, `v_product_sales`) was worth
-   +11.3pt for the 4B — no prompt engineering could do that.
+   +11.3pt for the 4B; a calculator pass-through annotation added another +4pt (92.0%).
 3. **The frontier model's last mile is rarely intelligence**: DeepSeek 86% → 92%
    (cross-turn context, metric conventions) → 99.3% (eval corrections + observation
    selection). Of 21 failures only ~4 were real model errors.
@@ -167,6 +167,7 @@ export LLM_EXTRA_BODY='{}'
 export LLM_TOK_CAP=6000
 export ANSWER_TOK=6000
 export ANSWER_CTX=1                # rich observation context (strong models)
+# (the v12c calculator pass-through annotation is always on — see agent/v12c_calcpy.py)
 export CASE_TIMEOUT=1800
 python eval/runner.py --agent v12b_select --suite all --subprocess --workers 4
 
@@ -191,6 +192,7 @@ off, planner thinking on), `ANSWER_TOK=3000`, **no `ANSWER_CTX`**.
 | `eval/results/v9h_hospital_full.json` | DeepSeek v9h baseline × hospital v1.0: 10/66 (15.2%) |
 | `eval/results/v12h_hospital_full.json` | DeepSeek v12h governed × hospital v1.0: 25/66 (37.9%, **+22.7pt**) |
 | `eval/results/v12_views_all.json` | spark-4B v12 × v1.1.1: 132/150 (88.0%) |
+| `eval/results/v12c_calcpy_all.json` | spark-4B v12c × v1.1.1: 138/150 (92.0%) |
 | `eval/results/deepseek_v12_full.json` | DeepSeek v12 × v1.1.1: 146/150 (97.3%) |
 | `eval/results/v12b_select_all.json` | spark-4B v12b: 128/150 (85.3%) |
 | `eval/results/v11d_v11_full.json` | DeepSeek v11d × v1.1: 149/150 |

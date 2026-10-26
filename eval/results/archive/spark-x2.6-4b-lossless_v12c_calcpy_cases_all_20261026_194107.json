@@ -1,0 +1,33 @@
+[
+ {
+  "case": "TOOL-T3-05",
+  "suite": "tool",
+  "level": 3,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "id: 7, name: 无线耳机3号, category: 数码, price: 8082.7",
+   "列: qty, line_count, amount, order_count | 数据: [[1160, 388, 8200424.19, 380]]",
+   "1160 * 8082.7 = 9375932.00"
+  ]
+ },
+ {
+  "case": "TOOL-T4-07",
+  "suite": "tool",
+  "level": 4,
+  "answer_ok": true,
+  "all_turns_ok": true,
+  "tool_ok": true,
+  "exec_ok": true,
+  "chart_ok": true,
+  "answers": [
+   "销售额为170341074.91",
+   "今天天气视具体状况而定，若天气舒适无恶劣天气则适合加班，若天气不佳则不太适合。",
+   "保持专注，定能顺利完成当前任务！",
+   "170341074.91/13574 = 12549.0699"
+  ]
+ }
+]

@@ -339,15 +339,17 @@ def tool_make_chart(args: dict, state: dict):
             labels = df["label"].astype(str)
             values = pd.to_numeric(df["value"], errors="coerce")
             plt.figure(figsize=(8, 4.5))
+            x = list(range(len(labels)))
             if ctype == "line":
-                plt.plot(labels, values, marker="o")
+                plt.plot(x, values, marker="o")
+                plt.xticks(x, labels, rotation=45, fontsize=8)
             elif ctype == "bar":
-                plt.bar(labels, values)
+                plt.bar(x, values)
+                plt.xticks(x, labels, rotation=45, fontsize=8)
             else:
                 plt.pie(values, labels=labels, autopct="%.1f%%")
                 plt.axis("equal")
             plt.title(f"{metric} by {dim}")
-            plt.xticks(rotation=45, fontsize=8)
             plt.tight_layout()
         path = os.path.join(ARTIFACTS, filename)
         plt.savefig(path, dpi=110)
